@@ -1,0 +1,925 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Swift JSON 转 model · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Swift Pointer.html" />
+    
+    
+    <link rel="prev" href="Swift 泛型.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iOS.html">
+            
+                <a href="../iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="编程范式.html">
+            
+                <a href="编程范式.html">
+            
+                    
+                    编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="编译.html">
+            
+                <a href="编译.html">
+            
+                    
+                    编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="单元测试.html">
+            
+                <a href="单元测试.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="多线程.html">
+            
+                <a href="多线程.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="简单的前端编译器.html">
+            
+                <a href="简单的前端编译器.html">
+            
+                    
+                    简单的前端编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="将macro移除pch.html">
+            
+                <a href="将macro移除pch.html">
+            
+                    
+                    将macro移除pch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="清理webview缓存.html">
+            
+                <a href="清理webview缓存.html">
+            
+                    
+                    清理webview缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="为什么要使用RAC.html">
+            
+                <a href="为什么要使用RAC.html">
+            
+                    
+                    为什么要使用RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="系统自带分享机制.html">
+            
+                <a href="系统自带分享机制.html">
+            
+                    
+                    系统自带分享机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="信鸽推送.html">
+            
+                <a href="信鸽推送.html">
+            
+                    
+                    信鸽推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="修改类的前缀.html">
+            
+                <a href="修改类的前缀.html">
+            
+                    
+                    修改类的前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="运行时.html">
+            
+                <a href="运行时.html">
+            
+                    
+                    运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="AutoreleasePoolPage.html">
+            
+                <a href="AutoreleasePoolPage.html">
+            
+                    
+                    AutoreleasePoolPage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="Carthage.html">
+            
+                <a href="Carthage.html">
+            
+                    
+                    Carthage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="Event.html">
+            
+                <a href="Event.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="HandyJSON.html">
+            
+                <a href="HandyJSON.html">
+            
+                    
+                    HandyJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="iOS 开发.html">
+            
+                <a href="iOS 开发.html">
+            
+                    
+                    iOS 开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="iOS&Android 使用对比.html">
+            
+                <a href="iOS&Android 使用对比.html">
+            
+                    
+                    iOS&Android 使用对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="Jenkins自动打包.html">
+            
+                <a href="Jenkins自动打包.html">
+            
+                    
+                    Jenkins自动打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="Lock.html">
+            
+                <a href="Lock.html">
+            
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="Python & Swift 对比.html">
+            
+                <a href="Python & Swift 对比.html">
+            
+                    
+                    Python & Swift 对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="RAC.html">
+            
+                <a href="RAC.html">
+            
+                    
+                    RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="RAC实现代理.html">
+            
+                <a href="RAC实现代理.html">
+            
+                    
+                    RAC实现代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="Reveal 4.html">
+            
+                <a href="Reveal 4.html">
+            
+                    
+                    Reveal 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="Swift 泛型.html">
+            
+                <a href="Swift 泛型.html">
+            
+                    
+                    Swift 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.26" data-path="Swift JSON 转 model.html">
+            
+                <a href="Swift JSON 转 model.html">
+            
+                    
+                    Swift JSON 转 model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="Swift Pointer.html">
+            
+                <a href="Swift Pointer.html">
+            
+                    
+                    Swift Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="UI Tests.html">
+            
+                <a href="UI Tests.html">
+            
+                    
+                    UI Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="UI布局.html">
+            
+                <a href="UI布局.html">
+            
+                    
+                    UI布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="UIButton imageEdgeInsets.html">
+            
+                <a href="UIButton imageEdgeInsets.html">
+            
+                    
+                    UIButton imageEdgeInsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../shell.html">
+            
+                <a href="../shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../shell/shell脚本在 iOS 中的应用.html">
+            
+                <a href="../shell/shell脚本在 iOS 中的应用.html">
+            
+                    
+                    shell脚本在 iOS 中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../shell/Mac Oh-My-Zsh.html">
+            
+                <a href="../shell/Mac Oh-My-Zsh.html">
+            
+                    
+                    Mac Oh-My-Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../shell/shell入门.html">
+            
+                <a href="../shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../shell/字符串.html">
+            
+                <a href="../shell/字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../shell/sed.html">
+            
+                <a href="../shell/sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../shell/grep.html">
+            
+                <a href="../shell/grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../shell/awk.html">
+            
+                <a href="../shell/awk.html">
+            
+                    
+                    awk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../shell/curl.html">
+            
+                <a href="../shell/curl.html">
+            
+                    
+                    curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../shell/jq.html">
+            
+                <a href="../shell/jq.html">
+            
+                    
+                    jq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../shell/date.html">
+            
+                <a href="../shell/date.html">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Swift JSON 转 model</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x5728; OC &#x8FD0;&#x884C;&#x65F6;&#x652F;&#x6301;&#x4E0B;&#xFF0C;JSON &#x548C; model &#x4E92;&#x76F8;&#x8F6C;&#x6362;&#x6839;&#x672C;&#x4E0D;&#x7B97;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF0C;&#x5230;&#x4E86; swift &#x8FD9;&#x91CC;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="codable">Codable</h3>
+<p>Codable &#x662F;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;&#x534F;&#x8BAE;&#xFF0C;<code>public typealias Codable = Decodable &amp; Encodable</code></p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x548C; OC &#x7684; encode &#x548C; decoder &#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x901A;&#x8FC7;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0; JSON&#x548C;model&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x3002;</p>
+<p>&#x53EA;&#x662F; swfit &#x7CFB;&#x7EDF;&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x5B9E;&#x73B0;&#x4E86; Codable&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684; model &#x5C5E;&#x6027;&#x90FD;&#x662F;&#x9075;&#x5FAA; Codable,&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x58F0;&#x660E; model &#x9075;&#x5FAA; Codable&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x53E6;&#x5916;&#x5B9E;&#x73B0;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>init(from decoder: Decoder)
+func encode(to encoder: Encoder)
+</code></pre><p>user.json</p>
+<pre><code>{
+    &quot;base&quot; : {
+        &quot;id&quot; : &quot;20190523&quot;,
+        &quot;name&quot; : {
+            &quot;first&quot; : &quot;ying&quot;,
+            &quot;last&quot; : &quot;long&quot;
+        }
+    },
+    &quot;address&quot; : [
+        {
+            &quot;desc&quot; : &quot;work&quot;,
+            &quot;detail&quot; : &quot;fucheng&quot;
+        },
+        {
+            &quot;desc&quot; : &quot;home&quot;,
+            &quot;detail&quot; : &quot;xili&quot;
+        },
+        {
+            &quot;desc&quot; : &quot;home&quot;,
+        }
+    ]
+}
+
+struct Name : Codable {
+    var first : String?
+    var last : String?
+}
+
+struct Address : Codable {
+    var desc : String
+    var detail : String?
+}
+
+struct Base : Codable {
+    var id : String
+    var name : Name?
+    var age : Int?
+}
+
+struct User : Codable {
+    var base : Base 
+    var address : [Address]?
+}
+
+override func viewDidLoad() {
+         super.viewDidLoad()
+
+    // json to model
+    let jsonDecoder = JSONDecoder()
+    let model: User = try! jsonDecoder.decode(User.self, from: testData() as Data)
+
+    print(model.base.id)
+    print(model.address?.first?.detail)
+
+    // model to json
+    let jsonEncoder = JSONEncoder()
+    let jsonData = try? jsonEncoder.encode(model)
+
+}
+
+func testData() -&gt; NSData! {
+    let path : String = Bundle.main.path(forResource: &quot;user&quot;, ofType: &quot;json&quot;)!
+    let data = NSData(contentsOfFile: path)
+
+    return data
+}
+</code></pre><h3 id="&#x81EA;&#x5B9A;&#x4E49;-key">&#x81EA;&#x5B9A;&#x4E49; key</h3>
+<p>&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x540E;&#x53F0;&#x4F1A;&#x4F7F;&#x7528; id&#x3001;description &#x8FD9;&#x79CD;&#x4F5C;&#x4E3A;key,&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x524D;&#x6BB5;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x8C03;&#x6574;&#x4E00;&#x4E0B;key&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x907F;&#x514D;&#x51B2;&#x7A81;</p>
+<pre><code>struct Base : Codable {
+    var userId : String
+    var name : Name?
+    var age : Int?
+
+    // &#x81EA;&#x5B9A;&#x4E49;key
+    // &#x867D;&#x7136; age&#x548C;name &#x6CA1;&#x6709;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x8981;&#x5217;&#x51FA;&#x6765;&#xFF0C;&#x975E;&#x5E38;2
+    enum CodingKeys:String, CodingKey {
+        case userId = &quot;id&quot;
+        case age
+        case name
+    }
+}
+</code></pre><h3 id="&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;">&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;</h3>
+<p>&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x8FC7; YYModel&#xFF0C;YYModel &#x5C31;&#x9488;&#x5BF9;&#x8FD9;&#x4E00;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x4E86;&#x7279;&#x6B8A;&#x7684;&#x5904;&#x7406;</p>
+<pre><code>struct NumberType : Codable {
+    var intValue : Int {
+        didSet {
+            let value = String(intValue)
+            if value != stringValue {
+                stringValue = value
+            }
+        }
+    }
+
+    var stringValue : String {
+        didSet {
+            let value = Int(stringValue)
+            if value != intValue {
+                intValue = value ?? 0
+            }
+        }
+    }
+
+    init(from decoder: Decoder) throws {
+        let singleValueContainer = try decoder.singleValueContainer()
+
+        if let value = try? singleValueContainer.decode(String.self) {
+            stringValue = value
+            intValue = Int(stringValue) ?? 0
+        } else if let value = try? singleValueContainer.decode(Int.self) {
+            intValue = value
+            stringValue = String(intValue)
+        } else {
+            intValue = 0
+            stringValue = &quot;&quot;
+        }
+    }
+}
+
+struct Base : Codable {
+    var userId : NumberType
+    var name : Name?
+    var age : Int?
+
+    // &#x81EA;&#x5B9A;&#x4E49;key
+    enum CodingKeys:String, CodingKey {
+        case userId = &quot;id&quot;
+        case age
+        case name
+    }
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Swift 泛型.html" class="navigation navigation-prev " aria-label="Previous page: Swift 泛型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Swift Pointer.html" class="navigation navigation-next " aria-label="Next page: Swift Pointer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"type":"iOS","title":"Swift JSON 转 model","level":"1.2.26","depth":2,"next":{"title":"Swift Pointer","level":"1.2.27","depth":2,"path":"iOS/Swift Pointer.md","ref":"iOS/Swift Pointer.md","articles":[]},"previous":{"title":"Swift 泛型","level":"1.2.25","depth":2,"path":"iOS/Swift 泛型.md","ref":"iOS/Swift 泛型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/Swift JSON 转 model.md","mtime":"2019-05-23T08:32:47.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:54:27.836Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

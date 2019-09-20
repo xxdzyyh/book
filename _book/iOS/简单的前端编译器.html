@@ -1,0 +1,1054 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>简单的前端编译器 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="将macro移除pch.html" />
+    
+    
+    <link rel="prev" href="多线程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iOS.html">
+            
+                <a href="../iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="编程范式.html">
+            
+                <a href="编程范式.html">
+            
+                    
+                    编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="编译.html">
+            
+                <a href="编译.html">
+            
+                    
+                    编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="单元测试.html">
+            
+                <a href="单元测试.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="多线程.html">
+            
+                <a href="多线程.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="简单的前端编译器.html">
+            
+                <a href="简单的前端编译器.html">
+            
+                    
+                    简单的前端编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="将macro移除pch.html">
+            
+                <a href="将macro移除pch.html">
+            
+                    
+                    将macro移除pch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="清理webview缓存.html">
+            
+                <a href="清理webview缓存.html">
+            
+                    
+                    清理webview缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="为什么要使用RAC.html">
+            
+                <a href="为什么要使用RAC.html">
+            
+                    
+                    为什么要使用RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="系统自带分享机制.html">
+            
+                <a href="系统自带分享机制.html">
+            
+                    
+                    系统自带分享机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="信鸽推送.html">
+            
+                <a href="信鸽推送.html">
+            
+                    
+                    信鸽推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="修改类的前缀.html">
+            
+                <a href="修改类的前缀.html">
+            
+                    
+                    修改类的前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="运行时.html">
+            
+                <a href="运行时.html">
+            
+                    
+                    运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="AutoreleasePoolPage.html">
+            
+                <a href="AutoreleasePoolPage.html">
+            
+                    
+                    AutoreleasePoolPage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="Carthage.html">
+            
+                <a href="Carthage.html">
+            
+                    
+                    Carthage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="Event.html">
+            
+                <a href="Event.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="HandyJSON.html">
+            
+                <a href="HandyJSON.html">
+            
+                    
+                    HandyJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="iOS 开发.html">
+            
+                <a href="iOS 开发.html">
+            
+                    
+                    iOS 开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="iOS&Android 使用对比.html">
+            
+                <a href="iOS&Android 使用对比.html">
+            
+                    
+                    iOS&Android 使用对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="Jenkins自动打包.html">
+            
+                <a href="Jenkins自动打包.html">
+            
+                    
+                    Jenkins自动打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="Lock.html">
+            
+                <a href="Lock.html">
+            
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="Python & Swift 对比.html">
+            
+                <a href="Python & Swift 对比.html">
+            
+                    
+                    Python & Swift 对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="RAC.html">
+            
+                <a href="RAC.html">
+            
+                    
+                    RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="RAC实现代理.html">
+            
+                <a href="RAC实现代理.html">
+            
+                    
+                    RAC实现代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="Reveal 4.html">
+            
+                <a href="Reveal 4.html">
+            
+                    
+                    Reveal 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="Swift 泛型.html">
+            
+                <a href="Swift 泛型.html">
+            
+                    
+                    Swift 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="Swift JSON 转 model.html">
+            
+                <a href="Swift JSON 转 model.html">
+            
+                    
+                    Swift JSON 转 model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="Swift Pointer.html">
+            
+                <a href="Swift Pointer.html">
+            
+                    
+                    Swift Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="UI Tests.html">
+            
+                <a href="UI Tests.html">
+            
+                    
+                    UI Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="UI布局.html">
+            
+                <a href="UI布局.html">
+            
+                    
+                    UI布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="UIButton imageEdgeInsets.html">
+            
+                <a href="UIButton imageEdgeInsets.html">
+            
+                    
+                    UIButton imageEdgeInsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../shell.html">
+            
+                <a href="../shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../shell/shell脚本在 iOS 中的应用.html">
+            
+                <a href="../shell/shell脚本在 iOS 中的应用.html">
+            
+                    
+                    shell脚本在 iOS 中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../shell/Mac Oh-My-Zsh.html">
+            
+                <a href="../shell/Mac Oh-My-Zsh.html">
+            
+                    
+                    Mac Oh-My-Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../shell/shell入门.html">
+            
+                <a href="../shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../shell/字符串.html">
+            
+                <a href="../shell/字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../shell/sed.html">
+            
+                <a href="../shell/sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../shell/grep.html">
+            
+                <a href="../shell/grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../shell/awk.html">
+            
+                <a href="../shell/awk.html">
+            
+                    
+                    awk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../shell/curl.html">
+            
+                <a href="../shell/curl.html">
+            
+                    
+                    curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../shell/jq.html">
+            
+                <a href="../shell/jq.html">
+            
+                    
+                    jq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../shell/date.html">
+            
+                <a href="../shell/date.html">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >简单的前端编译器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x65B0;&#x7684;&#x8BED;&#x8A00;&#x63CF;&#x8FF0;">&#x65B0;&#x7684;&#x8BED;&#x8A00;&#x63CF;&#x8FF0;</h3>
+<p>&#x65B0;&#x7684;&#x8BED;&#x8A00;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x89C6;&#x56FE;&#x521B;&#x5EFA;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x8FD9;&#x949F;&#x8BED;&#x8A00;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;Objective-C&#x4EE3;&#x7801;&#x3002;</p>
+<ol>
+<li><p>&#x63CF;&#x8FF0;&#x63A7;&#x4EF6;&#x7684;&#x5C5E;&#x6027;</p>
+<pre><code> # @property (nonatomic, strong) UILabel *nameLabel;
+ # - (UILabel *)nameLabel {
+ #    if (!_nameLabel) {
+ #        _nameLabel = [[UILabel alloc] init]; 
+ #        
+ #        _nameLabel.text = @&quot;www&quot;;
+ #        _nameLabel.textColor = UIColorFromRGB(0xFFFFFF);
+ #        _nameLabel.font = kFontSize(15);
+ #    }
+ #    return _nameLabel;
+ # }
+
+ nameLabel(f:15,t:&quot;www&quot;,tc:0xFFFFFF)
+</code></pre></li>
+<li><p>&#x63CF;&#x8FF0;&#x63A7;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;</p>
+<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x548C;iOS VFL&#x662F;&#x5DEE;&#x4E0D;&#x591A;&#x7684;&#x3002;</p>
+<pre><code># nameLabel&#x5230;superView&#x5DE6;&#x53F3;&#x4E3A;20&#xFF0C;&#x9876;&#x90E8;&#x8DDD;&#x79BB;&#x4E3A;30&#xFF0C;&#x9AD8;&#x5EA6;&#x4E3A;40
+
+H|-20-nameLabel-20-|
+V|-30-nameLabel(40)|
+</code></pre></li>
+<li><p>&#x63CF;&#x8FF0;&#x63A7;&#x4EF6;&#x7684;&#x5173;&#x7CFB;</p>
+<pre><code># [self.view addSubview:nameLabel]
+# [self.view addSubview:commitButton]
+
+self.view = nameLabel + commitButton
+</code></pre></li>
+</ol>
+<h3 id="&#x5173;&#x952E;&#x5B57;">&#x5173;&#x952E;&#x5B57;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x5173;&#x952E;&#x5B57;</th>
+<th>&#x5B8C;&#x6574;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f</td>
+<td>font</td>
+<td>&#x5B57;&#x4F53;</td>
+</tr>
+<tr>
+<td>b</td>
+<td>backgroundColor</td>
+<td>&#x80CC;&#x666F;&#x989C;&#x8272;</td>
+</tr>
+<tr>
+<td>lbc</td>
+<td>layer.borderColor</td>
+<td>&#x8FB9;&#x6846;&#x989C;&#x8272;</td>
+</tr>
+<tr>
+<td>lbw</td>
+<td>layer.borderWidth</td>
+<td>&#x8FB9;&#x6846;&#x5BBD;&#x5EA6;</td>
+</tr>
+<tr>
+<td>t</td>
+<td>text</td>
+<td>&#x6587;&#x672C;</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Placeholder</td>
+<td>&#x5360;&#x4F4D;&#x7B26;</td>
+</tr>
+<tr>
+<td>lc</td>
+<td>layer.cornerRadius</td>
+<td>&#x5706;&#x89D2;</td>
+</tr>
+<tr>
+<td>i</td>
+<td>image</td>
+<td>&#x56FE;&#x50CF;</td>
+</tr>
+<tr>
+<td>tc</td>
+<td>textColor</td>
+<td>&#x6587;&#x672C;&#x989C;&#x8272;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF08;lexer&#xFF09;">&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;&#xFF08;Lexer&#xFF09;</h3>
+<p>&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x5C06;&#x8BCD;&#x7D20;&#x8F6C;&#x6362;&#x4E3A;&#x8BCD;&#x6CD5;&#x5355;&#x5143;&#x3002;</p>
+<pre><code># -*- coding: UTF-8 -*-
+import re
+from enum import Enum
+
+# &#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x662F;&#x8BCD;&#x7D20;&#x5230;&#x8BCD;&#x6CD5;&#x5355;&#x5143;&#x7684;&#x8FC7;&#x7A0B;
+class TokenType(Enum):
+    Init = 0
+    Operator = 1
+    Number = 2
+    Keyword = 3
+    String = 4
+    Separator = 5
+    Identify = 6
+
+# &#x8BCD;&#x6CD5;&#x5355;&#x5143;
+class Token(object):
+    def __init__(this):
+        # &#x884C;&#x53F7;
+        this.line = 0
+        # &#x7C7B;&#x578B;
+        this.type = TokenType.Init
+        this.value = 0
+
+    def __str__(this):
+        return &quot;line:&quot; + str(this.line) + &quot;, type:&quot; + str(this.type) + &quot;, value:&quot; + str(this.value)
+
+# &#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;
+class Lexer(object):
+
+    def __init__(this):
+        # &#x8BBE;&#x7F6E;&#x8BED;&#x8A00;&#x5173;&#x952E;&#x5B57;
+        this.keywords = [&apos;b&apos;,&apos;c&apos;,&apos;f&apos;,&apos;i&apos;,&apos;lbc&apos;,&apos;lbw&apos;,&apos;lc&apos;,&apos;p&apos;,&apos;t&apos;,&apos;tc&apos;]
+        # &#x8BBE;&#x7F6E;&#x5206;&#x9694;&#x7B26;
+        this.separator = [&apos;,&apos;,&apos;(&apos;,&apos;)&apos;]
+        # &#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#x7B26;
+        this.operator = [&apos;:&apos;&#xFF0C;&apos;+&apos;]
+        this.tokenObjects = []
+        this.line_num = 0
+
+    def read_file(this,filename):
+        with open(filename,&quot;r&quot;) as f_input:
+            return [line.strip() for line in f_input]
+
+    def run(this,line):
+        this.line_num = this.line_num + 1
+        # &#x53BB;&#x6389;&#x7A7A;&#x767D;&#x884C;
+        if len(line) &lt; 1:
+            return
+        else:
+            # &#x53BB;&#x6389;&#x6CE8;&#x91CA;
+            if line.startswith(&apos;//&apos;):
+                return
+
+        each = []
+        for letter in line:
+            each.append(letter)
+
+        #
+        op_first = &apos;&apos;
+        word = &apos;&apos;
+        # &#x5224;&#x65AD;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x5224;&#x65AD;
+        # 0 &#x662F;&#x521D;&#x59CB;&#x503C;
+        # 1 &#x662F;&#x64CD;&#x4F5C;&#x7B26;
+        # 2 &#x662F;&#x5E38;&#x6570;NUM
+        # 3 &#x662F;&#x5173;&#x952E;&#x5B57;&#x6216;&#x53D8;&#x91CF;&#x540D;
+        # 4 &#x662F;&#x5B57;&#x7B26;&#x4E32; STRING
+        oflag = 0
+
+
+        for e in each:
+            if oflag == 1:
+                # &#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x5904;&#x7406;&#x64CD;&#x4F5C;&#x7B26;&#x662F;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x60C5;&#x51B5;
+                if e in this.separator:
+                    this.addToken(TokenType.Separator,word)
+                elif re.match(r&apos;[a-zA-Z\_]&apos;,e):
+                    word = word + e
+                oflag = 0
+
+
+                continue
+            elif oflag == 2:
+                if e == &apos;&apos;:
+                    this.addToken(TokenType.Number,word)
+                    word = &apos;&apos;
+                    oflag = 0
+
+                elif e in this.separator:
+                    this.addToken(TokenType.Number,word)
+                    word = &apos;&apos;
+                    oflag = 0
+
+            elif oflag == 3: # &#x662F;&#x5173;&#x952E;&#x5B57;&#x6216;&#x53D8;&#x91CF;&#x540D;
+                if e == &apos;&apos;:
+                    if word in this.keywords:
+                        this.addToken(TokenType.Keyword,word)    
+                    else:
+                        this.addToken(TokenType.Identify,word)
+                    word = &apos;&apos;
+                    oflag = 0
+
+                elif e in this.separator:
+                    if word in this.keywords:
+                        this.addToken(TokenType.Keyword,word)    
+                    else:
+                        this.addToken(TokenType.Identify,word)
+                    word = &apos;&apos;
+                    oflag = 0
+
+                elif e in this.operator:
+                    if word in this.keywords:
+                        this.addToken(TokenType.Keyword,word)    
+                    else:
+                        this.addToken(TokenType.Identify,word)    
+                    word = &apos;&apos;
+                    oflag = 0
+
+                else:
+                    word = word + e
+                continue
+            elif oflag == 4:
+                if e != &apos;&quot;&apos;:
+                    word = word + e
+                elif e == &apos;&quot;&apos;:
+                    word = word + e
+                    this.addToken(TokenType.String,word)
+                    word = &apos;&apos;
+                    oflag = 0
+
+                continue
+
+            # &#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x64CD;&#x4F5C;&#x7B26;
+            if e in this.operator:
+                oflag = 1
+                op_first = e
+                continue
+
+            # &#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x5206;&#x9694;&#x7B26;
+            if e in this.separator:
+                this.addToken(TokenType.Separator,e)
+                continue
+
+            # &#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x5E38;&#x6570;
+            if re.match(r&apos;[0-9\.]&apos;,e): 
+                oflag = 2
+                word = word + e
+                continue
+
+            #&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x5173;&#x952E;&#x5B57;&#x6216;&#x8005;&#x53D8;&#x91CF;&#x540D;
+            if re.match(r&apos;[a-zA-Z\_]&apos;,e):
+                oflag = 3
+                word = word + e
+                continue
+
+            #&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x5B57;&#x7B26;&#x4E32;
+            if e == &apos;&quot;&apos;:
+                oflag = 4
+                word = word + e
+                continue
+
+    def addToken(this,type,value):
+        tokenObject = Token()
+        tokenObject.type = type
+        tokenObject.value = value
+        tokenObject.line = this.line_num
+        this.tokenObjects.append(tokenObject)
+
+if __name__ == &apos;__main__&apos;:
+    token = Lexer()
+    filepath = &quot;/Users/xiaoniu/Workspace/shell/11.txt&quot;
+    lines = token.read_file(filepath)
+
+    for line in lines:
+        token.run(line)
+
+    for obj in token.tokenObjects:
+        print(obj)
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="多线程.html" class="navigation navigation-prev " aria-label="Previous page: 多线程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="将macro移除pch.html" class="navigation navigation-next " aria-label="Next page: 将macro移除pch">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"简单的前端编译器","level":"1.2.5","depth":2,"next":{"title":"将macro移除pch","level":"1.2.6","depth":2,"path":"iOS/将macro移除pch.md","ref":"iOS/将macro移除pch.md","articles":[]},"previous":{"title":"多线程","level":"1.2.4","depth":2,"path":"iOS/多线程.md","ref":"iOS/多线程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/简单的前端编译器.md","mtime":"2019-08-02T09:35:32.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:54:27.836Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1020 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>shell脚本在 iOS 中的应用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Mac Oh-My-Zsh.html" />
+    
+    
+    <link rel="prev" href="../shell.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iOS.html">
+            
+                <a href="../iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../iOS/编程范式.html">
+            
+                <a href="../iOS/编程范式.html">
+            
+                    
+                    编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../iOS/编译.html">
+            
+                <a href="../iOS/编译.html">
+            
+                    
+                    编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../iOS/单元测试.html">
+            
+                <a href="../iOS/单元测试.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../iOS/多线程.html">
+            
+                <a href="../iOS/多线程.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../iOS/简单的前端编译器.html">
+            
+                <a href="../iOS/简单的前端编译器.html">
+            
+                    
+                    简单的前端编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../iOS/将macro移除pch.html">
+            
+                <a href="../iOS/将macro移除pch.html">
+            
+                    
+                    将macro移除pch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../iOS/清理webview缓存.html">
+            
+                <a href="../iOS/清理webview缓存.html">
+            
+                    
+                    清理webview缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../iOS/为什么要使用RAC.html">
+            
+                <a href="../iOS/为什么要使用RAC.html">
+            
+                    
+                    为什么要使用RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../iOS/系统自带分享机制.html">
+            
+                <a href="../iOS/系统自带分享机制.html">
+            
+                    
+                    系统自带分享机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../iOS/信鸽推送.html">
+            
+                <a href="../iOS/信鸽推送.html">
+            
+                    
+                    信鸽推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../iOS/修改类的前缀.html">
+            
+                <a href="../iOS/修改类的前缀.html">
+            
+                    
+                    修改类的前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../iOS/运行时.html">
+            
+                <a href="../iOS/运行时.html">
+            
+                    
+                    运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../iOS/AutoreleasePoolPage.html">
+            
+                <a href="../iOS/AutoreleasePoolPage.html">
+            
+                    
+                    AutoreleasePoolPage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../iOS/Carthage.html">
+            
+                <a href="../iOS/Carthage.html">
+            
+                    
+                    Carthage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../iOS/Event.html">
+            
+                <a href="../iOS/Event.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../iOS/HandyJSON.html">
+            
+                <a href="../iOS/HandyJSON.html">
+            
+                    
+                    HandyJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../iOS/iOS 开发.html">
+            
+                <a href="../iOS/iOS 开发.html">
+            
+                    
+                    iOS 开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../iOS/iOS&Android 使用对比.html">
+            
+                <a href="../iOS/iOS&Android 使用对比.html">
+            
+                    
+                    iOS&Android 使用对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../iOS/Jenkins自动打包.html">
+            
+                <a href="../iOS/Jenkins自动打包.html">
+            
+                    
+                    Jenkins自动打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../iOS/Lock.html">
+            
+                <a href="../iOS/Lock.html">
+            
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="../iOS/Python & Swift 对比.html">
+            
+                <a href="../iOS/Python & Swift 对比.html">
+            
+                    
+                    Python & Swift 对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="../iOS/RAC.html">
+            
+                <a href="../iOS/RAC.html">
+            
+                    
+                    RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="../iOS/RAC实现代理.html">
+            
+                <a href="../iOS/RAC实现代理.html">
+            
+                    
+                    RAC实现代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="../iOS/Reveal 4.html">
+            
+                <a href="../iOS/Reveal 4.html">
+            
+                    
+                    Reveal 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="../iOS/Swift 泛型.html">
+            
+                <a href="../iOS/Swift 泛型.html">
+            
+                    
+                    Swift 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="../iOS/Swift JSON 转 model.html">
+            
+                <a href="../iOS/Swift JSON 转 model.html">
+            
+                    
+                    Swift JSON 转 model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="../iOS/Swift Pointer.html">
+            
+                <a href="../iOS/Swift Pointer.html">
+            
+                    
+                    Swift Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="../iOS/UI Tests.html">
+            
+                <a href="../iOS/UI Tests.html">
+            
+                    
+                    UI Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="../iOS/UI布局.html">
+            
+                <a href="../iOS/UI布局.html">
+            
+                    
+                    UI布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="../iOS/UIButton imageEdgeInsets.html">
+            
+                <a href="../iOS/UIButton imageEdgeInsets.html">
+            
+                    
+                    UIButton imageEdgeInsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../shell.html">
+            
+                <a href="../shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="shell脚本在 iOS 中的应用.html">
+            
+                <a href="shell脚本在 iOS 中的应用.html">
+            
+                    
+                    shell脚本在 iOS 中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Mac Oh-My-Zsh.html">
+            
+                <a href="Mac Oh-My-Zsh.html">
+            
+                    
+                    Mac Oh-My-Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="shell入门.html">
+            
+                <a href="shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="字符串.html">
+            
+                <a href="字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="sed.html">
+            
+                <a href="sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="grep.html">
+            
+                <a href="grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="awk.html">
+            
+                <a href="awk.html">
+            
+                    
+                    awk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="curl.html">
+            
+                <a href="curl.html">
+            
+                    
+                    curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="jq.html">
+            
+                <a href="jq.html">
+            
+                    
+                    jq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="date.html">
+            
+                <a href="date.html">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >shell脚本在 iOS 中的应用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x4F5C;&#x4E3A;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#xFF0C;&#x548C;&#x811A;&#x672C;&#x6253;&#x4EA4;&#x9053;&#x662F;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x3002;</p>
+<p>&#x5F88;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x5728;&#x754C;&#x9762;&#x4E0A;&#x70B9;&#x70B9;&#x70B9;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x6700;&#x7EC8;&#x8F6C;&#x4E3A;&#x6267;&#x884C;&#x4E86;&#x51E0;&#x6761;&#x811A;&#x672C;&#x547D;&#x4EE4;&#x3002;&#x6BD4;&#x5982;&#x8BF4;Xcode &#x7F16;&#x8BD1;&#x67D0;&#x4E2A;&#x9879;&#x76EE;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;</p>
+<pre><code>xcodebuild -workspace LearnSwift.xcworkspace -scheme LearnSwift
+</code></pre><p>&#x5F88;&#x591A;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x5DE5;&#x5177;&#x90FD;&#x4F1A;&#x63D0;&#x4F9B;&#x76F8;&#x5E94;&#x7684;&#x547D;&#x4EE4;&#x6765;&#x4F9B;&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528;&#xFF0C;&#x5982;Xcode/jenkins&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5DE5;&#x5177;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x5DF2;&#x7ECF;&#x5728;&#x548C; Shell &#x6253;&#x4EA4;&#x9053;&#x4E86;&#x3002;</p>
+<p>&#x4F7F;&#x7528; Shell &#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x6446;&#x8131;&#x5BF9;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x5DE5;&#x5177;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x6BD4;&#x5982; SourceTree/Versions&#xFF0C;&#x6709;&#x4E9B;&#x5DE5;&#x5177;&#x8FD8;&#x662F;&#x6536;&#x8D39;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x8FD9;&#x4E9B;&#x5DE5;&#x5177;&#x3002;</p>
+<p>&#x501F;&#x52A9; Shell &#x6211;&#x4EEC;&#x5C06;&#x4E00;&#x4E9B;&#x7E41;&#x7410;&#x7684;&#x4E1C;&#x897F;&#x81EA;&#x52A8;&#x5316;&#xFF0C;&#x6BD4;&#x5982;&#x81EA;&#x52A8;&#x6253;&#x5305;&#xFF0C;&#x6216;&#x8005;&#x534A;&#x81EA;&#x52A8;&#x5316;&#x5982;&#x540E;&#x53F0;&#x63A5;&#x53E3;&#x6587;&#x6863;&#x751F;&#x6210;&#x6A21;&#x578B;&#x4EE3;&#x7801;&#x3002;</p>
+<h3 id="shell-&#x7B80;&#x4ECB;">Shell &#x7B80;&#x4ECB;</h3>
+<p>Linux &#x7684; Shell &#x79CD;&#x7C7B;&#x4F17;&#x591A;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x6709;&#xFF1A;</p>
+<ul>
+<li>Bourne Shell&#xFF08;/usr/bin/sh&#x6216;/bin/sh&#xFF09;</li>
+<li>Bourne Again Shell&#xFF08;/bin/bash&#xFF09;</li>
+<li>C Shell&#xFF08;/usr/bin/csh&#xFF09;</li>
+<li>K Shell&#xFF08;/usr/bin/ksh&#xFF09;</li>
+<li>Shell for Root&#xFF08;/sbin/sh&#xFF09;</li>
+<li>&#x2026;&#x2026;</li>
+</ul>
+<p>&#x7531;&#x4E8E;&#x6613;&#x7528;&#x548C;&#x514D;&#x8D39;&#xFF0C;Bash &#x5728;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x4E2D;&#x88AB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x3002;&#x540C;&#x65F6;&#xFF0C;Bash &#x4E5F;&#x662F;&#x5927;&#x591A;&#x6570;Linux &#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7684; Shell&#x3002;</p>
+<p>&#x5728;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4EBA;&#x4EEC;&#x5E76;&#x4E0D;&#x533A;&#x5206; Bourne Shell &#x548C; Bourne Again Shell,&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x8BA8;&#x8BBA;&#x7684;&#x662F;Bash&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;test.sh&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x811A;&#x672C;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002; </p>
+<pre><code>#!/bin/bash
+echo &quot;Hello World !&quot;
+</code></pre><p><code>#!</code>  &#x544A;&#x8BC9;&#x7CFB;&#x7EDF;&#x5176;&#x540E;&#x8DEF;&#x5F84;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x7A0B;&#x5E8F;&#x5373;&#x662F;&#x89E3;&#x91CA;&#x6B64;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x7684; Shell &#x7A0B;&#x5E8F;&#x3002;</p>
+<pre><code>chmod +x ./test.sh #&#x4F7F;&#x811A;&#x672C;&#x5177;&#x6709;&#x6267;&#x884C;&#x6743;&#x9650;
+./test.sh  #&#x6267;&#x884C;&#x811A;&#x672C;
+</code></pre><p>&#x6216;&#x8005;&#x76F4;&#x63A5;</p>
+<pre><code>sh test.sh
+</code></pre><p>&#x60F3;&#x8981;&#x4E86;&#x89E3;&#x7279;&#x5B9A;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; man &#x6765;&#x67E5;&#x770B;&#x6587;&#x6863;</p>
+<pre><code>$ man echo
+</code></pre><p>shell &#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x5165;&#x53E3;&#xFF0C;&#x4E0D;&#x7BA1;&#x7528;&#x90A3;&#x79CD;&#x8BED;&#x8A00;&#x5199;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x5165;&#x53E3;&#x8FDB;&#x884C;&#x8C03;&#x7528;,&#x540C;&#x65F6;&#xFF0C;&#x4F18;&#x79C0;&#x7684;&#x811A;&#x672C;&#x7A0B;&#x5E8F;&#x5C42;&#x51FA;&#x4E0D;&#x7A77;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;shell &#x811A;&#x672C;&#x80FD;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x975E;&#x5E38;&#x6709;&#x6548;&#x7387;&#x3002;</p>
+<h3 id="&#x6587;&#x672C;&#x5904;&#x7406;&#x547D;&#x4EE4;">&#x6587;&#x672C;&#x5904;&#x7406;&#x547D;&#x4EE4;</h3>
+<p>&#x5728;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5E38;&#x7528; shell &#x6765;&#x5904;&#x7406;&#x5404;&#x79CD;&#x6587;&#x672C;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x6587;&#x672C;&#x5904;&#x7406;&#x76F8;&#x5173;&#x7684;&#x547D;&#x4EE4; </p>
+<ul>
+<li><p>grep &#x6309;&#x884C;&#x5904;&#x7406;  &#x67E5;&#x627E;&#x7279;&#x5B9A;&#x5185;&#x5BB9;</p>
+<ul>
+<li>-r &#x9012;&#x5F52;&#x641C;&#x7D22;</li>
+<li>-v &#x8F93;&#x51FA;&#x672A;&#x5339;&#x914D;&#x7684;&#x884C;</li>
+<li>-i &#x5FFD;&#x7565;&#x5927;&#x5C0F;&#x5199;</li>
+<li>-c &#x8F93;&#x51FA;&#x5339;&#x914D;&#x5230;&#x6570;&#x91CF;&#xFF0C;&#x7EDF;&#x8BA1;&#x4E2A;&#x6570;&#x65F6;&#x5E38;&#x7528;&#x5230;</li>
+</ul>
+<pre><code>$ cd /Users/xiaoniu/Workspace/XNOnline
+$ grep -r 4006- .
+
+./XNOnline/XNOnline/Resources/Files/info.json:    &quot;mmnWithdrawDelayTip&quot;: &quot;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x5F02;&#x5E38;&#xFF0C;&#x60A8;&#x7684;&#x63D0;&#x73B0;&#x7ED3;&#x679C;&#x5C1A;&#x672A;&#x786E;&#x8BA4;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x5728;&#x6211;&#x7684;&#x7F51;&#x8D37;-&#x6708;&#x6708;&#x725B;&#x4E2D;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x6709;&#x7591;&#x95EE;&#x8BF7;&#x62E8;&#x6253;&#x5BA2;&#x6237;&#x70ED;&#x7EBF;4006-0755-70&#x3002;&quot;,
+./XNOnline/XNOnline/Resources/Files/info.json:    &quot;mmnInvestDelayTip&quot;: &quot;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x5F02;&#x5E38;&#xFF0C;&#x60A8;&#x7684;&#x6295;&#x8D44;&#x7ED3;&#x679C;&#x5C1A;&#x672A;&#x786E;&#x8BA4;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x5728;&#x6211;&#x7684;&#x7F51;&#x8D37;-&#x6708;&#x6708;&#x725B;&#x4E2D;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x6709;&#x7591;&#x95EE;&#x8BF7;&#x62E8;&#x6253;&#x5BA2;&#x6237;&#x70ED;&#x7EBF;4006-0755-70&#x3002;&quot;,
+./XNOnline/XNOnline/Resources/Files/info.json:    &quot;flexInvestDelayTipTail&quot;: &quot;&#x4E2D;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x6709;&#x7591;&#x95EE;&#x8BF7;&#x62E8;&#x6253;&#x5BA2;&#x6237;&#x70ED;&#x7EBF;4006-0755-70&#x3002;&quot;,
+./XNOnline/XNOnline/Resources/Files/info.json:    &quot;flexWithdrawDelayTipTail&quot;: &quot;&#x4E2D;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x6709;&#x7591;&#x95EE;&#x8BF7;&#x62E8;&#x6253;&#x5BA2;&#x6237;&#x70ED;&#x7EBF;4006-0755-70&#x3002;&quot;,
+./XNOnline/XNOnline/Resources/Files/info.json:    &quot;serviceCall&quot;: &quot;4006-0755-70&quot;,
+./XNOnline/XNOnline/Resources/Files/info.json:    &quot;currentWithdrawDelayTip2&quot;: &quot;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x5F02;&#x5E38;&#xFF0C;&#x60A8;&#x7684;&#x63D0;&#x53D6;&#x7ED3;&#x679C;&#x5C1A;&#x672A;&#x786E;&#x8BA4;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x5728;&#x6211;&#x7684;&#x7F51;&#x8D37;-&#x5929;&#x5929;&#x725B;&#x4E2D;&#x7684;&#x8D44;&#x91D1;&#x8BE6;&#x60C5;&#x91CC;&#x67E5;&#x8BE2;&#x63D0;&#x53D6;&#x8BB0;&#x5F55;&#x3002;&#x5982;&#x6709;&#x7591;&#x95EE;&#x62E8;&#x6253;&#x5BA2;&#x670D;&#x70ED;&#x7EBF;4006-0755-70&#x3002;&quot;,
+./XNOnline/XNOnline/Resources/Files/info.json:    &quot;investDelayTip2&quot;: &quot;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x5F02;&#x5E38;&#xFF0C;&#x60A8;&#x7684;&#x6295;&#x8D44;&#x7ED3;&#x679C;&#x5C1A;&#x672A;&#x786E;&#x8BA4;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x5728;&#x6211;&#x7684;&#x7F51;&#x8D37;-&#x5929;&#x5929;&#x725B;&#x4E2D;&#x67E5;&#x8BE2;&#x3002;&#x5982;&#x6709;&#x7591;&#x95EE;&#x8BF7;&#x62E8;&#x6253;&#x5BA2;&#x6237;&#x70ED;&#x7EBF;4006-0755-70&#x3002;&quot;,
+</code></pre></li>
+<li><p>awk  &#x6309;&#x5217;&#x5904;&#x7406;  &#x5148;&#x6309;&#x5217;&#x5212;&#x5206;&#xFF0C;&#x7136;&#x540E;&#x4F9D;&#x636E;&#x8868;&#x8FBE;&#x5F0F;&#x8FDB;&#x884C;&#x9010;&#x884C;&#x5904;&#x7406;</p>
+<ul>
+<li>$0 &#x5F53;&#x524D;&#x884C;</li>
+<li><p><code>$1</code>,<code>$2</code>,&#x2026;,<code>NF</code> &#x7B2C;&#x4E00;&#x5217;&#xFF0C;&#x7B2C;&#x4E8C;&#x5217;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x5217;</p>
+</li>
+<li><p>NR&#xFF0C;&#x5F53;&#x524D;&#x884C;</p>
+</li>
+</ul>
+<p>&#x8D26;&#x53F7;&#x8FC1;&#x79FB;&#x4E4B;&#x540E;&#xFF0C;&#x539F;&#x8D26;&#x53F7;&#x4E0B;&#x6DFB;&#x52A0;&#x7684;&#x8BBE;&#x5907;id&#x5F97;&#x79FB;&#x8FC7;&#x6765;&#x3002;&#x6682;&#x65F6;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x53EA;&#x80FD;&#x590D;&#x5236;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#x3002;&#x590D;&#x5236;&#x540E;&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</p>
+</li>
+</ul>
+<pre><code>    Ganyisou    cccccb6e4854bccccc0f8775f9c6e86e44eccccc
+Lineshine   ccccc7c3800bdccccc1af740346213b83b3ccccc
+  iPhone      cccccf732dba1d57afccccc87ba30e41fb4ccccc
+</code></pre><p>  &#x82F9;&#x679C;&#x7ED9;&#x7684;&#x6279;&#x91CF;&#x6DFB;&#x52A0;&#x8BBE;&#x5907;id&#x7684;&#x683C;&#x5F0F;&#x5982;&#x4E0B;</p>
+<pre><code>    Device ID   Device Name
+A123456789012345678901234567890123456789    NAME1
+  B123456789012345678901234567890123456789    NAME2
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x590D;&#x5236;&#x7684;&#x5185;&#x5BB9;&#x8981;&#x4EA4;&#x6362;&#x4E24;&#x5217;&#x7684;&#x4F4D;&#x7F6E;&#x624D;&#x80FD;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x3002;</p>
+<pre><code>  # &#x4EA4;&#x6362;id.txt&#x7684;&#x7B2C;&#x4E00;&#x5217;&#x548C;&#x7B2C;&#x4E8C;&#x5217;
+
+  $ awk -F &quot; &quot; &apos;{print $2, $1 &gt; &quot;id.txt&quot;}&apos; id.txt
+</code></pre><pre><code>  Beth    4.00    0
+  Dan      3.75    0
+  kathy    4.00    10
+  Mark    5.00    20
+  Mary    5.50    22
+  Susie    4.25    18
+
+  $ awk &apos;$3 &gt;0 { print $1, $2 * $3 }&apos; emp.data
+
+  Kathy 40
+  Mark 100
+  Mary 121
+  Susie 76.5
+</code></pre><ul>
+<li><p>sed   &#x6309;&#x884C;&#x5904;&#x7406;  &#x589E;&#x5220;&#x6539;&#x67E5;&#x3002;Mac sed &#x548C; Linux sed &#x6709;&#x70B9;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x7F51;&#x4E0A;&#x7684;&#x6559;&#x7A0B;&#x4E00;&#x822C;&#x662F;Linux&#x7684;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x6539;&#x6210;Linux &#x98CE;&#x683C;&#x7684; <a href="https://blog.csdn.net/sun_wangdong/article/details/71078083" target="_blank">Mac&#x4F7F;&#x7528;gnu sed</a>&#x3002;</p>
+<pre><code># &#x5220;&#x9664;&#x7B2C;&#x4E00;&#x884C;
+
+// d &#x5220;&#x9664;
+// a &#x8FFD;&#x52A0;&#xFF0C;&#x65B0;&#x5185;&#x5BB9;&#x5728;&#x4E0B;&#x4E00;&#x884C; 
+// i &#x63D2;&#x5165;&#xFF0C;&#x65B0;&#x5185;&#x5BB9;&#x5728;&#x4E0A;&#x4E00;&#x884C;
+// p &#x6253;&#x5370;&#xFF0C;&#x901A;&#x5E38; p &#x4F1A;&#x4E0E;&#x53C2;&#x6570; sed -n &#x4E00;&#x8D77;&#x8FD0;&#x884C;
+// s &#x66FF;&#x6362;
+// n &#x8BFB;&#x53D6;&#x4E0B;&#x4E00;&#x884C;&#x5230;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;
+// N &#x8FFD;&#x52A0;&#x4E0B;&#x4E00;&#x884C;&#x5230;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;
+
+sed 1d test.txt
+
+#&#x5339;&#x914D; &#x5220;&#x9664;&#x4EE5;//&#x5F00;&#x5934;&#x7684;&#x884C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5220;&#x9664;&#x67D0;&#x4E9B;&#x6CE8;&#x91CA;
+sed &apos;/^\/\//d&apos; test.txt
+
+#&#x6307;&#x5B9A;&#x884C;&#x53F7; &#x5220;&#x9664;1-5&#x884C;
+sed 1,5d test.txt
+
+# sed &#x5339;&#x914D;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B63;&#x5219;
+$ echo q_00040 | sed &apos;s/0\+//&apos; 
+
+q_40
+
+# &#x5BF9;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x589E;&#x52A0;@2x
+echo q_00040.png | sed &apos;s/0\+[0-9]*/\0@2x/&apos;
+
+q_00040@2x.png
+
+# &#x5C06;&#x4E24;&#x884C;&#x5408;&#x4E3A;&#x4E00;&#x884C;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+sed -n &quot;N;s/\n//;p&quot; test.txt
+</code></pre></li>
+</ul>
+<h3 id="&#x5176;&#x4ED6;&#x547D;&#x4EE4;">&#x5176;&#x4ED6;&#x547D;&#x4EE4;</h3>
+<ul>
+<li>diff</li>
+</ul>
+<pre><code># &#x6BD4;&#x8F83;1.txt&#x548C;2.txt&#x6539;&#x52A8;&#x7684;&#x5730;&#x65B9;&#xFF0C;-a &#x5355;&#x505A;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x5904;&#x7406; -b &#x5FFD;&#x7565;&#x7A7A;&#x683C;&#x6570;&#x91CF;&#x5F15;&#x8D77;&#x7684;&#x53D8;&#x5316; -u &#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#xFF0C;git diff
+$ diff -abu 1.txt 2.txt
+</code></pre><ul>
+<li>say &#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x7684;&#x8BED;&#x97F3;&#x53BB;&#x8BFB;&#x6587;&#x672C;   </li>
+</ul>
+<pre><code>$ say &#x6211;&#x7231;&#x4E2D;&#x56FD;
+$ say &#x4E0B;&#x73ED;&#x4E86;&#xFF0C;&#x53BB;&#x6253;&#x5361;
+</code></pre><h3 id="xcode-run-script-phase">Xcode Run Script Phase</h3>
+<ul>
+<li><p>env &#x67E5;&#x770B;Xcode &#x8BBE;&#x7F6E;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+</li>
+<li><p>Build Number &#x81EA;&#x589E;</p>
+<pre><code>  ```
+</code></pre><p>  if [ $CONFIGURATION == Release ]; then</p>
+<pre><code> echo &quot;Bumping build number...&quot;
+ plist=${PROJECT_DIR}/${INFOPLIST_FILE}
+
+ #increment the build number (ie 115 to 116)
+ buildnum=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; &quot;${plist}&quot;)
+
+ if [[ &quot;${buildnum}&quot; == &quot;&quot; ]]; then
+     echo &quot;No build number in $plist&quot;
+     exit 2
+ fi
+
+ buildnum=$(expr $buildnum + 1)
+
+ /usr/libexec/Plistbuddy -c &quot;Set CFBundleVersion $buildnum&quot; &quot;${plist}&quot;
+
+ echo &quot;Bumped build number to $buildnum&quot;
+</code></pre><p>   else</p>
+<pre><code> echo $CONFIGURATION &quot; build - Not bumping build number.&quot;
+</code></pre><p>   fi
+  ```</p>
+</li>
+<li><p>Bugly &#x81EA;&#x52A8;&#x4E0A;&#x4F20;dSYMs</p>
+</li>
+<li><p>&#x6253;&#x5305;&#x4E0A;&#x4F20;&#x65F6;&#x79FB;&#x9664;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x4E2D;&#x65E0;&#x7528;&#x7684;&#x90E8;&#x5206;</p>
+<pre><code>  # Without further ado, here&#x2019;s the script. Add a Run Script step to your build steps, put it after your step to embed frameworks, set it to use /bin/sh and enter the following script:
+
+APP_PATH=&quot;${TARGET_BUILD_DIR}/${WRAPPER_NAME}&quot;
+
+# This script loops through the frameworks embedded in the application and
+# removes unused architectures.
+find &quot;$APP_PATH&quot; -name &apos;*.framework&apos; -type d | while read -r FRAMEWORK
+do
+FRAMEWORK_EXECUTABLE_NAME=$(defaults read &quot;$FRAMEWORK/Info.plist&quot; CFBundleExecutable)
+FRAMEWORK_EXECUTABLE_PATH=&quot;$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME&quot;
+echo &quot;Executable is $FRAMEWORK_EXECUTABLE_PATH&quot;
+
+EXTRACTED_ARCHS=()
+
+for ARCH in $ARCHS
+do
+echo &quot;Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME&quot;
+lipo -extract &quot;$ARCH&quot; &quot;$FRAMEWORK_EXECUTABLE_PATH&quot; -o &quot;$FRAMEWORK_EXECUTABLE_PATH-$ARCH&quot;
+EXTRACTED_ARCHS+=(&quot;$FRAMEWORK_EXECUTABLE_PATH-$ARCH&quot;)
+done
+
+echo &quot;Merging extracted architectures: ${ARCHS}&quot;
+lipo -o &quot;$FRAMEWORK_EXECUTABLE_PATH-merged&quot; -create &quot;${EXTRACTED_ARCHS[@]}&quot;
+rm &quot;${EXTRACTED_ARCHS[@]}&quot;
+
+echo &quot;Replacing original executable with thinned version&quot;
+rm &quot;$FRAMEWORK_EXECUTABLE_PATH&quot;
+mv &quot;$FRAMEWORK_EXECUTABLE_PATH-merged&quot; &quot;$FRAMEWORK_EXECUTABLE_PATH&quot;
+
+done
+</code></pre></li>
+<li><p>iOS &#x4FEE;&#x6539;&#x7C7B;&#x7684;&#x524D;&#x7F00;</p>
+<pre><code>echo &apos;sh file.sh -o &#x65E7;&#x7684;&#x524D;&#x7F00; -n &#x65B0;&#x7684;&#x524D;&#x7F00; &#x9700;&#x8981;&#x66FF;&#x6362;&#x7684;&#x76EE;&#x5F55;&apos;
+  while getopts &quot;o:n:&quot; opt; do
+  case $opt in
+    o)
+      oldPrefix=$OPTARG 
+      ;;
+    n)
+      newPrefix=$OPTARG 
+      ;;
+    \?)
+      echo &quot;Invalid option: -$OPTARG&quot; 
+      ;;
+  esac
+done
+src=${@: -1}
+echo $oldPrefix
+echo $newPrefix
+echo $src
+for file in `find $src -name &quot;${oldPrefix}*&quot;`; do
+    # &#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5305;&#x542B;&#x540E;&#x7F00;
+    fileName=${file##*/}
+    if [[ ! -d $file ]]; then
+        # &#x6587;&#x4EF6;&#x6240;&#x5728;&#x76EE;&#x5F55;
+        dir=${file%/*}
+        # &#x65B0;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5305;&#x542B;&#x540E;&#x7F00;
+        nFilePath=${newPrefix}${fileName#${oldPrefix}}
+        # &#x65B0;&#x6587;&#x4EF6;&#x7684;&#x5B8C;&#x6574;&#x5730;&#x5740;
+        nPath=${dir}/${nFilePath}
+        # &#x539F;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x4E0D;&#x542B;&#x540E;&#x7F00;
+        oFileName=${fileName%.*}
+        # &#x65B0;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x4E0D;&#x542B;&#x540E;&#x7F00;
+        nFileName=${newPrefix}${oFileName#${oldPrefix}}
+        # &#x6587;&#x672C;&#x66FF;&#x6362;
+        LC_ALL=C sed -i &quot;&quot; &quot;s/$oFileName/$nFileName/g&quot; `grep $oFileName -rl $src`
+        # &#x91CD;&#x547D;&#x540D;&#x6587;&#x4EF6;
+        mv -v $file $nPath
+    fi
+done
+</code></pre></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../shell.html" class="navigation navigation-prev " aria-label="Previous page: shell">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Mac Oh-My-Zsh.html" class="navigation navigation-next " aria-label="Next page: Mac Oh-My-Zsh">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"type":"iOS","title":"shell脚本在 iOS 中的应用","level":"1.3.1","depth":2,"next":{"title":"Mac Oh-My-Zsh","level":"1.3.2","depth":2,"path":"shell/Mac Oh-My-Zsh.md","ref":"shell/Mac Oh-My-Zsh.md","articles":[]},"previous":{"title":"shell","level":"1.3","depth":1,"path":"shell.md","ref":"shell.md","articles":[{"title":"shell脚本在 iOS 中的应用","level":"1.3.1","depth":2,"path":"shell/shell脚本在 iOS 中的应用.md","ref":"shell/shell脚本在 iOS 中的应用.md","articles":[]},{"title":"Mac Oh-My-Zsh","level":"1.3.2","depth":2,"path":"shell/Mac Oh-My-Zsh.md","ref":"shell/Mac Oh-My-Zsh.md","articles":[]},{"title":"shell入门","level":"1.3.3","depth":2,"path":"shell/shell入门.md","ref":"shell/shell入门.md","articles":[]},{"title":"字符串","level":"1.3.4","depth":2,"path":"shell/字符串.md","ref":"shell/字符串.md","articles":[]},{"title":"sed","level":"1.3.5","depth":2,"path":"shell/sed.md","ref":"shell/sed.md","articles":[]},{"title":"grep","level":"1.3.6","depth":2,"path":"shell/grep.md","ref":"shell/grep.md","articles":[]},{"title":"awk","level":"1.3.7","depth":2,"path":"shell/awk.md","ref":"shell/awk.md","articles":[]},{"title":"curl","level":"1.3.8","depth":2,"path":"shell/curl.md","ref":"shell/curl.md","articles":[]},{"title":"jq","level":"1.3.9","depth":2,"path":"shell/jq.md","ref":"shell/jq.md","articles":[]},{"title":"date","level":"1.3.10","depth":2,"path":"shell/date.md","ref":"shell/date.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shell/shell脚本在 iOS 中的应用.md","mtime":"2019-07-10T02:22:21.603Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:54:27.836Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

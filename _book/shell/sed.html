@@ -1,0 +1,959 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>sed · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="grep.html" />
+    
+    
+    <link rel="prev" href="字符串.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iOS.html">
+            
+                <a href="../iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../iOS/编程范式.html">
+            
+                <a href="../iOS/编程范式.html">
+            
+                    
+                    编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../iOS/编译.html">
+            
+                <a href="../iOS/编译.html">
+            
+                    
+                    编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../iOS/单元测试.html">
+            
+                <a href="../iOS/单元测试.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../iOS/多线程.html">
+            
+                <a href="../iOS/多线程.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../iOS/简单的前端编译器.html">
+            
+                <a href="../iOS/简单的前端编译器.html">
+            
+                    
+                    简单的前端编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../iOS/将macro移除pch.html">
+            
+                <a href="../iOS/将macro移除pch.html">
+            
+                    
+                    将macro移除pch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../iOS/清理webview缓存.html">
+            
+                <a href="../iOS/清理webview缓存.html">
+            
+                    
+                    清理webview缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../iOS/为什么要使用RAC.html">
+            
+                <a href="../iOS/为什么要使用RAC.html">
+            
+                    
+                    为什么要使用RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../iOS/系统自带分享机制.html">
+            
+                <a href="../iOS/系统自带分享机制.html">
+            
+                    
+                    系统自带分享机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../iOS/信鸽推送.html">
+            
+                <a href="../iOS/信鸽推送.html">
+            
+                    
+                    信鸽推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../iOS/修改类的前缀.html">
+            
+                <a href="../iOS/修改类的前缀.html">
+            
+                    
+                    修改类的前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../iOS/运行时.html">
+            
+                <a href="../iOS/运行时.html">
+            
+                    
+                    运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../iOS/AutoreleasePoolPage.html">
+            
+                <a href="../iOS/AutoreleasePoolPage.html">
+            
+                    
+                    AutoreleasePoolPage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../iOS/Carthage.html">
+            
+                <a href="../iOS/Carthage.html">
+            
+                    
+                    Carthage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../iOS/Event.html">
+            
+                <a href="../iOS/Event.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../iOS/HandyJSON.html">
+            
+                <a href="../iOS/HandyJSON.html">
+            
+                    
+                    HandyJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../iOS/iOS 开发.html">
+            
+                <a href="../iOS/iOS 开发.html">
+            
+                    
+                    iOS 开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../iOS/iOS&Android 使用对比.html">
+            
+                <a href="../iOS/iOS&Android 使用对比.html">
+            
+                    
+                    iOS&Android 使用对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../iOS/Jenkins自动打包.html">
+            
+                <a href="../iOS/Jenkins自动打包.html">
+            
+                    
+                    Jenkins自动打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../iOS/Lock.html">
+            
+                <a href="../iOS/Lock.html">
+            
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="../iOS/Python & Swift 对比.html">
+            
+                <a href="../iOS/Python & Swift 对比.html">
+            
+                    
+                    Python & Swift 对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="../iOS/RAC.html">
+            
+                <a href="../iOS/RAC.html">
+            
+                    
+                    RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="../iOS/RAC实现代理.html">
+            
+                <a href="../iOS/RAC实现代理.html">
+            
+                    
+                    RAC实现代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="../iOS/Reveal 4.html">
+            
+                <a href="../iOS/Reveal 4.html">
+            
+                    
+                    Reveal 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="../iOS/Swift 泛型.html">
+            
+                <a href="../iOS/Swift 泛型.html">
+            
+                    
+                    Swift 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="../iOS/Swift JSON 转 model.html">
+            
+                <a href="../iOS/Swift JSON 转 model.html">
+            
+                    
+                    Swift JSON 转 model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="../iOS/Swift Pointer.html">
+            
+                <a href="../iOS/Swift Pointer.html">
+            
+                    
+                    Swift Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="../iOS/UI Tests.html">
+            
+                <a href="../iOS/UI Tests.html">
+            
+                    
+                    UI Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="../iOS/UI布局.html">
+            
+                <a href="../iOS/UI布局.html">
+            
+                    
+                    UI布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="../iOS/UIButton imageEdgeInsets.html">
+            
+                <a href="../iOS/UIButton imageEdgeInsets.html">
+            
+                    
+                    UIButton imageEdgeInsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../shell.html">
+            
+                <a href="../shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="shell脚本在 iOS 中的应用.html">
+            
+                <a href="shell脚本在 iOS 中的应用.html">
+            
+                    
+                    shell脚本在 iOS 中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Mac Oh-My-Zsh.html">
+            
+                <a href="Mac Oh-My-Zsh.html">
+            
+                    
+                    Mac Oh-My-Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="shell入门.html">
+            
+                <a href="shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="字符串.html">
+            
+                <a href="字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="sed.html">
+            
+                <a href="sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="grep.html">
+            
+                <a href="grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="awk.html">
+            
+                <a href="awk.html">
+            
+                    
+                    awk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="curl.html">
+            
+                <a href="curl.html">
+            
+                    
+                    curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="jq.html">
+            
+                <a href="jq.html">
+            
+                    
+                    jq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="date.html">
+            
+                <a href="date.html">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >sed</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>sed&#x547D;&#x4EE4;&#x4EE5;&#x884C;&#x4E3A;&#x5355;&#x4F4D;&#x5BF9;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<p>Mac OS&#x81EA;&#x5E26;&#x7684;sed&#x548C;gnu-sed&#x6709;&#x4E00;&#x4E9B;&#x533A;&#x522B;&#xFF0C;gnu-sed&#x66F4;&#x597D;&#x7528;&#x4E00;&#x4E9B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0B;&#x9762;sed&#x6307;&#x7684;&#x90FD;&#x662F;gnu-sed.</p>
+<pre><code>$ brew install gnu-sed
+$ where sed
+
+/usr/local/opt/gnu-sed/libexec/gnubin/sed
+/usr/bin/sed
+
+$ /usr/local/opt/gnu-sed/libexec/gnubin/sed -i 1d test.txt
+</code></pre><p>&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x7684;&#x884C;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x884C;&#x53F7;&#xFF0C;&#x5982;1&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6B63;&#x5219;&#x5339;&#x914D;&#x5BF9;&#x5339;&#x914D;&#x6210;&#x529F;&#x7684;&#x884C;&#x8FDB;&#x884C;&#x5904;&#x7406;</p>
+<blockquote>
+<p>&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x884C;&#x53F7;</p>
+</blockquote>
+<pre><code># &#x5220;&#x9664;&#x7B2C;&#x4E00;&#x884C;
+sed 1d test.txt
+
+# &#x6700;&#x540E;&#x4E00;&#x884C;&#x540E;&#x9762;&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;a,&#x5EFA;&#x8BAE;&#x52A0;&#x4E2A;\&#x4F5C;&#x4E3A;&#x5206;&#x9694;&#x7B26;
+sed &apos;$aa&apos; test.txt
+sed &apos;$a\a&apos; test.txt
+</code></pre><blockquote>
+<p>&#x5339;&#x914D;&#x5185;&#x5BB9;</p>
+</blockquote>
+<p>&#x6240;&#x6709;&#x5339;&#x914D;&#x5230;&#x7684;&#x884C;&#x90FD;&#x4F1A;&#x6267;&#x884C;&#x64CD;&#x4F5C;</p>
+<pre><code># &#x5339;&#x914D;&#x5220;&#x9664;&#x5305;&#x542B;er&#x7684;&#x884C;
+sed /er/d test.txt
+</code></pre><blockquote>
+<p>&#x6307;&#x5B9A;&#x533A;&#x95F4;</p>
+</blockquote>
+<p>&#x6307;&#x5B9A;&#x533A;&#x95F4;&#x4F7F;&#x7528;&apos;,&apos;&#x9694;&#x5F00;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x548C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;</p>
+<pre><code># &#x6307;&#x5B9A;&#x884C;&#x53F7; &#x5220;&#x9664;1-5&#x884C;
+sed 1,5d test.txt
+
+# &#x5339;&#x914D; &#x5220;&#x9664;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x4EE5;&lt;&lt;&lt;&lt;&#x5F00;&#x5934;&#x7684;&#x884C; &#xFF0C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x4EE5;&apos;====&apos;&#x5F00;&#x5934;&#x7684;&#x884C;
+sed &apos;/^&lt;&lt;&lt;&lt;/,/^====/&apos;d test.txt
+
+# &#x6307;&#x5B9A;&#x884C;&#x53F7;&#x548C;&#x5339;&#x914D;&#x884C;&#x662F;&#x540C;&#x7B49;&#x5730;&#x4F4D;&#xFF0C;&#x53EF;&#x4EE5;&#x6DF7;&#x7528;
+# &#x5220;&#x9664;&#x7B2C;2&#x884C;&#x5230;&#x4EE5;&apos;====&apos;&#x5F00;&#x5934;&#x7684;&#x884C;
+sed  &apos;2,/^====/&apos;d test.txt
+</code></pre><h3 id="command">Command</h3>
+<p>sed &#x547D;&#x4EE4;&#x5FAA;&#x73AF;&#x8BFB;&#x5165;&#x884C;&#x6570;&#x636E;&#x5230;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x6E05;&#x7A7A;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#xFF0C;&#x91CD;&#x590D;&#x3002;&#x3002;&#x3002;</p>
+<ul>
+<li><p>a &#xFF1A;&#x65B0;&#x589E;&#xFF0C; a &#x7684;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x63A5;&#x5B57;&#x4E32;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x5B57;&#x4E32;&#x4F1A;&#x5728;&#x65B0;&#x7684;&#x4E00;&#x884C;&#x51FA;&#x73B0;(&#x76EE;&#x524D;&#x7684;&#x4E0B;&#x4E00; &#x884C;)</p>
+<pre><code># &#x53EF;&#x4EE5;&#x5728;a&#x540E;&#x9762;&#x52A0;&#x4E2A;\&#x4F5C;&#x4E3A;&#x5206;&#x9694;&#xFF0C;&#x8FD9;&#x6837;&#x770B;&#x8D77;&#x6765;&#x4F1A;&#x597D;&#x4E9B;&#xFF0C;&#x52A0;&#x4E0D;&#x52A0;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;
+echo eee | sed 1a\www
+eee
+www
+</code></pre></li>
+<li><p>c &#xFF1A;&#x53D6;&#x4EE3;&#xFF0C; c &#x7684;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x63A5;&#x5B57;&#x4E32;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B57;&#x4E32;&#x53EF;&#x4EE5;&#x53D6;&#x4EE3;&#x6307;&#x5B9A;&#x7684;&#x884C;</p>
+<pre><code>echo eee | sed 1c\www
+www
+</code></pre></li>
+<li><p>d &#xFF1A;&#x5220;&#x9664;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x5220;&#x9664;&#x554A;&#xFF0C;&#x6240;&#x4EE5; d &#x540E;&#x9762;&#x901A;&#x5E38;&#x4E0D;&#x63A5;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;</p>
+<pre><code>echo &quot;eee\nwww&quot; | sed 1d
+www
+</code></pre></li>
+<li><p>e : &#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x547D;&#x4EE4;</p>
+<pre><code>$ cat 11.txt
+
+123456
+qwerty
+
+# &#x5BF9;&#x6BCF;&#x4E00;&#x884C;&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x6BCF;&#x4E2A;&#x547D;&#x4EE4;
+$ sed -e &apos;s/1/q/&apos; -e &apos;s/q/1/&apos; 11.txt 
+
+123456
+1werty
+</code></pre></li>
+<li><p>f &#xFF1A;&#x4ECE;&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;sed&#x547D;&#x4EE4;&#xFF0C;&#x6BD4; -e &#x66F4;&#x9002;&#x5408;&#x590D;&#x6742;&#x573A;&#x666F;</p>
+<pre><code>$ cat 11.txt
+
+123456
+qwerty
+
+$ cat commands.txt
+
+s/1/q/; #&#x8FD9;&#x91CC;&#x5206;&#x53F7;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#xFF0C;&#x5355;&#x72EC;&#x884C;&#x5C31;&#x662F;&#x4E00;&#x5929;&#x547D;&#x4EE4;
+s/q/1/;
+
+$ sed -f commands.txt 11.txt
+
+123456
+1werty
+</code></pre><blockquote>
+<p>&#x5B9A;&#x4E49;&#x6807;&#x7B7E;</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>i  &#xFF1A;&#x63D2;&#x5165;&#xFF0C; i &#x7684;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x63A5;&#x5B57;&#x4E32;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x5B57;&#x4E32;&#x4F1A;&#x5728;&#x65B0;&#x7684;&#x4E00;&#x884C;&#x51FA;&#x73B0;(&#x76EE;&#x524D;&#x7684;&#x4E0A;&#x4E00;&#x884C;)&#xFF1B;</p>
+<pre><code>echo &quot;eee&quot; | sed 1i\www
+www
+eee
+</code></pre></li>
+<li><p>p &#xFF1A;&#x6253;&#x5370;&#xFF0C;&#x4EA6;&#x5373;&#x5C06;&#x67D0;&#x4E2A;&#x9009;&#x62E9;&#x7684;&#x6570;&#x636E;&#x5370;&#x51FA;&#x3002;&#x901A;&#x5E38; p &#x4F1A;&#x4E0E;&#x53C2;&#x6570; sed -n &#x4E00;&#x8D77;&#x8FD0;&#x884C;&#xFF5E;</p>
+<pre><code># sed&#x9ED8;&#x8BA4;&#x5728;&#x6E05;&#x7A7A;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5C06;&#x5185;&#x5BB9;&#x8F93;&#x51FA;&#xFF0C;-n &#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x4E0D;&#x8F93;&#x51FA;
+echo &quot;eee&quot; | sed -n 1p
+eee
+</code></pre></li>
+<li><p>s &#xFF1A;&#x66FF;&#x6362;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x53D6;&#x4EE3;&#x7684;&#x5DE5;&#x4F5C;&#x54E9;&#xFF01;&#x901A;&#x5E38;&#x8FD9;&#x4E2A; s &#x7684;&#x52A8;&#x4F5C;&#x53EF;&#x4EE5;&#x642D;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</p>
+<blockquote>
+<p>g</p>
+</blockquote>
+<pre><code>// sed s&#x9ED8;&#x8BA4;&#x5339;&#x914D;&#x5230;&#x4E00;&#x4E2A;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x52A0;&#x4E0A;g,&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x6240;&#x6709;
+echo q_00040 | sed &apos;s/0\+//g&apos;  
+q_4
+</code></pre><blockquote>
+<p>\0  \1</p>
+</blockquote>
+<pre><code>// &#x6709;&#x65F6;&#x5019;&#x60F3;&#x8981;&#x5BF9;&#x5339;&#x914D;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4; \0 &#x5BF9;&#x5E94;&#x6574;&#x4E2A;&#x5339;&#x914D;&#x5230;&#x5185;&#x5BB9;
+echo q_00040.png | sed &apos;s/0\+[0-9]*/\0@2x/&apos;
+q_00040@2x.png
+
+// &#x53EF;&#x4EE5;&#x4F7F;&#x7528;\()&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#xFF0C;&#x540E;&#x7EED;&#x4F7F;&#x7528; \1,\2 &#x8FDB;&#x884C;&#x63D0;&#x53D6;
+echo &apos;TextStyle(fontSize: 14)&apos; | sed &quot;s/fontSize: \([0-9]\+\)/fontSize: XNScale.fontSize(\1)/&quot;
+TextStyle(fontSize: XNScale.fontSize(14))
+</code></pre></li>
+<li><p>n : &#x7ACB;&#x5373;&#x6E05;&#x7A7A;&#x5F53;&#x524D;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#x5E76;&#x8BFB;&#x5165;&#x4E0B;&#x4E00;&#x884C;</p>
+<pre><code>// test.txt 9&#x884C;&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;1-9
+
+// &#x5148;&#x8BFB;&#x5165;&#x4E00;&#x884C;&#x6267;&#x884C;p,&#x7136;&#x540E;&#x6267;&#x884C;n,&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6E05;&#x7A7A;&#x6389;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#xFF0C;&#x8BFB;&#x5165;&#x4E0B;&#x4E00;&#x884C;&#xFF0C;&#x672C;&#x6B21;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#xFF0C;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#x6570;&#x636E;&#x88AB;&#x6E05;&#x7A7A;
+// &#x6240;&#x4EE5;&#x8F93;&#x51FA;&#x662F;&#x5947;&#x6570;&#x884C;
+sed -n &apos;p;n&apos; test.txt
+1
+3
+5
+7
+9
+
+// &#x5148;&#x8BFB;&#x5165;&#x4E00;&#x884C;&#x6267;&#x884C;n,&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6E05;&#x7A7A;&#x6389;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#xFF0C;&#x8BFB;&#x5165;&#x4E0B;&#x4E00;&#x884C;&#xFF0C;&#x6267;&#x884C;p,&#x672C;&#x6B21;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#xFF0C;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#x6570;&#x636E;&#x88AB;&#x6E05;&#x7A7A;
+// &#x6240;&#x4EE5;&#x8F93;&#x51FA;&#x662F;&#x5076;&#x6570;&#x884C;
+sed -n &apos;n;p&apos; test.txt
+2
+4
+6
+8
+</code></pre></li>
+<li><p>N : &#x4E0D;&#x6E05;&#x7A7A;&#x5F53;&#x524D;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#xFF0C;&#x8BFB;&#x5165;&#x4E0B;&#x4E00;&#x884C;&#xFF0C;&#x7528; \n &#x5206;&#x9694;&#x4E24;&#x884C;.&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;9 &#x4E0D;&#x89C1;&#x4E86;&#xFF0C;append &#x4E0B;&#x4E00;&#x884C;&#x7ED3;&#x679C;&#x6CA1;&#x6709;&#x6210;&#x529F;&#xFF0C;&#x6A21;&#x5F0F;&#x7A7A;&#x95F4;&#x770B;&#x8D77;&#x6765;&#x88AB;&#x6E05;&#x7A7A;&#x4E86;</p>
+<pre><code>sed -n &quot;N;s/\n//;p&quot; test.txt
+12
+34
+56
+78
+</code></pre></li>
+</ul>
+<h3 id="sed&#x5E94;&#x7528;">sed&#x5E94;&#x7528;</h3>
+<p>&#x73B0;&#x5728;&#x8981;&#x53BB;&#x6389;&#x6240;&#x6709;&#x7684;0
+&#x6709;&#x4E00;&#x6279;&#x56FE;&#x7247;&#xFF0C;&#x547D;&#x540D;&#x5982;&#x4E0B;</p>
+<pre><code>qiqiu_00005.png ... qiqiu_00045.png
+</code></pre><p>&#x73B0;&#x5728;&#x8981;&#x53BB;&#x6389;&#x6570;&#x5B57;&#x524D;&#x9762;&#x7684;0</p>
+<pre><code>#!bin/bash
+for file in `ls $1` 
+do
+    if test -f $1&quot;/&quot;$file  
+    then
+        if echo $file | grep -q &apos;.png$&apos;
+        then
+            newname=$(echo &quot;$file&quot; | sed &apos;s/0\+//&apos;)
+            echo $newname
+            mv $1&quot;/&quot;$file $1&quot;/&quot;${newname}
+        fi
+    fi
+done
+</code></pre><p>&#x4E3B;&#x8981;&#x8FD8;&#x662F;</p>
+<pre><code>echo &quot;$file&quot; | sed &apos;s/0\+//&apos;
+</code></pre><p>sed&#x662F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x4E86;+&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x6216;&#x8005;&#x591A;&#x6B21;&#xFF0C;&#x56E0;&#x4E3A;&#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;&#x7279;&#x6B8A;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x4E49;&#xFF0C;&#x5426;&#x5219;+&#x4E0D;&#x5177;&#x5907;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x3002;</p>
+<p>sed&#x9ED8;&#x8BA4;&#x53EA;&#x5904;&#x7406;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5426;&#x5219;qiqiu_00040.png&#x5E94;&#x8BE5;&#x53D8;&#x6210;qiqiu_4.png&#x800C;&#x4E0D;&#x662F;qiqiu_40.png&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x53C2;&#x6570;&#x6765;&#x5339;&#x914D;&#x6240;&#x6709;&#x7684;</p>
+<pre><code>echo q_00040 | sed &apos;s/0\+//&apos; 
+q_40
+
+echo q_00040 | sed &apos;s/0\+//g&apos;     
+q_4
+</code></pre><p>&#x6CE8;&#x610F;&#x4E0A;&#x9762;&#x7684;&#x5199;&#x6CD5;&#x6709;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x679C;&#x662F;qiqiu<em>00000&#x4F1A;&#x53D8;&#x6210;qiqiu</em>&#x800C;&#x4E0D;&#x662F;qiqiu_0&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="字符串.html" class="navigation navigation-prev " aria-label="Previous page: 字符串">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="grep.html" class="navigation navigation-next " aria-label="Next page: grep">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"type":"other","title":"sed","level":"1.3.5","depth":2,"next":{"title":"grep","level":"1.3.6","depth":2,"path":"shell/grep.md","ref":"shell/grep.md","articles":[]},"previous":{"title":"字符串","level":"1.3.4","depth":2,"path":"shell/字符串.md","ref":"shell/字符串.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shell/sed.md","mtime":"2019-07-29T02:55:54.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:54:27.836Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

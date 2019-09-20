@@ -1,0 +1,899 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AutoreleasePoolPage · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Carthage.html" />
+    
+    
+    <link rel="prev" href="运行时.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iOS.html">
+            
+                <a href="../iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="编程范式.html">
+            
+                <a href="编程范式.html">
+            
+                    
+                    编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="编译.html">
+            
+                <a href="编译.html">
+            
+                    
+                    编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="单元测试.html">
+            
+                <a href="单元测试.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="多线程.html">
+            
+                <a href="多线程.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="简单的前端编译器.html">
+            
+                <a href="简单的前端编译器.html">
+            
+                    
+                    简单的前端编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="将macro移除pch.html">
+            
+                <a href="将macro移除pch.html">
+            
+                    
+                    将macro移除pch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="清理webview缓存.html">
+            
+                <a href="清理webview缓存.html">
+            
+                    
+                    清理webview缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="为什么要使用RAC.html">
+            
+                <a href="为什么要使用RAC.html">
+            
+                    
+                    为什么要使用RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="系统自带分享机制.html">
+            
+                <a href="系统自带分享机制.html">
+            
+                    
+                    系统自带分享机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="信鸽推送.html">
+            
+                <a href="信鸽推送.html">
+            
+                    
+                    信鸽推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="修改类的前缀.html">
+            
+                <a href="修改类的前缀.html">
+            
+                    
+                    修改类的前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="运行时.html">
+            
+                <a href="运行时.html">
+            
+                    
+                    运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.13" data-path="AutoreleasePoolPage.html">
+            
+                <a href="AutoreleasePoolPage.html">
+            
+                    
+                    AutoreleasePoolPage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="Carthage.html">
+            
+                <a href="Carthage.html">
+            
+                    
+                    Carthage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="Event.html">
+            
+                <a href="Event.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="HandyJSON.html">
+            
+                <a href="HandyJSON.html">
+            
+                    
+                    HandyJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="iOS 开发.html">
+            
+                <a href="iOS 开发.html">
+            
+                    
+                    iOS 开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="iOS&Android 使用对比.html">
+            
+                <a href="iOS&Android 使用对比.html">
+            
+                    
+                    iOS&Android 使用对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="Jenkins自动打包.html">
+            
+                <a href="Jenkins自动打包.html">
+            
+                    
+                    Jenkins自动打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="Lock.html">
+            
+                <a href="Lock.html">
+            
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="Python & Swift 对比.html">
+            
+                <a href="Python & Swift 对比.html">
+            
+                    
+                    Python & Swift 对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="RAC.html">
+            
+                <a href="RAC.html">
+            
+                    
+                    RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="RAC实现代理.html">
+            
+                <a href="RAC实现代理.html">
+            
+                    
+                    RAC实现代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="Reveal 4.html">
+            
+                <a href="Reveal 4.html">
+            
+                    
+                    Reveal 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="Swift 泛型.html">
+            
+                <a href="Swift 泛型.html">
+            
+                    
+                    Swift 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="Swift JSON 转 model.html">
+            
+                <a href="Swift JSON 转 model.html">
+            
+                    
+                    Swift JSON 转 model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="Swift Pointer.html">
+            
+                <a href="Swift Pointer.html">
+            
+                    
+                    Swift Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="UI Tests.html">
+            
+                <a href="UI Tests.html">
+            
+                    
+                    UI Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="UI布局.html">
+            
+                <a href="UI布局.html">
+            
+                    
+                    UI布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="UIButton imageEdgeInsets.html">
+            
+                <a href="UIButton imageEdgeInsets.html">
+            
+                    
+                    UIButton imageEdgeInsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../shell.html">
+            
+                <a href="../shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../shell/shell脚本在 iOS 中的应用.html">
+            
+                <a href="../shell/shell脚本在 iOS 中的应用.html">
+            
+                    
+                    shell脚本在 iOS 中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../shell/Mac Oh-My-Zsh.html">
+            
+                <a href="../shell/Mac Oh-My-Zsh.html">
+            
+                    
+                    Mac Oh-My-Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../shell/shell入门.html">
+            
+                <a href="../shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../shell/字符串.html">
+            
+                <a href="../shell/字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../shell/sed.html">
+            
+                <a href="../shell/sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../shell/grep.html">
+            
+                <a href="../shell/grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../shell/awk.html">
+            
+                <a href="../shell/awk.html">
+            
+                    
+                    awk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../shell/curl.html">
+            
+                <a href="../shell/curl.html">
+            
+                    
+                    curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../shell/jq.html">
+            
+                <a href="../shell/jq.html">
+            
+                    
+                    jq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../shell/date.html">
+            
+                <a href="../shell/date.html">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AutoreleasePoolPage</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <pre><code>magic_t magic;
+id *next;
+AutoreleasePoolPage *child;
+AutoreleasePoolPage *parent;
+pthread *thread;
+int depth;
+int hiwat;
+</code></pre><p>AutoreleasePool&#x5B9E;&#x9645;&#x5C31;&#x662F; AutoreleasePoolPage &#x6784;&#x6210;&#x7684;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x76F8;&#x5173;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x662F;&#x5728; AutoreleasePoolPage &#x4E2D;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<h3 id="objcautoreleasepoolprint">_objc_autoreleasePoolPrint()</h3>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x79C1;&#x6709;&#x51FD;&#x6570; _objc_autoreleasePoolPrint() &#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#xFF0C;&#x5BF9;&#x5E94; OC &#x7684;&#x65B9;&#x6CD5;&#x662F; [NSAutoreleasePool showPools]&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#x662F; AutoreleasePool &#x6E05;&#x7A7A;&#x7684;&#x901F;&#x5EA6;&#x662F;&#x975E;&#x5E38;&#x7684;&#x5FEB;&#xFF0C;&#x6240;&#x4EE5;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x65F6;&#x9700;&#x8981;&#x63D0;&#x524D;&#x4E0B;&#x65AD;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x5355;&#x6B65;&#x8C03;&#x8BD5;&#x3002;</p>
+<pre><code>+ (MemoryObj *)memoryObj {
+    MemoryObj *memory = [[MemoryObj alloc] init];
+
+    return memory;
+}
+
+// &#x60F3;&#x8981;&#x9A8C;&#x8BC1; obj &#x662F;&#x5426;&#x88AB;&#x6CE8;&#x518C;&#x5230; AutoreleasePool&#xFF0C;&#x9700;&#x8981;&#x5728;return memory&#x4E0B;&#x65AD;&#x70B9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x4E0B;&#x9762;&#x8FD9;&#x53E5;&#x51FA;&#x4E0B;&#x65AD;&#x70B9; 
+MemoryObj *obj = [MemoryObj memoryObj];
+</code></pre><pre><code>po _objc_autoreleasePoolPrint()
+
+po [NSAutoreleasePool showPools]
+
+objc[86279]: ##############
+objc[86279]: AUTORELEASE POOLS for thread 0x70000c98f000
+objc[86279]: 1 releases pending.
+objc[86279]: [0x7fc54d847000]  ................  PAGE  (hot) (cold)
+objc[86279]: [0x7fc54d847038]    0x600001a1eb50  MemoryObj
+objc[86279]: ##############
+</code></pre><h3 id="runloop">Runloop</h3>
+<p>&#x5728; main.m &#x4E2D;&#xFF0C; @autoreleasepool &#x524D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65AD;&#x70B9;&#xFF0C;po [NSRunloop currentLoop]&#x3002;</p>
+<pre><code>observers = (null),
+</code></pre><p>&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x6682;&#x505C;&#xFF0C;po [NSRunloop currentLoop]</p>
+<pre><code>observers = (
+    &quot;&lt;CFRunLoopObserver 0x6000017bc460 [0x10b0ceb68]&gt;{valid = Yes, activities = 0x1, repeats = Yes, order = -2147483647, callout = _wrapRunLoopWithAutoreleasePoolHandler (0x114a771b1), context = &lt;CFArray 0x6000028fa040 [0x10b0ceb68]&gt;{type = mutable-small, count = 1, values = (\n\t0 : &lt;0x7f8a01801058&gt;\n)}}&quot;,
+    &quot;&lt;CFRunLoopObserver 0x6000017b8a00 [0x10b0ceb68]&gt;{valid = Yes, activities = 0x20, repeats = Yes, order = 0, callout = _UIGestureRecognizerUpdateObserver (0x114649473), context = &lt;CFRunLoopObserver context 0x600000dba3e0&gt;}&quot;,
+    &quot;&lt;CFRunLoopObserver 0x6000017bc320 [0x10b0ceb68]&gt;{valid = Yes, activities = 0xa0, repeats = Yes, order = 1999000, callout = _beforeCACommitHandler (0x114aa6dfc), context = &lt;CFRunLoopObserver context 0x7f8a01502590&gt;}&quot;,
+    &quot;&lt;CFRunLoopObserver 0x6000017bc5a0 [0x10b0ceb68]&gt;{valid = Yes, activities = 0xa0, repeats = Yes, order = 2000000, callout = _ZN2CA11Transaction17observer_callbackEP19__CFRunLoopObservermPv (0x10c7b26ae), context = &lt;CFRunLoopObserver context 0x0&gt;}&quot;,
+    &quot;&lt;CFRunLoopObserver 0x6000017bc140 [0x10b0ceb68]&gt;{valid = Yes, activities = 0xa0, repeats = Yes, order = 2001000, callout = _afterCACommitHandler (0x114aa6e75), context = &lt;CFRunLoopObserver context 0x7f8a01502590&gt;}&quot;,
+    &quot;&lt;CFRunLoopObserver 0x6000017bc3c0 [0x10b0ceb68]&gt;{valid = Yes, activities = 0xa0, repeats = Yes, order = 2147483647, callout = _wrapRunLoopWithAutoreleasePoolHandler (0x114a771b1), context = &lt;CFArray 0x6000028fa040 [0x10b0ceb68]&gt;{type = mutable-small, count = 1, values = (\n\t0 : &lt;0x7f8a01801058&gt;\n)}}&quot;
+),
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6709;&#x4E24;&#x4E2A; observer &#x662F;&#x548C; AutoreleasePool &#x76F8;&#x5173;&#x7684;&#xFF0C;&#x56DE;&#x8C03;&#x90FD;&#x662F; _wrapRunLoopWithAutoreleasePoolHandler &#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B26;&#x53F7;&#x65AD;&#x70B9;&#x6765;&#x89C2;&#x5BDF; _wrapRunLoopWithAutoreleasePoolHandler &#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x4E2A; Observer &#x76D1;&#x89C6;&#x7684;&#x4E8B;&#x4EF6;&#x662F; kCFRunLoopEntry&#xFF0C;&#x5176;&#x56DE;&#x8C03;&#x5185;&#x4F1A;&#x8C03;&#x7528; _objc_autoreleasePoolPush() &#x521B;&#x5EFA;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x6C60;&#x3002;&#x5176; order &#x662F;-2147483647&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#xFF0C;&#x4FDD;&#x8BC1;&#x521B;&#x5EFA;&#x91CA;&#x653E;&#x6C60;&#x53D1;&#x751F;&#x5728;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x56DE;&#x8C03;&#x4E4B;&#x524D;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A; Observer &#x76D1;&#x89C6;&#x4E86;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF1A; kCFRunLoopBeforeWaiting &#x65F6;&#x8C03;&#x7528;_objc_autoreleasePoolPop() &#x548C; _objc_autoreleasePoolPush() &#x91CA;&#x653E;&#x65E7;&#x7684;&#x6C60;&#x5E76;&#x521B;&#x5EFA;&#x65B0;&#x6C60;&#xFF1B;kCFRunLoopExit &#x65F6;&#x8C03;&#x7528; _objc_autoreleasePoolPop() &#x6765;&#x91CA;&#x653E;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x6C60;&#x3002;&#x8FD9;&#x4E2A; Observer &#x7684; order &#x662F; 2147483647&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x4F4E;&#xFF0C;&#x4FDD;&#x8BC1;&#x5176;&#x91CA;&#x653E;&#x6C60;&#x5B50;&#x53D1;&#x751F;&#x5728;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x56DE;&#x8C03;&#x4E4B;&#x540E;&#x3002;</p>
+<h3 id="autoreleasing">__autoreleasing</h3>
+<p>ARC &#x751F;&#x6548;&#x65F6;&#xFF0C;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x8981;&#x9644;&#x52A0;&#x6240;&#x6709;&#x6743;&#x4FEE;&#x9970;&#x7B26;&#x3002;</p>
+<ul>
+<li>__strong</li>
+<li>__weak</li>
+<li>__unsafe_unretained</li>
+<li>__autoreleasing</li>
+</ul>
+<blockquote>
+<p>__strong </p>
+</blockquote>
+<p>id&#x548C;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x9ED8;&#x8BA4;&#x4FEE;&#x9970;&#x7B26;&#x662F; __strong&#xFF0C;</p>
+<pre><code>id obj = [[NSObject alloc] init];
+id __strong obj = [[NSObject alloc] init];
+
+
+id array = [NSArray array];
+// &#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x4E0D;&#x662F;__autoreleasing,&#x6CE8;&#x518C;&#x5230; autoreleasePool &#x53D1;&#x751F;&#x5728; + (NSArray *)array; 
+id __strong obj = [NSArray array];
+</code></pre><blockquote>
+<p>__autoreleasing</p>
+</blockquote>
+<ol>
+<li>&#x975E; alloc/new/copy/mutableCopy &#x5F00;&#x5934;&#x7684;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#x4F1A;&#x6CE8;&#x518C;&#x5230;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x6C60;</li>
+<li>&#x9644;&#x6709; __weak &#x4FEE;&#x9970;&#x7B26;&#x7684;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x6CE8;&#x518C;&#x5230; autoreleasepool, &#x5EF6;&#x957F;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</li>
+<li><p>&#x6CA1;&#x6709;&#x663E;&#x793A;&#x9644;&#x52A0;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x9644;&#x52A0; __autoreleasing</p>
+<pre><code> -(BOOL)performOperationWithError:(NSError **)error;
+
+ -(BOOL)performOperationWithError:(NSError * __autoreleasing *)error;
+</code></pre></li>
+</ol>
+<h3 id="&#x7EBF;&#x7A0B;&#x95EE;&#x9898;">&#x7EBF;&#x7A0B;&#x95EE;&#x9898;</h3>
+<p>&#x5B50;&#x7EBF;&#x7A0B;&#x9ED8;&#x8BA4;&#x662F;&#x6CA1;&#x6709;&#x5F00;&#x542F; runloop &#x7684;&#xFF0C;&#x90A3;&#x5B50;&#x7EBF;&#x7A0B;&#x7684; __autoreleasing &#x53D8;&#x91CF;&#x600E;&#x4E48;&#x91CA;&#x653E;&#x5462;&#xFF1F;
+&#x901A;&#x8FC7;&#x6D4B;&#x8BD5;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5B50;&#x7EBF;&#x7A0B;&#x4E5F;&#x6709; autoReleasePool &#xFF0C;&#x90A3;&#x5B50;&#x7EBF;&#x7A0B;&#x7684; autoReleasePool &#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x6E05;&#x7A7A;&#x5462;&#xFF1F;</p>
+<pre><code>// &#x5728;main&#x7EBF;&#x7A0B;&#x6253;&#x5370;
+po _objc_autoreleasePoolPrint()
+objc[87148]: ##############
+objc[87148]: AUTORELEASE POOLS for thread 0x700005c3d000
+objc[87148]: 0 releases pending.
+objc[87148]: [0x7ff7fb884000]  ................  PAGE  (hot) (cold)
+objc[87148]: ##############
+
+- (void)test4 {
+    NSMutableArray __autoreleasing*array = [NSMutableArray array];
+
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(asyncTask) object:nil];
+
+    [thread start];
+}
+
+- (void)asyncTask {
+    NSLog(@&quot;%@&quot;,[NSThread currentThread]);
+    id __weak obj = [MemoryObj memoryObj];
+
+    NSLog(@&quot;%@&quot;,[NSThread currentThread]);
+}
+
+// &#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x6253;&#x5370;
+po _objc_autoreleasePoolPrint()
+objc[87148]: ##############
+objc[87148]: AUTORELEASE POOLS for thread 0x700005b37000
+objc[87148]: 1 releases pending.
+objc[87148]: [0x7ff7fa056000]  ................  PAGE  (hot) (cold)
+objc[87148]: [0x7ff7fa056038]    0x600000b2f2e0  MemoryObj
+objc[87148]: ##############
+</code></pre><p><code>id __weak obj = [MemoryObj memoryObj];</code> &#x6267;&#x884C;&#x540E; <code>po _objc_autoreleasePoolPrint()</code>,&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x6C60;&#x5DF2;&#x7ECF;&#x662F;&#x7A7A;&#x7684;&#x3002;
+&#x8FD9;&#x4E2A;&#x65F6;&#x673A;&#x7684;&#x786E;&#x4E0D;&#x597D;&#x8BF4;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x67E5;&#x627E;&#x8D44;&#x6599;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="运行时.html" class="navigation navigation-prev " aria-label="Previous page: 运行时">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Carthage.html" class="navigation navigation-next " aria-label="Next page: Carthage">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"type":"iOS","title":"AutoreleasePoolPage","level":"1.2.13","depth":2,"next":{"title":"Carthage","level":"1.2.14","depth":2,"path":"iOS/Carthage.md","ref":"iOS/Carthage.md","articles":[]},"previous":{"title":"运行时","level":"1.2.12","depth":2,"path":"iOS/运行时.md","ref":"iOS/运行时.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/AutoreleasePoolPage.md","mtime":"2019-07-10T02:24:17.235Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:54:27.836Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

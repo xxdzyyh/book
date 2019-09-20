@@ -1,0 +1,953 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>运行时 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="AutoreleasePoolPage.html" />
+    
+    
+    <link rel="prev" href="修改类的前缀.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iOS.html">
+            
+                <a href="../iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="编程范式.html">
+            
+                <a href="编程范式.html">
+            
+                    
+                    编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="编译.html">
+            
+                <a href="编译.html">
+            
+                    
+                    编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="单元测试.html">
+            
+                <a href="单元测试.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="多线程.html">
+            
+                <a href="多线程.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="简单的前端编译器.html">
+            
+                <a href="简单的前端编译器.html">
+            
+                    
+                    简单的前端编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="将macro移除pch.html">
+            
+                <a href="将macro移除pch.html">
+            
+                    
+                    将macro移除pch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="清理webview缓存.html">
+            
+                <a href="清理webview缓存.html">
+            
+                    
+                    清理webview缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="为什么要使用RAC.html">
+            
+                <a href="为什么要使用RAC.html">
+            
+                    
+                    为什么要使用RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="系统自带分享机制.html">
+            
+                <a href="系统自带分享机制.html">
+            
+                    
+                    系统自带分享机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="信鸽推送.html">
+            
+                <a href="信鸽推送.html">
+            
+                    
+                    信鸽推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="修改类的前缀.html">
+            
+                <a href="修改类的前缀.html">
+            
+                    
+                    修改类的前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.12" data-path="运行时.html">
+            
+                <a href="运行时.html">
+            
+                    
+                    运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="AutoreleasePoolPage.html">
+            
+                <a href="AutoreleasePoolPage.html">
+            
+                    
+                    AutoreleasePoolPage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="Carthage.html">
+            
+                <a href="Carthage.html">
+            
+                    
+                    Carthage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="Event.html">
+            
+                <a href="Event.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="HandyJSON.html">
+            
+                <a href="HandyJSON.html">
+            
+                    
+                    HandyJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="iOS 开发.html">
+            
+                <a href="iOS 开发.html">
+            
+                    
+                    iOS 开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="iOS&Android 使用对比.html">
+            
+                <a href="iOS&Android 使用对比.html">
+            
+                    
+                    iOS&Android 使用对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="Jenkins自动打包.html">
+            
+                <a href="Jenkins自动打包.html">
+            
+                    
+                    Jenkins自动打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="Lock.html">
+            
+                <a href="Lock.html">
+            
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="Python & Swift 对比.html">
+            
+                <a href="Python & Swift 对比.html">
+            
+                    
+                    Python & Swift 对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="RAC.html">
+            
+                <a href="RAC.html">
+            
+                    
+                    RAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="RAC实现代理.html">
+            
+                <a href="RAC实现代理.html">
+            
+                    
+                    RAC实现代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="Reveal 4.html">
+            
+                <a href="Reveal 4.html">
+            
+                    
+                    Reveal 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="Swift 泛型.html">
+            
+                <a href="Swift 泛型.html">
+            
+                    
+                    Swift 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="Swift JSON 转 model.html">
+            
+                <a href="Swift JSON 转 model.html">
+            
+                    
+                    Swift JSON 转 model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="Swift Pointer.html">
+            
+                <a href="Swift Pointer.html">
+            
+                    
+                    Swift Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="UI Tests.html">
+            
+                <a href="UI Tests.html">
+            
+                    
+                    UI Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="UI布局.html">
+            
+                <a href="UI布局.html">
+            
+                    
+                    UI布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="UIButton imageEdgeInsets.html">
+            
+                <a href="UIButton imageEdgeInsets.html">
+            
+                    
+                    UIButton imageEdgeInsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../shell.html">
+            
+                <a href="../shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../shell/shell脚本在 iOS 中的应用.html">
+            
+                <a href="../shell/shell脚本在 iOS 中的应用.html">
+            
+                    
+                    shell脚本在 iOS 中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../shell/Mac Oh-My-Zsh.html">
+            
+                <a href="../shell/Mac Oh-My-Zsh.html">
+            
+                    
+                    Mac Oh-My-Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../shell/shell入门.html">
+            
+                <a href="../shell/shell入门.html">
+            
+                    
+                    shell入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../shell/字符串.html">
+            
+                <a href="../shell/字符串.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../shell/sed.html">
+            
+                <a href="../shell/sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../shell/grep.html">
+            
+                <a href="../shell/grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../shell/awk.html">
+            
+                <a href="../shell/awk.html">
+            
+                    
+                    awk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../shell/curl.html">
+            
+                <a href="../shell/curl.html">
+            
+                    
+                    curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../shell/jq.html">
+            
+                <a href="../shell/jq.html">
+            
+                    
+                    jq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../shell/date.html">
+            
+                <a href="../shell/date.html">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >运行时</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x65B9;&#x6CD5;&#x8C03;&#x7528;</p>
+<pre><code>- (void)noReturnNoParams {
+    NSLog(@&quot;noReturnNoParams&quot;);
+}
+
+- (NSString *)hasReturnHasParams:(NSString *)params {
+    NSLog(@&quot;hasReturnHasParams:%@&quot;,params);
+
+    return params;
+}
+</code></pre><p>&#x8C03;&#x7528;</p>
+<pre><code>// &#x4E00;&#x822C;&#x8C03;&#x7528;
+[self noReturnNoParams];
+[self hasReturnHasParams:@&quot;params&quot;];
+
+// &#x901A;&#x8FC7;objc_msgSend&#x8C03;&#x7528;
+((void(*)(id,SEL))objc_msgSend)(self,@selector(noReturnNoParams));
+((NSString *(*)(id,SEL,NSString *))objc_msgSend)(self,@selector(hasReturnHasParams:),@&quot;this is param&quot;);
+
+// &#x901A;&#x8FC7;&#x51FD;&#x6570;&#x5730;&#x5740;&#x8C03;&#x7528;
+void (*setter)(id,SEL);
+setter = (void(*)(id, SEL, BOOL))[self methodForSelector:@selector(noReturnNoParams)];
+setter(self, @selector(noReturnNoParams));
+</code></pre><h3 id="&#x6D88;&#x606F;&#x8F6C;&#x53D1;">&#x6D88;&#x606F;&#x8F6C;&#x53D1;</h3>
+<p>&#x901A;&#x8FC7; obj_msgSend &#x8C03;&#x7528;&#xFF0C;&#x5728;&#x627E;&#x4E0D;&#x5230;imp&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x6D88;&#x606F;&#x8F6C;&#x53D1;&#x6D41;&#x7A0B;</p>
+<ol>
+<li><p>&#x8C03;&#x7528; + (BOOL)resolveInstanceMethod:(SEL)sel; &#x5982;&#x679C;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x672A;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8F6C;&#x53D1;&#x6D41;&#x7A0B;&#x7ED3;&#x675F;&#x3002;</p>
+<pre><code> + (BOOL)resolveInstanceMethod:(SEL)sel {
+     NSLog(@&quot;resolveInstanceMethod&quot;);
+
+     if (sel == @selector(nofunction)) {
+
+         IMP imp = imp_implementationWithBlock(^{
+             NSLog(@&quot;&#x65E2;&#x7136;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#xFF0C;&#x90A3;&#x5C31;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&quot;);
+         });
+
+         class_addMethod([ObjcMsgSendVC class], sel, imp, &quot;v@:&quot;);
+
+           // return YES/NO&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x6CA1;&#x4EC0;&#x4E48;&#x5F71;&#x54CD;
+         return NO;
+     }
+
+     return [super resolveInstanceMethod:sel];
+ }
+</code></pre></li>
+<li><p>&#x89E6;&#x53D1; - (id)forwardingTargetForSelector:(SEL)aSelector &#xFF1B;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6765;&#x76F8;&#x5E94;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;nil,&#x5219;&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x6B65;</p>
+<pre><code> - (id)forwardingTargetForSelector:(SEL)aSelector {
+     NSLog(@&quot;forwardingTargetForSelector:&quot;);
+
+     if (aSelector == @selector(nofunction)) {
+         // Obviously if you return self from this method, the code would just fall into an infinite loop.
+         // &#x4F46;&#x662F;&#x7CFB;&#x7EDF;&#x505A;&#x4E86;&#x4F18;&#x5316;&#xFF0C;&#x8FD4;&#x56DE;self&#x4E5F;&#x6CA1;&#x4E8B;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5EFA;&#x8BAE;&#x8FD9;&#x4E48;&#x505A;
+         return self.delegate;
+     } else {
+         return [super forwardingTargetForSelector:aSelector];
+     }
+ }
+</code></pre></li>
+<li><p>&#x6B63;&#x5E38;&#x8F6C;&#x53D1;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x7ED9;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;</p>
+<pre><code> - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+     NSLog(@&quot;methodSignatureForSelector:&quot;);
+
+     if (aSelector == @selector(nofunction)) {
+         // return nil;&#x5C31;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;&#x4E0B;&#x4E00;&#x6B65;forwardInvocation:
+         return [self methodSignatureForSelector:@selector(showWithAnimated:)];
+     } else {
+         return [super methodSignatureForSelector:aSelector];
+     }
+ }
+
+ - (void)forwardInvocation:(NSInvocation *)anInvocation {
+     NSLog(@&quot;forwardInvocation:&quot;);
+
+     if (anInvocation.selector == @selector(nofunction)) {
+         NSLog(@&quot;anInvocation.selector == @selector(nofunction)&quot;);
+
+         [self showWithAnimated:YES];
+
+     } else {
+         [super forwardInvocation:anInvocation];
+     }
+ }
+</code></pre></li>
+</ol>
+<h3 id="&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;">&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;</h3>
+<pre><code>SEL selector = @selector(test);
+
+IMP imp =imp_implementationWithBlock(^{
+    NSLog(@&quot;&#x8FD9;&#x662F;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&quot;);
+});
+
+Method method = class_getInstanceMethod([AddMethodVC class], selector);
+
+class_addMethod([AddMethodVC class], selector, imp, method_getTypeEncoding(method));
+</code></pre><h3 id="&#x65B9;&#x6CD5;&#x4EA4;&#x6362;">&#x65B9;&#x6CD5;&#x4EA4;&#x6362;</h3>
+<pre><code>- (void)origin {
+    NSLog(@&quot;originMethod&quot;);
+}
+
+- (void)swizzle {
+    NSLog(@&quot;&#x8FD9;&#x662F;Swizzle&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&quot;);
+}
+
+- (void)swizzleMethod {
+    SEL originSel = @selector(origin);
+    SEL swizzleSel = @selector(swizzle);
+
+    Method originMethod = class_getInstanceMethod([SwizzleMethodVC class], originSel);
+    Method swizzleMethod = class_getInstanceMethod([SwizzleMethodVC class], swizzleSel);
+
+    // &#x786E;&#x5B9A;&#x65B9;&#x6CD5;&#x5B58;&#x5728;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4EA4;&#x6362;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#xFF0C;&#x5982;&#x679C;&#x65B9;&#x6CD5;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x6DFB;&#x52A0;
+    BOOL didAddMethod = class_addMethod([SwizzleMethodVC class], originSel, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));
+
+    if (didAddMethod) {
+        class_replaceMethod([SwizzleMethodVC class], swizzleSel, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+    } else {
+        method_exchangeImplementations(originMethod, swizzleMethod);
+    }
+}
+</code></pre><h3 id="&#x65B9;&#x6CD5;&#x66FF;&#x6362;">&#x65B9;&#x6CD5;&#x66FF;&#x6362;</h3>
+<pre><code>- (void)replaceMethod {
+
+//    Method method = class_getInstanceMethod([ReplaceMethodVC class], @selector(swizzle));
+//
+//    class_replaceMethod([ReplaceMethodVC class], @selector(origin), method_getImplementation(method), method_getTypeEncoding(method));
+
+    Method method = class_getInstanceMethod([ReplaceMethodVC class], @selector(origin));
+
+    IMP imp = imp_implementationWithBlock(^{
+        NSLog(@&quot;&#x8FD9;&#x662F;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&quot;);
+    });
+
+    class_replaceMethod([ReplaceMethodVC class], @selector(origin), imp, method_getTypeEncoding(method));
+}
+
+- (void)origin {
+    NSLog(@&quot;originMethod&quot;);
+}
+
+- (void)swizzle {
+    NSLog(@&quot;&#x8FD9;&#x662F;Swizzle&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&quot;);
+}
+</code></pre><h3 id="impselmethodclass">IMP/SEL/Method/Class</h3>
+<p>IMP &#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#xFF0C;&#x6709;&#x4E86;IMP&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6267;&#x884C;
+SEL &#x65B9;&#x6CD5;&#x540D;&#x79F0;&#xFF0C;&#x901A;&#x8FC7;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#xFF0C;&#x627E;&#x5230;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x624D;&#x80FD;&#x6267;&#x884C;
+Class &#x4FDD;&#x5B58;&#x4E86;&#x5C5E;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x8868;</p>
+<pre><code>struct objc_class { 
+    ...
+    struct objc_method_list **methodLists;
+    struct objc_cache *cache; 
+    ...
+
+}
+</code></pre><pre><code>typedef struct objc_method *Method;
+
+typedef struct objc_ method {
+    SEL method_name;
+    char *method_types;
+    IMP method_imp;
+};
+</code></pre><p>Class -&gt; Method</p>
+<pre><code>Method _Nullable
+class_getInstanceMethod(Class _Nullable cls, SEL _Nonnull name)
+
+Method _Nullable
+class_getClassMethod(Class _Nullable cls, SEL _Nonnull name)
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="修改类的前缀.html" class="navigation navigation-prev " aria-label="Previous page: 修改类的前缀">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="AutoreleasePoolPage.html" class="navigation navigation-next " aria-label="Next page: AutoreleasePoolPage">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"运行时","type":"iOS","level":"1.2.12","depth":2,"next":{"title":"AutoreleasePoolPage","level":"1.2.13","depth":2,"path":"iOS/AutoreleasePoolPage.md","ref":"iOS/AutoreleasePoolPage.md","articles":[]},"previous":{"title":"修改类的前缀","level":"1.2.11","depth":2,"path":"iOS/修改类的前缀.md","ref":"iOS/修改类的前缀.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/运行时.md","mtime":"2018-11-08T01:10:22.989Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:54:27.836Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
