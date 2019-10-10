@@ -10,7 +10,7 @@
 
 ### 绝对布局
 
-对屏幕中的位置，可以建立一个坐标系，然后用坐标去描述这个位置。绝对布局就是直接指明控件的坐标，如 view.frame = CGRectMake(0,0,100,200) ，是所有布局的基础。即使使用了AutoLayout，最终也是通过约束计算出view的frame，复杂场景可以试试用frame替代AutoLayout来提高流畅度。
+对屏幕中的位置，可以建立一个坐标系，然后用坐标去描述这个位置。绝对布局就是直接指明控件的坐标，如 view.frame = CGRectMake(0,0,100,200) ，是所有布局的基础。即使使用了AutoLayout，最终也是通过约束计算出view的frame，复杂场景建议使用frame替代AutoLayout来提高流畅度，比如cell里面嵌套WKWebView。
 
 #### 屏幕旋转
 

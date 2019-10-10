@@ -1,8 +1,11 @@
 # Summary
 
-* [Introduction](README.md)
+* [基础](基础.md)
+    * [命名](base/命名.md)
+    * [变和不变的思考](base/变和不变的思考.md)
+    * [编程范式](base/编程范式.md)
+
 * [iOS](iOS.md)
-    * [编程范式](iOS/编程范式.md)
     * [编译](iOS/编译.md)
     * [单元测试](iOS/单元测试.md)
     * [多线程](iOS/多线程.md)
@@ -32,9 +35,10 @@
     * [UI Tests](iOS/UI Tests.md)
     * [UI布局](iOS/UI布局.md)
     * [UIButton imageEdgeInsets](iOS/UIButton imageEdgeInsets.md)
+
+
 * [shell](shell.md)
-    * [shell脚本在 iOS 中的应用](shell/shell脚本在 iOS 中的应用.md)
-    * [Mac Oh-My-Zsh](shell/Mac Oh-My-Zsh.md)
+  
     * [shell入门](shell/shell入门.md)
     * [字符串](shell/字符串.md)
     * [sed](shell/sed.md)
@@ -43,4 +47,19 @@
     * [curl](shell/curl.md)
     * [jq](shell/jq.md)
     * [date](shell/date.md)
+    * [shell脚本在 iOS 中的应用](shell/shell脚本在 iOS 中的应用.md)
+    * [Oh-My-Zsh](shell/Mac Oh-My-Zsh.md)
+    * [Apple Script入门](shell/Apple\ Script入门.md)
+    * [Apple Script操作其他应用](shell/AppleScript操作其他应用.md)
+    * [Mac定时任务](shell/Mac定时任务.md)
+    * [Automator导入头文件](shell/Automator导入头文件.md)
+    * [代码自动生成工具](shell/代码自动生成工具.md)
+    
+* [android](android.md)
+    * [Library](android/Library.md)
+    * [Activity生命周期](android/Activity生命周期.md)
+* [C](C.md)
+    * [可变数组](C/可变数组.md)
+    * [指针](C/指针.md)
+
 
