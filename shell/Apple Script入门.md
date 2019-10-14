@@ -1,8 +1,3 @@
----
-layout: post
-type: other
----
-
 
 * 平台：Mac OS
 * 工具：脚本编辑器
@@ -11,24 +6,24 @@ type: other
 
 ### 常用语句
 
->hello world
+> hello world
 
-```
+```shell
 say "hello world"
 beep 2
 ```
 
->变量
+> 变量
 
-```
+```shell
 set a to {1, 2}
 # 此处报错，a不能转成字符串
 say a
 ```
 
->dialog
+> dialog
 
-```
+```shell
 set message to "Dialog Message"
 set temp to display dialog message buttons {"OK", "Cancel"}
 set selectedTitle to button returned of temp
@@ -40,7 +35,7 @@ display dialog "You pressed the following button " & selectedTitle
 
 >清空废纸篓
 
-```
+```shell
 tell application "Finder"
 	empty trash
 end tell
@@ -48,7 +43,7 @@ end tell
 
 >列表选择器
 
-```
+```shell
 choose from list {"dawei", "libai", "lilei"} with title "名字选择器" with prompt "请选择名称" default items {"lilei"} with empty selection allowed and multiple selections allowed
 ```
 
@@ -56,7 +51,7 @@ choose from list {"dawei", "libai", "lilei"} with title "名字选择器" with p
 
 文件选择器
 
-```
+```shell
 # choose folder 选择文件夹
 choose file of type ("txt") with prompt "选取文件"
 ```
@@ -69,13 +64,13 @@ choose file of type ("txt") with prompt "选取文件"
 
 > AppleScript 调用shell
 
-```
+```sh
 do shell script "cd ~;ls"
 ```
 
 > shell 调用 AppleScript
 
-```
+```shell
 # osascript -e "语句"
 finder=`osascript -e "set dir to POSIX path of (choose folder with prompt \"选择一个文件夹\")"`
 # 输出结果/Users/xiaoniu/Documents/XXXX/
@@ -108,7 +103,7 @@ echo "
 
 如果是字符串，可以直接使用 & 进行拼接。
 
-```
+```shell
 set hostname to "www.baidu.com"
 
 do shell script "ping -c1 " & hostname
@@ -116,7 +111,7 @@ do shell script "ping -c1 " & hostname
 
 更通用的是 quoted form of
 
-```
+```shell
 # quoted form of
 set hostname to "www.baidu.com"
 
@@ -125,7 +120,7 @@ do shell script "ping -c1 " & quoted form of hostname
 
 > shell -> AppleScript
 
-```
+```shell
 path=`pwd`
 osascript <<EOF
 set a to  POSIX file "$path"
@@ -134,15 +129,15 @@ set a to  POSIX file "$path"
 
 很多时候，shell 需要获取Apple Script的执行结果，获取方式如下
 
-```
+```shell
 finder=`osascript -e "set dir to POSIX path of (choose folder with prompt \"选择一个文件夹\")"`
 # 输出结果/Users/xiaoniu/Documents/XXXX/
 echo $finder
 ```
 
->路径转换
+> 路径转换
 
-```
+```shell
 set p to "/usr/local/bin/" 
 set a to POSIX file p 
    -- file "Macintosh HD:usr:local:bin:"
@@ -155,53 +150,3 @@ set p to POSIX path of a
 ```
 
 
-## 定时执行脚本
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-  <dict>
-    <!-- 名称，要全局唯一 -->
-    <key>Label</key>
-    <string>com.feng.record</string>
-    <!-- 命令， 第一个为命令，其它为参数-->
-    <key>ProgramArguments</key>
-    <array>
-        <string>osascript</string>
-      <string>~/Documents/record.scpt</string>
-    </array>
-    <!-- 运行时间 -->
-    <key>StartCalendarInterval</key>
-    <dict>
-      <key>Minute</key>
-      <integer>0</integer>
-      <key>Hour</key>
-      <integer>18</integer>
-    </dict>
-    <!-- 标准输入文件 -->
-    <key>StandardInPath</key>
-    <string>~/Documents/MyAppleScript/in.log</string>
-    <!-- 标准输出文件 -->
-    <key>StandardOutPath</key>
-    <string>~/Documents/MyAppleScript/out.log</string>
-    <!-- 标准错误输出文件 -->
-    <key>StandardErrorPath</key>
-    <string>~/Documents/MyAppleScript/err.log</string>
-  </dict>
-</plist>
-```
-
-```
-$ plutil -lint xxx.plist
-$ launchctl load ~/Library/LaunchAgents/18.plist 
-```
-
-每天18：00执行脚本~/Documents/record.scpt，至于这个脚本里写什么就可以自由发挥了。
-
-```
-# record.scpt
-# 语音 + 弹窗 提醒打卡
-say "快去打卡，忘记打卡就不好了！"
-display dialog "快去打卡，忘记打卡就不好了！" buttons {"了解"}
-```

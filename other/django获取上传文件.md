@@ -1,7 +1,3 @@
----
-type : other
----
-
 django 是 Python 下的一个 web 框架，了解一下 Python,顺便看看 django
 
 

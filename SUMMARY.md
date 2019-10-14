@@ -1,15 +1,16 @@
 # Summary
 
-* [基础](基础.md)
+* [基础](base.md)
     * [命名](base/命名.md)
     * [变和不变的思考](base/变和不变的思考.md)
     * [编程范式](base/编程范式.md)
 
 * [iOS](iOS.md)
-    * [编译](iOS/编译.md)
     * [单元测试](iOS/单元测试.md)
+    * [UI Tests](iOS/UI Tests.md)
     * [多线程](iOS/多线程.md)
     * [简单的前端编译器](iOS/简单的前端编译器.md)
+    * [编译过程](iOS/编译过程.md)
     * [将macro移除pch](iOS/将macro移除pch.md)
     * [清理webview缓存](iOS/清理webview缓存.md)
     * [为什么要使用RAC](iOS/为什么要使用RAC.md)
@@ -32,10 +33,8 @@
     * [Swift 泛型](iOS/Swift 泛型.md)
     * [Swift JSON 转 model](iOS/Swift JSON 转 model.md)
     * [Swift Pointer](iOS/Swift Pointer.md)
-    * [UI Tests](iOS/UI Tests.md)
     * [UI布局](iOS/UI布局.md)
-    * [UIButton imageEdgeInsets](iOS/UIButton imageEdgeInsets.md)
-
+    * [FlexBox - YogaKit](iOS/FlexBox - YogaKit.md)
 
 * [shell](shell.md)
   
@@ -49,7 +48,7 @@
     * [date](shell/date.md)
     * [shell脚本在 iOS 中的应用](shell/shell脚本在 iOS 中的应用.md)
     * [Oh-My-Zsh](shell/Mac Oh-My-Zsh.md)
-    * [Apple Script入门](shell/Apple\ Script入门.md)
+    * [Apple Script入门](shell/Apple Script入门.md)
     * [Apple Script操作其他应用](shell/AppleScript操作其他应用.md)
     * [Mac定时任务](shell/Mac定时任务.md)
     * [Automator导入头文件](shell/Automator导入头文件.md)

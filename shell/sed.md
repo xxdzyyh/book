@@ -1,7 +1,3 @@
----
-type : other
----
-
 sed命令以行为单位对文本文件进行处理。
 
 Mac OS自带的sed和gnu-sed有一些区别，gnu-sed更好用一些，因此下面sed指的都是gnu-sed.

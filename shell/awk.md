@@ -1,6 +1,3 @@
----
-type : other 
----
 
 [TOC]
 

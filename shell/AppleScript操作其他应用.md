@@ -1,7 +1,3 @@
----
-layout: post
-type: other
----
 
 ```
 tell application "System Events"

@@ -1,11 +1,6 @@
----
-layout: post
-type: other
----
-
 ### launchctl 命令
- 
- 
+
+
 **语法**
 
 launchctl subcommand [arguments ...]
