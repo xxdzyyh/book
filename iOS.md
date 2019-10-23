@@ -36,3 +36,12 @@ Xcode和Mac系统最好一起升级，否则可能会出各种奇怪的Bug。
 
 [神经病院objc runtime入院考试](https://blog.sunnyxx.com/2014/11/06/runtime-nuts/)
 
+[视音频技术笔记](https://blog.csdn.net/leixiaohua1020)
+
+[美团技术团队](https://tech.meituan.com/archives)
+
+[swift tips](https://swifter.tips)
+
+[戴铭的博客](https://ming1016.github.io)
+
+[sunnyxx的博客](https://blog.sunnyxx.com)
