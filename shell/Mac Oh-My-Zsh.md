@@ -7,8 +7,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 装好之后，会默认启动 git 插件，当你进入一个git管理的目录时，会显示当前的分支。
 
-
-
 ### 安装插件
 
 插件列表:https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins

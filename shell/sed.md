@@ -10,6 +10,8 @@ $ where sed
 /usr/bin/sed
 
 $ /usr/local/opt/gnu-sed/libexec/gnubin/sed -i 1d test.txt
+
+$ gsed -i 1d test.txt
 ```
 
 可以针对特定的行进行处理，直接指定行号，如1，也可以通过正则匹配对匹配成功的行进行处理
