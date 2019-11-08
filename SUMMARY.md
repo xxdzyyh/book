@@ -36,6 +36,10 @@
     * [UI布局](iOS/UI布局.md)
     * [FlexBox - YogaKit](iOS/FlexBox - YogaKit.md)
 * [面试总结](iOS/面试总结.md)
+    * [性能优化](iOS/性能优化.md)
+    * [swift](iOS/Swift.md)
+    * [VFL](iOS/VFL.md)
+    * [库](iOS/库.md)
     
 * [shell](shell.md)
   

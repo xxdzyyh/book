@@ -6,7 +6,7 @@ FlexBox和UIStackView以及Android的LineLayout有相通的地方，优势在于
 
 ### flex direction 
 
-布局延伸的方向，确定了主轴和副轴，添加的元素沿着主轴的方向进行排列。这个方向应该是否和地区有关，有的地区默认是从右往左。
+布局延伸的方向，确定了主轴和副轴，添加的元素沿着主轴的方向进行排列。
 
 > Row
 
@@ -41,11 +41,52 @@ justify 进一步明确了元素在主轴方向如何排列，align 进一步明
 
 ### padding & margin
 
-iOS 上 padding 对应的是 content inserts，但是 iOS 大部分控件都没有padding,我曾经写过一个继承自 UILabel
-
-的控件来提供设置 content inserts 的控件，有了YogaKit，那个类以后用不上了。
+iOS 上 padding 对应的是 content inserts，但是 iOS 大部分控件都没有padding,相信很多人都写过一个继承自 UILabel的控件来提供设置 content inserts 的控件，有了YogaKit，那个类以后用不上了。
 
 padding 指的是自身内边距，margin 指的是外边距，@"H:|-20-[redView]-20-|"，这条VFL里的20就是margin。
+
+### display
+
+是否显示这个元素，如果为none,则不显示，也不参与计算
+
+### markDirty
+
+标记元素需要重新计算位置，只对叶子节点生效。
+
+```
+// 获取验证码 -> 重发
+- (void)codeButtonClicked:(UIButton *)button {
+    [button setTitle:@"重发" forState:UIControlStateNormal];
+    button.superview.yoga.marginTop = YGPointValue(0);
+    [button.yoga markDirty];
+    [button.superview.yoga applyLayoutPreservingOrigin:YES];
+}
+```
+
+
+
+### flexGrow & flexShrink
+
+flexGrow决定剩余空间怎么分配，含义类似于layout_weight.如果flex item的flexGrow为0，该flex item不会占用剩余的空间。如果多个flex item的flexGrow不为0，则按flexGrow的值按比例进行划分。
+
+flexShrink决定空间不足，怎么缩放
+
+
+
+### 问题
+
+使用```pod 'YogaKit' ```安装的时候，这个库包含了一个swift文件，对于纯OC的项目，这会报错。
+
+可以改成
+
+```
+pod 'IGListKit','2.1.0'
+pod 'Yoga','1.14.0'
+```
+
+然后将YogaKit的代码(删除掉swfit文件后)copy到项目中，这部分不使用cocopods进行管理，这样改动比较小。
+
+
 
 ### 实践
 
@@ -92,3 +133,68 @@ padding 指的是自身内边距，margin 指的是外边距，@"H:|-20-[redView
 
 
 <img src="https://i.loli.net/2019/10/10/sdIMwUluPVoCBrN.png" alt="截屏2019-10-10下午5.30.21.png" style="zoom:50%;" />
+
+> 更新布局
+
+很多时候，我们的视图大小是依据视图内容来决定的,比如按钮的宽依据title进行调整。
+
+```
+- (void)inputLayout {
+    UIView *bgView = [[UIView alloc] init];
+    
+    bgView.backgroundColor = [UIColor whiteColor];
+    [bgView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.height = YGPointValue(40);
+        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);
+        layout.marginTop = YGPointValue(20);
+        layout.flexDirection = YGFlexDirectionRow;
+    }];
+    
+    [self.view addSubview:bgView];
+    
+    UIImageView *leftImageView = [[UIImageView alloc] init];
+    
+    leftImageView.backgroundColor = [UIColor greenColor];
+    [leftImageView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.width = YGPointValue(40);
+        layout.height = YGPointValue(40);
+    }];
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(40, 0, 200, 40)];
+    textField.placeholder = @"这就是占位符";
+    textField.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+    [textField configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.marginLeft = YGPointValue(10);
+        layout.flexGrow = 1;
+        layout.borderWidth = 1;
+    }];
+    
+    UIButton *codeButton = [[UIButton alloc] init];
+    codeButton.backgroundColor = [UIColor blueColor];
+    [codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+    [codeButton configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.marginRight = YGPointValue(10);
+    }];
+    
+    [codeButton addTarget:self action:@selector(codeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [bgView addSubview:leftImageView];
+    [bgView addSubview:textField];
+    [bgView addSubview:codeButton];
+    
+    self.view.yoga.isEnabled = YES;
+    [self.view.yoga applyLayoutPreservingOrigin:NO];
+}
+
+- (void)codeButtonClicked:(UIButton *)button {
+    [button setTitle:@"验证" forState:UIControlStateNormal];
+    button.superview.yoga.marginTop = YGPointValue(0);
+    [button.yoga markDirty];
+    [button.superview.yoga applyLayoutPreservingOrigin:YES];
+}
+```
+
