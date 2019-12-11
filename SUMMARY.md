@@ -28,6 +28,7 @@
     * [Lock](iOS/Lock.md)
     * [Python & Swift 对比](iOS/Python & Swift 对比.md)
     * [RAC](iOS/RAC.md)
+    * [RACObserver](iOS/RACObserver.md)
     * [RAC实现代理](iOS/RAC实现代理.md)
     * [Reveal 4](iOS/Reveal 4.md)
     * [Swift 泛型](iOS/Swift 泛型.md)
