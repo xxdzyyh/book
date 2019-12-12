@@ -26,17 +26,11 @@ RACObserver 是基于KVC实现的（KVC的代码存在于RACKVOTrampoline中）�
 }
 ```
 
+RACObserve(self.anchor, name) 监听的是self.anchor这个对象的name属性，如果self.anchor = anchor2，这个时候self.anchorName 依旧不会改变。如果self.anchor = nil,这句话没有效果。
 
+RACObserve(self, anchor.uid) 监听的是anchor.uid,anchor和uid任何一个发生变化，都会改变self.anchorUid。如果执行的时候，anchor 为nil,后续再给self.anchor赋值，self.anchorUid会是正确的值
 
-* RAC(self,anchorName) = RACObserve(self.anchor, name)
-
-  RACObserve(self.anchor, name) 监听的是self.anchor这个对象的name属性，如果self.anchor = anchor2，这个时候self.anchorName 依旧不会改变。如果self.anchor = nil,这句话没有效果。
-
-* RAC(self, anchorUid) = RACObserve(self, anchor.uid);
-
-  RACObserve(self, anchor.uid) 监听的是anchor.uid,anchor和uid任何一个发生变化，都会改变self。anchorUid。如果执行的时候，anchor 为nil,后续再给self.anchor赋值，self.anchorUid会是正确的值
-
-对比两个keyPath，肯定选择后者会比较好，因为你不知道未来代码会怎么变化。
+对比两个keyPath，直接使用后者就行。
 
 ### setter
 
@@ -58,4 +52,4 @@ RACObserver 是基于KVC实现的（KVC的代码存在于RACKVOTrampoline中）�
 
 ### 合理使用
 
-RACObserver使用起来非常方便，但是如果监听代码散布在代码的个个角落，维护起来就非常困难。很多时候修改了某个属性就会引起一系列的连锁反应。
+RACObserver使用起来非常方便，但是这个便利是有副作用的。如果监听代码散布在代码的各个角落，维护起来就非常困难。很多时候修改了某个属性就会引起一系列的变化，除了问题很难定位，建议监听的代码集中放置。
