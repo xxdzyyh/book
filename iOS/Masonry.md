@@ -20,6 +20,8 @@
 
 ------------
 
+如果重复添加了约束，Xcode Debug时会有相关的信息输出。
+
 
 
 这三个方法最终调用的都是 `-[MASConstraintMaker install]`,区别只是调用前设置不同
@@ -59,6 +61,10 @@ remakeConstraints
 通过Masonry添加约束时，Masonry会把这些约束添加到一个数组mas_installedConstraints中，这个数组会动态关联到view上面。通过其他方法添加的约束也会作用到视图上，但是要注意Masonry只会管理通过自身添加的约束。所以 updateConstraints 和 remakeConstraints 不会影响通过其他方式添加的约束。
 
 
+
+### Masonry block为什么不会循环引用
+
+block没有被其他持有，执行完就直接释放了，所以block持有的变量引用计数也会恢复。
 
 
 

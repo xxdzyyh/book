@@ -3,13 +3,16 @@ type: iOS
 ---
 
 ```
-magic_t magic;
-id *next;
-AutoreleasePoolPage *child;
-AutoreleasePoolPage *parent;
-pthread *thread;
-int depth;
-int hiwat;
+class AutoreleasePoolPage {
+  magic_t magic;
+  // 因为page存储变量是一个栈，所有next指向栈顶就可以操作整个栈。
+  id *next;
+  AutoreleasePoolPage *child;
+  AutoreleasePoolPage *parent;
+  // AutoreleasePool和线程一一对应，所以这里记录所在线程
+  pthread *thread;
+  int depth;
+  int hiwat;
 ```
 AutoreleasePool实际就是 AutoreleasePoolPage 构成的双向链表，相关的方法都是在 AutoreleasePoolPage 中实现的。
 
