@@ -13,4 +13,11 @@ defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder
 defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
 ```
 
+常用工具
+
+
+
+图片压缩 
+
+ImageOptim : 直接文件夹遍历
 
