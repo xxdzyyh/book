@@ -49,7 +49,7 @@ enum Direction : Int {
 enum Name : String {
     case Tom
     case Tony = "122"
-    // Ted = "Ted"
+    // 没有设置对应的值，rawValue默认为"Ted"，即 case 的名字
     case Ted
 }
 ```
@@ -57,6 +57,8 @@ enum Name : String {
 ### RawRepresentable
 
 在声明枚举的时候，可以选择遵循 RawRepresentable 协议。
+
+associatedtype ： associatedtype 只能用在协议中，是一个编译期起作用的关键字。
 
 ```
 public protocol RawRepresentable {

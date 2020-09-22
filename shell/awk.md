@@ -25,7 +25,7 @@ Mary 121
 Susie 76.5
 ```
 
-### awk 数组
+#### awk 数组
 
 ```
 awk 'BEGIN{	
@@ -57,7 +57,47 @@ erwa 二娃
 sanwa 三娃
 ```
 
+
+#### 字符串和数字相互转换
+
+```
+awk -F '"' '{
+	if (match($4,"\\\.")) {
+		print $4
+	}
+
+	if ($2 > 0) {
+		if (($4+0) > 0) {
+			print "var "$2" : Double = 0.0";
+		} else {
+			print "var "$2" : String = \"\"";
+		}
+	}
+}' $1
+
+# awk 还是挺智能的，会自动识别输入是字符串还是数字
+# $4+0 转为数字
+# $4"" 转为字符串
+```
+
+
+
 ### 匹配
+
+匹配可以使用函数 match . 
+
+match(原字符串,匹配规则)，匹配成功返回正数
+
+```
+// 匹配小数点，需要转义，用了三个\\\
+if (match($4,"\\\.")) {
+		print $4
+}
+```
+
+
+
+
 
 ### awk 与 shell 相互传值
 
@@ -183,13 +223,18 @@ OFMT 设置输出数据格式是保留3位小数
 
 **获得随机数：**
 
+```
 [chengmo@centos5 ~]$ awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
 78
 [chengmo@centos5 ~]$ awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
 31
 [chengmo@centos5 ~]$ awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
-
 41
+```
+
+
+
+
 
  
 
@@ -223,7 +268,7 @@ lalaltop
 ```
 
 ### 附录
-
+#### 声明生成文件
 ```
 # grep @property $1 | awk -f declearToFileAwk.txt
 eval `grep @property $1 | awk -f declearToFileAwk.txt`
@@ -260,5 +305,28 @@ BEGIN {
 }
 ```
 
+####  Swift JSONToModel
 
 
+```
+awk -F '"' '{
+
+	if ($2 > 0) {
+		if (($4+0) > 0) {
+			if (match($4,"\\\.")) {
+				print "var "$2" : Double = 0.0";
+			} else if (length($4) > 3) {
+				print "var "$2" : String = \"\"";
+			} else {
+				print "var "$2" : Int = 0";
+			}
+		} else {
+			print "var "$2" : String = \"\"";
+		}
+	}
+}' $1
+
+# $4+0 转为数字
+# match($4,"\\\.") 匹配小数点，匹配成功返回正数
+# length($4) 获取 $4 的长度
+```

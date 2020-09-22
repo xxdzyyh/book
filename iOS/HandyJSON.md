@@ -1,6 +1,15 @@
 ## HandyJSON
 
-HandyJSON 的使用并不是一个问题，查查他们的文档就可以了，它怎么做的才是我们关心的问题。
+原理
+
+1. JSON数据必须转成Dictionary才能进行下一步处理，这是原生支持的，没理由不先做这一步
+2. Dictionary怎么转换为Model
+   * OC 可以使用KVC通过key为属性赋值， Dictionary可以通过key读取值，主要问题解决
+   * Swift 如果不桥接为OC类型，并不能通过KVC赋值，所以只能想其他的办法去完成Dictionary转换为Model
+
+
+
+
 
 ### 测试代码
 
