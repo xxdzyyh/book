@@ -1,4 +1,11 @@
-### Swift 派发问题 协议和子类到底使用哪个？？？
+## Swift 函数派发
+
+一般调用者是不用关心函数是怎么派发的，只要确定调用的函数执行了就可以。
+
+但是在编码的过程中可能会遇到一些奇怪的东西，想要知道答案的话就需要进一步了解细节。
+
+
+### 协议和子类到底使用哪个？？？
 
 ```
 import Foundation
@@ -149,10 +156,6 @@ sil_vtable PageContainerDataRefreshViewModel {
 
 
 > request(page: Int, limit: Int)
-
-
-
-
 
 
 
