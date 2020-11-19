@@ -1,15 +1,14 @@
 ### 自定义present动画
 
-
-
 1. 实现 UIViewControllerAnimatedTransitioning 协议，决定动画怎么做
+
+   
 
    ```
    #import <UIKit/UIKit.h>
    @interface BouncePresentAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
    
    @end
-   
    
    #import "BouncePresentAnimatedTransitioning.h"
    
@@ -54,7 +53,9 @@
    @end
    ```
 
-2. 要弹出视图的VC，实现 UIViewControllerTransitioningDelegate，
+2. 要弹出视图的VC，实现 UIViewControllerTransitioningDelegate
+
+   
 
    ```
    @interface CustomTransitionVC () <UIViewControllerTransitioningDelegate> 

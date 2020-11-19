@@ -1,8 +1,8 @@
 ## iOS 开发
 
-### 
+ 
 
-[全部开源代码](https://opensource.apple.com/tarballs/)
+* [苹果全部开源代码](https://opensource.apple.com/tarballs/)
 
 * [objc4源码在线查看](https://opensource.apple.com/source/objc4/)
 * [objc4源码下载地址](https://opensource.apple.com/tarballs/objc4/)
@@ -21,6 +21,10 @@
 > head 只是返回head,不返回其他数据，可以用来判断资源是否存在、判断资源是否更新过等，节约流量
 
 ### TCP
+
+Q:为什么断开连接要四次？
+
+A:因为收到断开连接请求的时候，可能还有数据要传给对方，必须等数据传完才能断开，所以需要先发ACK，再发FIN
 
 建立连接
 
