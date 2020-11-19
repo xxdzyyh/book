@@ -2,8 +2,6 @@
 
 官方文档：[Optimizing App Startup Time](https://developer.apple.com/videos/play/wwdc2016/406)
 
-
-
 1. 解析Info.plist
 2. Mach-O加载
    * Parse images
@@ -18,13 +16,62 @@
 
 
 
-### Warm launch VS Cold launch
+T1:点击应用图标到执行main之前
 
-Warm launch
+T2:main函数到applicationDidBecomeActive
+
+
+
+启动耗时 = T1 + T2
+
+T1阶段受动态的加载时间波动比较大
+
+
+
+didFinishLaunchingWithOptions 用户可以看到应用window
+
+applicationDidBecomeActive 用户可以操作
+
+```
+// main.m
+#import "AppDelegate.h"
+
+extern CFAbsoluteTime StartTime;
+
+int main(int argc, char *argv[]) {
+    StartTime = CFAbsoluteTimeGetCurrent();
+    
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
+
+// AppDelegate.m
+CFAbsoluteTime StartTime;
+
+@interface AppDelegate ()
+
+@end
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSUInteger milliseconds = (NSUInteger)((CFAbsoluteTimeGetCurrent() - StartTime) * 1000);
+        NSLog(@"applicationDidBecomeActive in %lu ms", milliseconds);
+    });
+}   
+```
+
+
+
+
+
+### 冷启动和热启动
+
+热启动
 
 * App and data already in memory
 
-Cold launch
+冷启动
 
 * App is not in kernel buffer cache
 
@@ -100,8 +147,6 @@ Objc `+load` methods
 
 
 ### load VS intialize
-
-
 
 load
 
