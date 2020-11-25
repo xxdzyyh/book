@@ -73,6 +73,18 @@ flexShrink决定空间不足，怎么缩放
 
 
 
+### alignSelf/alignContent/alignItems
+
+align-item 属性需要施加在 flex 容器上，它规定的是 flex 容器中所有 item 在交叉轴中的对齐方式；设置flex 容器中所有的 item 都按一个方向对齐时用它
+
+align-self 属性则施加在 flex 容器中的 item 上，允许单个项目有与其他项目不一样的对齐方式，它覆盖了外部容器规定的 align-items 属性，同样也只规定在交叉轴上的对齐方式，如果想设置某一个item有不一样的对齐方式的时候，可以用它
+
+align-content 移动的是容器自身的 flex line，并仅对多行的项目起作用
+
+对于iOS开发而言，首选 align-item，因为UIStackView也是这种方式，先创建容器，在进行布局设置。
+
+
+
 ### 问题
 
 使用```pod 'YogaKit' ```安装的时候，这个库包含了一个swift文件，对于纯OC的项目，这会报错。
