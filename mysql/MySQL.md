@@ -64,3 +64,41 @@ app_version
 
 条件查询
 
+
+
+### 按日/按月汇总
+
+> 按月
+
+```
+select date_format(create_time, '%Y-%m') mont, count(*) coun
+from t_content
+group by date_format(create_time, '%Y-%m');
+```
+
+> 按日
+
+1. 字段是日期
+
+    ```
+    select date_format(create_time, '%Y-%m-%d') dat, count(*) coun
+    from t_content
+    group by date_format(create_time, '%Y-%m-%d');
+    ```
+
+2. 字段是时间戳
+
+   ```
+   select from_unixtime(create_time / 1000, '%Y-%m-%d') dat, count(*) coun
+   from t_content
+   group by from_unixtime(create_time / 1000, '%Y-%m-%d')
+   ```
+
+
+格式转换
+
+```
+select from_unixtime(create_time / 1000, '%Y-%m-%d %H:%i:%S') create_time
+from t_content
+```
+
