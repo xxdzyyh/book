@@ -102,3 +102,13 @@ select from_unixtime(create_time / 1000, '%Y-%m-%d %H:%i:%S') create_time
 from t_content
 ```
 
+
+
+### 两列相加
+
+
+
+```
+SELECT IFNULL(page_start_time,0) + IFNULL(offset_timestamp,0) AS errorTime FROM TABLENAME
+```
+
