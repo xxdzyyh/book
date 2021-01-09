@@ -224,3 +224,14 @@ type
 1. **drop是DDL，会隐式提交，所以，不能回滚，不会触发触发器。**
 2. **drop语句删除表结构及所有数据，并将表所占用的空间全部释放。**
 3. **drop语句将删除表的结构所依赖的约束，触发器，索引，依赖于该表的存储过程/函数将保留,但是变为invalid状态。**
+
+
+
+### update 
+
+```
+UPDATE network set os = 'iPhone',os_version = '12.4' WHERE token = 'b427fcfb1f9af05c8d7766ca60b02eb7'
+```
+
+
+
