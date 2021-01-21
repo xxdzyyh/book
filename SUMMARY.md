@@ -1,15 +1,15 @@
 # Summary
 - C
+	- [C](C/C.md)
 	- [关键 字](C/关键 字.md)
 	- [指针](C/指针.md)
 	- [可变数组](C/可变数组.md)
-- [C](C.md)
 - android
 	- [Activity生命周期](android/Activity生命周期.md)
 	- [Library](android/Library.md)
 	- [LinearLayout](android/LinearLayout.md)
+	- [android](android/android.md)
 	- [mac adb](android/mac adb.md)
-- [android](android.md)
 - apple
 	- [Mac常用](apple/Mac常用.md)
 	- iOS
@@ -100,6 +100,7 @@
 - base
 	- [MVC](base/MVC.md)
 	- [MVP](base/MVP.md)
+	- [base](base/base.md)
 	- [git](base/git.md)
 	- [命名](base/命名.md)
 	- [数据结构](base/数据结构.md)
@@ -109,7 +110,6 @@
 	- [中介者模式](base/中介者模式.md)
 	- [批判性思维](base/批判性思维.md)
 	- [变和不变的思考](base/变和不变的思考.md)
-- [base](base.md)
 - java
 	- [SpringBoot](java/SpringBoot.md)
 	- [java](java/java.md)
@@ -148,11 +148,12 @@
 	- [date](shell/date.md)
 	- [grep](shell/grep.md)
 	- [sed](shell/sed.md)
+	- [shell](shell/shell.md)
 	- [shell入门](shell/shell入门.md)
 	- [shell脚本在 iOS 中的应用](shell/shell脚本在 iOS 中的应用.md)
 	- [svn命令行使用](shell/svn命令行使用.md)
 	- [文件](shell/文件.md)
 	- [字符串](shell/字符串.md)
+	- [使用脚本更新gitbook目录](shell/使用脚本更新gitbook目录.md)
 	- [代码自动生成工具](shell/代码自动生成工具.md)
 	- [判断命令是否存在](shell/判断命令是否存在.md)
-- [shell](shell.md)
