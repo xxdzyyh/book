@@ -126,11 +126,14 @@
     * [Spring Boot](_book/shell/SpringBoot.md)
     * [svn命令行使用](_book/shell/svn命令行使用.md)
 * [Android](android.md)
+- Apple
+  * [I OS](apple/iOS.md)
+  * [Mac常用](apple/Mac常用.md)
 * [Base](base.md)
 * [C](C.md)
-* [I OS](iOS.md)
 - [Java](java/java.md)
   * [Mybatis](java/mybatis.md)
+  * [Shiro](java/shiro.md)
   * [Spring Boot](java/SpringBoot.md)
 - Mysql
   * [My SQL](mysql/MySQL.md)
@@ -198,6 +201,3 @@
   * [Q 我需要什么](other/Q 我需要什么.md)
   * [Tensorflow](other/Tensorflow.md)
 * [Shell](shell.md)
-- Tools
-  * [使用 Sublime + PlantUML 高效地画图](tools/使用 Sublime + PlantUML 高效地画图.md)
-* [Mac常用](Mac常用.md)

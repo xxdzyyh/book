@@ -225,13 +225,48 @@ type
 2. **drop语句删除表结构及所有数据，并将表所占用的空间全部释放。**
 3. **drop语句将删除表的结构所依赖的约束，触发器，索引，依赖于该表的存储过程/函数将保留,但是变为invalid状态。**
 
-
-
 ### update 
 
 ```
 UPDATE network set os = 'iPhone',os_version = '12.4' WHERE token = 'b427fcfb1f9af05c8d7766ca60b02eb7'
 ```
 
+### 清空表中数据
+
+删除表信息的方式有两种 :
+
+```
+truncate table table_name;
+delete * from table_name;
+```
+
+注 : truncate操作中的table可以省略，delete操作中的*可以省略
+
+truncate、delete 清空表数据的区别 :
+1> truncate 是整体删除 (速度较快)，delete是逐条删除 (速度较慢)
+2> truncate 不写服务器 log，delete 写服务器 log，也就是 truncate 效率比 delete高的原因
+3> truncate 不激活trigger (触发器)，但是会重置Identity (标识列、自增字段)，相当于自增列会被置为初始值，又重新从1开始记录，而不是接着原来的 ID数。而 delete 删除以后，identity 依旧是接着被删除的最近的那一条记录ID加1后进行记录。如果只需删除表中的部分记录，只能使用 DELETE语句配合 where条件
+
+### 添加索引
+
+```
+ALTER TABLE `table_name` ADD INDEX index_name ( `column` ) 
+```
 
 
+
+### 增加列
+
+```
+ALTER TABLE `table name`
+ADD COLUMN `column name` int(11) DEFAULT NULL,
+ADD COLUMN `column name` int(11) DEFAULT NULL;
+```
+
+
+
+### 重命名列
+
+```js
+ALTER TABLE tableName CHANGE `oldcolname` `newcolname` datatype(length);
+```

@@ -27,3 +27,31 @@ bootstrap.yml（bootstrap.properties）用来在程序引导时执行，应用�
 application.yml（application.properties) 应用程序特有配置信息，可以用来配置后续各个模块中需使用的公共参数等。
 
 bootstrap.yml 先于 application.yml 加载
+
+
+
+
+
+```
+class ModifyHeaderRequest extends HttpServletRequestWrapper {
+
+    private String userName;
+
+    public ModifyHeaderRequest(HttpServletRequest request) {
+        super(request);
+    }
+
+    public ModifyHeaderRequest(HttpServletRequest request,String userName) {
+        super(request);
+        this.userName = userName;
+    }
+
+    public String getHeader(String name) {
+        String value = super.getHeader(name);
+        if (StringUtil.isBlank(value) && name.equalsIgnoreCase(USERNAME_HEADER)) {
+            return this.userName;
+        }
+        return value;
+    }
+}
+```
