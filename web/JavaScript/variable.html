@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+	<title>javaScript 变量</title>
+</head>
+<body>
+
+<p>全局变量，定义在函数外。在html中等价于window的成员变量，可以通过window.变量名进行访问</p>
+<p id="global"></p>
+<script type="text/javascript">
+	// 全局变量
+	var carName = "Volvo"
+	function myFunction() {
+		console.log(carName)	
+	}
+	document.getElementById('global').innerHTML = "变量在函数外定义，即为全局变量。全局变量有 全局作用域: 网页中所有脚本和函数均可使用。 "
+</script>
+
+<script type="text/javascript">
+	
+	// 在函数被第一次调用之前， undefined_var 变量是不存在的即 undefined。
+	// 函数被调用过之后，undefined_var 成为全局变量。
+	function undeclearVariableFunction() {
+		undefined_var = 100
+	}
+
+	function logUndeclearVariableFunction() {
+		console.log(undefined_var)
+		console.log(window.undefined_var)
+	}
+</script>
+
+<button onclick="logUndeclearVariableFunction()">log indefined_var</button>
+<button onclick="undeclearVariableFunction()">create indefined_var</button>
+
+<p>函数内未声明即使用的变量,在被第一次调用之前，变量是不存在的即undefined。被调用过之后，成为全局变量.</p>
+<p>局部变量：变量在函数内声明，变量为局部作用域。只能在函数内部访问，不同的函数可以有相同名称的变量</p>
+<p>你的全局变量，或者函数，可以覆盖 window 对象的变量或者函数。你的局部变量，包括 window 对象可以覆盖全局变量和函数。</p>
+
+</body>
+</html>

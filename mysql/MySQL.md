@@ -1,17 +1,15 @@
-# MySQL
-
-
+## mysql
 
 ### 命令行使用
 
 ```
-// 用户名 root 密码 123456 远程地址 106.75.169.229 端口 3306
-mysql -uroot -p123456 -h106.75.169.229 -P3306;
+// 用户名 root 密码 123456 远程地址 104.35.129.219 端口 3306
+mysql -uroot -p123456 -h104.35.129.219 -P3306;
 
 // 显示所有数据库
 show databases;
 // 选择数据库
-use buginsight;
+use mydatabase;
 // 显示所有的表
 show tables;
 // 显示表结构
@@ -171,11 +169,9 @@ INSERT INTO network_summary SELECT
 
 索引越多，维护索引的消耗就越多。
 
-
-
 单表查询相对来说比较好优化，大部分时候只需要把where条件里面的字段依照规则加上索引就好，如果只是这种“无脑”优化的话，显然一些区分度非常低的列，不应该加索引的列也会被加上索引，这样会对插入、更新性能造成严重的影响，同时也有可能影响其它的查询语句。
 
-
+索引选择区分度大的列。
 
 ### network
 
@@ -252,8 +248,6 @@ truncate、delete 清空表数据的区别 :
 ```
 ALTER TABLE `table_name` ADD INDEX index_name ( `column` ) 
 ```
-
-
 
 ### 增加列
 

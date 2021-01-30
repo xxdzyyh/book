@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>页面title和按钮title都是在Vue中设置</title>
+</head>
+<body>
+
+<!-- 写法1 -->
+<h2 id="app">{{ title }}</h2>
+
+<!-- 写法2 -->
+<div id="app1">
+	<template id="template">
+		<h3>我是模板写法2</h3>
+	</template>
+</div>
+
+<!-- 写法3 -->
+<div id="app2">
+	<script type="x-template" id="template2">
+		<h3>我是模板写法3</h3>
+	</script>
+</div>
+
+<script type="text/javascript">
+// Vue对象创建的时候，对应的id的元素必须存在，否则无法关联	
+var app = new Vue({
+	el:'#app',
+	data: {
+		title : "这就是title"
+	},
+	template: '<h3>我是模板写法1</h3>'
+})
+
+
+var app1 = new Vue({
+	el: "#app1",
+	data: {},
+	template:"#template"
+})
+
+var app2 = new Vue({
+	el: "#app2",
+	data: {},
+	template:"#template2"
+})
+
+
+</script>
+
+<style type="text/css">
+h2 {
+	color: "yellow";
+}
+h3 {
+	color: #000fff;
+}
+</style>
+</body>
+</html>

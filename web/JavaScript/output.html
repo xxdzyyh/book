@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<body>
+<h1>javaScript 输出信息</h1>
+<p>使用 **window.alert()** 弹出警告框</p>
+<p>使用 **document.write()** 方法将内容写到 HTML 文档中</p>
+<p>使用 **innerHTML** 写入到 HTML 元素</p>
+<p>使用 **console.log()** 写入到浏览器的控制台</p>
+
+<script type="text/javascript">
+	window.alert("使用 **window.alert()** 弹出警告框")
+</script>
+
+<script type="text/javascript">
+	document.write("12345")
+</script>
+
+<p id="demo">我的第一个段落</p>
+<script>
+document.getElementById("demo").innerHTML = "段落已修改。";
+</script>
+
+<script type="text/javascript">
+	console.log("使用 **console.log()** 写入到浏览器的控制台")
+</script>
+
+</body>
+</html>
