@@ -310,6 +310,24 @@ new Vue({
 </script>
 ```
 
+双向绑定有个前提，就是两者的类型要相同，也不要传入表达式。
+
+看下面的例子
+
+```
+<el-select v-model="scope.row.status + ''" v-on:change="jsErrorStatusChanged($event,scope.row)">
+```
+
+因为原数据status是 number 类型，而 el-select 需要的字符串类型，这个时候 v-model 传入了一个表达式，将 number 改成了字符串。这个时候通过el-select切换选项时，scope.row.status 并不能正确的赋值，所以 el-select 切换了选项，但是显示的内容还是没有变。
+
+```
+jsErrorStatusChanged(index, data) {
+	data.status = parseInt(index)
+}
+```
+
+
+
 ## Vue实例
 
 ### data

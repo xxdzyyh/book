@@ -1,9 +1,11 @@
 # Web
 
+
+
+[TOC]
+
 * HTML 定义了网页的内容
-
 * CSS    描述了网页的布局
-
 * JavaScript  网页的行为
 
 
@@ -61,6 +63,15 @@ const path = require('path');
   }
   ```
 
+  定义好脚本之后，就可以使用脚本
+
+  ```
+  npm run dev
+  npm run build 
+  ```
+
+  
+
 * dependencies
 
   release 环境需要的依赖
@@ -104,4 +115,45 @@ const path = require('path');
   ]
   ```
 
-  
+
+
+
+### Express
+
+[Express 中文网](https://www.expressjs.com.cn/)
+
+Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发框架，为 Web 和移动应用程序提供一组强大的功能。
+
+Express 的功能是非常的强大的，目前我们只用它来作为 web 服务器，也就是和 tomcat 一样的作用。
+
+
+
+### 项目打包
+
+```
+$ npm run build
+
+// 会生成一个dist文件夹，所有的东西都在dist下面
+dist
+```
+
+
+
+### 项目运行
+
+dist里面包含的网页的数据，而用户是通过 http 进行访问的，你怎么知道有人访问了我们的网页呢？
+
+所以你需要一个 web服务器，监听用户的访问，然后将网页数据返回给用户。
+
+Tomcat 是一个web服务器，Node上最常用的Web服务器也许是[Express](http://expressjs.com/)。
+
+
+
+
+
+
+
+
+
+
+

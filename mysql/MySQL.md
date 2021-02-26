@@ -1,5 +1,9 @@
 ## mysql
 
+[TOC]
+
+
+
 ### 命令行使用
 
 ```
@@ -15,6 +19,20 @@ show tables;
 // 显示表结构
 desc network;
 ```
+
+
+
+## 数据类型
+
+| 类型名称      | 说明           | 存储需求 |
+| ------------- | -------------- | -------- |
+| TINYINT       | 很小的整数     | 1个字节  |
+| SMALLINT      | 小的整数       | 2个宇节  |
+| MEDIUMINT     | 中等大小的整数 | 3个字节  |
+| INT (INTEGHR) | 普通大小的整数 | 4个字节  |
+| BIGINT        | 大整数         | 8个字节  |
+
+
 
 ## 函数
 
@@ -77,6 +95,16 @@ app_version
 ### where
 
 条件查询
+
+* is not null
+
+  ```
+  select * FROM issue where symbol_stack is not null;
+  ```
+
+  
+
+
 
 
 
@@ -243,10 +271,17 @@ truncate、delete 清空表数据的区别 :
 2> truncate 不写服务器 log，delete 写服务器 log，也就是 truncate 效率比 delete高的原因
 3> truncate 不激活trigger (触发器)，但是会重置Identity (标识列、自增字段)，相当于自增列会被置为初始值，又重新从1开始记录，而不是接着原来的 ID数。而 delete 删除以后，identity 依旧是接着被删除的最近的那一条记录ID加1后进行记录。如果只需删除表中的部分记录，只能使用 DELETE语句配合 where条件
 
+### 查看索引信息
+
+```
+show index from table_name
+```
+
 ### 添加索引
 
 ```
-ALTER TABLE `table_name` ADD INDEX index_name ( `column` ) 
+// 20是索引长度
+ALTER TABLE `table_name` ADD INDEX index_name ( `column_name`(20) ) 
 ```
 
 ### 增加列
