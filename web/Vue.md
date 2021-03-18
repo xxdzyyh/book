@@ -771,6 +771,18 @@ vue-resource除了提供http请求外，还提供了inteceptor拦截器功能，
 ### vue-resource
 
 ```
+// package.json
+
+"dependencies": {
+    "vue-resource": "^1.5.1"
+ }
+```
+
+
+
+#### Get
+
+```
 methods: {
   getPeoples: function () {
     var vm = this;
@@ -783,6 +795,31 @@ methods: {
       })
   }
 }
+```
+
+
+
+#### post
+
+```
+let requestBody = {
+  type: 'bugDesc',
+  data: {
+    id: this.bugObject.id,
+    token: this.getQueryString('token'),
+    bugDesc: bugDesc
+  }
+}
+this.$http.post(url, requestBody).then(res => {
+  if (res.body.code === 200) {
+    this.bugObject.bugDesc = bugDesc
+    this.$message.success('修改成功！')
+  } else {
+    this.$message.error('修改失败！')
+  }
+}, res => {
+  this.$message.error('修改失败！')
+})
 ```
 
 

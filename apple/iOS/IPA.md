@@ -4,7 +4,7 @@
 
 ### 重签名
 
-使用 `fastlane sigh resign xxx.ipa --signing_identity "cer" -p "xxx.mobileprovision";`
+使用 `fastlane sigh resign xaLive.ipa --signing_identity "674D18BAF901D5790B1755494AEE34B20BB95706" -p 
 
 
 

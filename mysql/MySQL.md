@@ -12,13 +12,33 @@ mysql -uroot -p123456 -h104.35.129.219 -P3306;
 
 // 显示所有数据库
 show databases;
+
 // 选择数据库
 use mydatabase;
+
 // 显示所有的表
 show tables;
+
 // 显示表结构
 desc network;
 ```
+
+mysql -uroot -pUTestor12345678_ -h10.13.148.103 -P3306;
+
+```
+host=10.13.148.103
+#host=192.168.3.41
+
+database.name = buginsight
+database.port = 3306
+#c3p0.jdbcUrl=jdbc:mysql://${host}:3306/${database.name}?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF8&createDatabaseIfNotExist=true
+c3p0.jdbcUrl=jdbc:mysql://${host}:${database.port}/${database.name}?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true&allowMultiQueries=true
+c3p0.user=root
+#c3p0.password=p12345678
+c3p0.password=UTestor12345678_
+```
+
+
 
 
 
@@ -292,10 +312,25 @@ ADD COLUMN `column name` int(11) DEFAULT NULL,
 ADD COLUMN `column name` int(11) DEFAULT NULL;
 ```
 
-
-
 ### 重命名列
 
 ```js
 ALTER TABLE tableName CHANGE `oldcolname` `newcolname` datatype(length);
 ```
+
+
+
+### 修改数据长度
+
+```
+ALTER TABLE attence MODIFY COLUMN id INT(20)
+```
+
+
+
+### 修改字段，允许为null
+
+```
+ALTER TABLE 表名 MODIFY 字段名 VARCHAR(20) DEFAULT NULL 
+```
+
