@@ -14,4 +14,23 @@ git cherry-pick 1d976a3c0d26a7b853a5a0122a3c218f9986465f
 
 ### git merge --squash 
 
-多个commit合并成一个commit。有时候分开的东西发现实际应该一起提交，就可以使用
+多个commit合并成一个commit。有时候分开的东西发现实际应该一起提交，就可以使用。
+
+
+
+### 从特定分支获取文件
+
+在其他分支上改了一些东西，可以通过 `git cherry-pick` 同步过来，但是如果一次提交中的部分文件，可以使用下面的语句使用其他分支的文件替换本分支的文件。
+
+
+
+```
+git checkout 文件路径 分支名称 
+// 
+git checkout BugInsight/SessionReplay/UTGestureDetector.m feature_serversiderender
+```
+
+
+
+### git add --force
+

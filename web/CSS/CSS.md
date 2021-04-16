@@ -48,32 +48,106 @@ button {
 
 ## 选择器
 
-默认的HTML标签，h1
+CSS 选择器用于“查找”（或选取）要设置样式的 HTML 元素。
+
+我们可以将 CSS 选择器分为五类：
+
+- 简单选择器（根据名称、id、类来选取元素）
+- [组合器选择器](https://www.w3school.com.cn/css/css_combinators.asp)（根据它们之间的特定关系来选取元素）
+- [伪类选择器](https://www.w3school.com.cn/css/css_pseudo_classes.asp)（根据特定状态选取元素）
+- [伪元素选择器](https://www.w3school.com.cn/css/css_pseudo_elements.asp)（选取元素的一部分并设置其样式）
+- [属性选择器](https://www.w3school.com.cn/css/css_attribute_selectors.asp)（根据属性或属性值来选取元素）
+
+
+
+* 元素选择器
+
+  ```
+  p {
+  	text-align: center;
+  	color: red;
+  }
+  
+  h1, h2, p {
+    text-align: center;
+    color: red;
+  }
+  ```
+
+* CSS id 选择器
+
+  id 选择器使用 HTML 元素的 id 属性来选择特定元素。
+
+  元素的 id 在页面中是唯一的，因此 id 选择器用于选择一个唯一的元素！
+
+  要选择具有特定 id 的元素，请写一个井号（＃），后跟该元素的 id。
+
+  **注意：**id 名称不能以数字开头。
+
+  ```
+  #para1 {
+    text-align: center;
+    color: red;
+  }
+  ```
+
+  
+
+* CSS 类选择器
+
+  类选择器选择有特定 class 属性的 HTML 元素。
+
+  如需选择拥有特定 class 的元素，请写一个句点（.）字符，后面跟类名。
+
+  ```
+  // 所有带有 class="center"
+  .myClass {
+    text-align: center;
+    color: red;
+  }
+  ```
+
+* 后代选择器（descendant selector）又称为包含选择器。
+
+  ```
+  h1 em {color:red;}
+  
+  <h1>This is a <em>important</em> heading</h1>
+  <p>This is a <em>important</em> paragraph.</p>
+  ```
+
+  当然，您也可以在 h1 中找到的每个 em 元素上放一个 class 属性，但是显然，后代选择器的效率更高。
+
+  有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。不必是子元素
+
+* 子元素选择器
+
+  ```
+  h1 > em {color:red
+  
+  // 选择p元素，父元素是td td 是table的后代节点 类型 table有一个class='company'
+  table.company td > p
+  ```
+
+* 相邻兄弟选择器
+
+  ```
+  // 选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素
+  h1 + p {margin-top:50px;}
+  ```
+
+### 实例
+
+在此例中，所有带有 class="center" 的 HTML 元素将为红色且居中对齐：
 
 ```
-<p id="myid">123</p>
-<h1 class="center">标题居中</h1>
-<p class="center">段落居中。</p> 
-
-<style>
-h3 {
-	text-align: center;
-}
-
-/*ID属性不要以数字开头*/
-#myid {
-	color: red;
-}
-
 .center {
-	text-align:center;
+  text-align: center;
+  color: red;
 }
-
-p.center {
-	text-align: center;
-}
-<style>
 ```
+
+
 
 ### 外部样式表
 

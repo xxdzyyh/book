@@ -23,6 +23,64 @@ public MyResponse addAccount(@RequestBody String param) {
 
 
 
+### 定时器
+
+java 没有 block 这种东西，又特别强调设计模式，所以在实现一个小功能的时候，代码特别多。 
+
+```
+import java.util.Timer;
+import java.util.TimerTask;
+
+class MyTimerTask extends TimerTask {
+		public void run() {
+				System.out.println("开始检查更新");
+		}
+}
+
+public class Main {
+
+		Timer timer;
+    public static void main(String[] args) {
+        System.out.println("main start");
+        // 每天执行一次
+        timer = new Timer();
+        
+        // 第一个参数指明任务
+        // 第二个参数指明Timer第一次触发延迟
+        // 第三个参数代表Timer触发的间隔
+        timer.schedule(new MyTimerTask(),1000, seconds * 1000);
+    }
+}
+```
+
+
+
+### 多线程
+
+匿名内部类还是很方便的，这样不用继承写一个类。
+
+```
+public static void parse(String result) {
+    JsonObject object = JsonParser.parseString(result).getAsJsonObject();
+    JsonArray data = object.get("data").getAsJsonArray();
+
+    for (int i=0;i<data.size();i++) {
+        JsonObject obj = data.get(i).getAsJsonObject();
+        UpdateItem item = UpdateItem.fromJsonObject(obj);
+        // 匿名类别类
+        new Thread() {
+            public void run() {
+                item.updateIfNeed();
+            }
+        }.start();
+    }
+}
+```
+
+
+
+
+
 ## 注解
 
 注解的本质就是一个继承了 Annotation 接口的接口。个人理解注解是用来实现一些附加功能或者流程相对固定的功能。
@@ -161,12 +219,330 @@ if (play!=null){
         System.out.println(game.value());
     }
 }
-
 ```
 
 
 
-### MyBatis
 
 
+## 常用
+
+
+
+### 获取文件 MD5
+
+```
+/**
+ * 根据文件计算出文件的MD5
+ * @param file
+ * @return
+ */
+public static String getFileMD5(File file) {
+    if (!file.isFile()) {
+        return null;
+    }
+
+    MessageDigest digest = null;
+    FileInputStream in = null;
+    byte buffer[] = new byte[1024];
+    int len;
+    try {
+        digest = MessageDigest.getInstance("MD5");
+        in = new FileInputStream(file);
+        while ((len = in.read(buffer, 0, 1024)) != -1) {
+            digest.update(buffer, 0, len);
+        }
+        in.close();
+
+    } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    BigInteger bigInt = new BigInteger(1, digest.digest());
+    return bigInt.toString(16);
+}
+```
+
+
+
+### 获取 jar 根目录
+
+```
+public static String rootPath() {
+    String jarWholePath = FileHelper.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+    try {
+        jarWholePath = java.net.URLDecoder.decode(jarWholePath, "UTF-8");
+    } catch (Exception e) {
+        System.out.println(e.toString());
+    }
+
+    String jarPath = new File(jarWholePath).getParentFile().getAbsolutePath();
+    return jarPath;
+}
+```
+
+
+
+### 读取文件全部内容
+
+```
+public static String readFile(String filePath) {
+    StringBuffer stringBuffer = new StringBuffer("");
+    byte[] buffer = new byte[1024];
+    int count = 0;
+    File file = new File(filePath);
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        while (-1 != (count = inputStream.read(buffer))) {
+            stringBuffer.append(new String(buffer, 0, count));
+        }
+        inputStream.close();
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+    return stringBuffer.toString();
+}
+```
+
+
+
+### 文件解压
+
+
+
+```
+package com.shujiantec;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+
+public class ZipUtil {
+
+    private static final int BUFFER_SIZE = 1024;
+
+    /**
+     * zip解压
+     * @param srcFile        zip源文件
+     * @param destDirPath     解压后的目标文件夹
+     * @throws RuntimeException 解压失败会抛出运行时异常
+     */
+    public static void unZip(File srcFile, String destDirPath) throws RuntimeException {
+        long start = System.currentTimeMillis();
+        // 判断源文件是否存在
+        if (!srcFile.exists()) {
+            throw new RuntimeException(srcFile.getPath() + "所指文件不存在");
+        }
+
+        // 开始解压
+        ZipFile zipFile = null;
+        try {
+            zipFile = new ZipFile(srcFile);
+            Enumeration<?> entries = zipFile.entries();
+            while (entries.hasMoreElements()) {
+                ZipEntry entry = (ZipEntry) entries.nextElement();
+                // 如果是文件夹，就创建个文件夹
+                if (entry.isDirectory()) {
+                    String dirPath = destDirPath + "/" + entry.getName();
+                    File dir = new File(dirPath);
+                    dir.mkdirs();
+                } else {
+                    // 如果是文件，就先创建一个文件，然后用io流把内容copy过去
+                    File targetFile = new File(destDirPath + "/" + entry.getName());
+                    // 保证这个文件的父文件夹必须要存在
+                    if(!targetFile.getParentFile().exists()){
+                        targetFile.getParentFile().mkdirs();
+                    }
+
+                    targetFile.createNewFile();
+                    // 将压缩文件内容写入到这个文件中
+                    InputStream is = zipFile.getInputStream(entry);
+                    FileOutputStream fos = new FileOutputStream(targetFile);
+
+                    int len;
+                    byte[] buf = new byte[BUFFER_SIZE];
+                    while ((len = is.read(buf)) != -1) {
+                        fos.write(buf, 0, len);
+                    }
+
+                    // 关流顺序，先打开的后关闭
+                    fos.close();
+                    is.close();
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("unzip error from ZipUtils", e);
+        } finally {
+            if(zipFile != null){
+                try {
+                    zipFile.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+```
+
+
+
+## 第三方
+
+### 网络请求 - org.apache.http.client
+
+#### POST
+
+```
+import com.google.gson.*;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+public class CheckUpdate {
+
+    public String checkUpdate(String httpUrl,String params) {
+        System.out.println(httpUrl + params);
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(httpUrl);
+        try {
+            org.apache.http.entity.StringEntity paramEntity = new StringEntity(params, "UTF-8");
+            paramEntity.setContentType("application/json; charset=utf-8");
+            httpPost.setEntity(paramEntity);
+            CloseableHttpResponse response = httpClient.execute(httpPost);
+            HttpEntity entity = response.getEntity();
+            if (entity != null) {
+                String responseStr = EntityUtils.toString(entity, "UTF-8");
+                System.out.println(responseStr);
+
+                if (responseStr == null) {
+                    responseStr = "{}";
+                }
+
+                int statusCode = response.getStatusLine().getStatusCode();
+                if (statusCode == 200) {
+                    System.out.println("请求成功");
+                    parse(responseStr);
+                } else {
+                    System.out.println("请求失败");
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+}
+```
+
+### JSON 解析 - com.google.gson
+
+使用 gson 解析 json 数据，和使用 NSDictionary 和 NSArray 去解析没有任何区别。
+
+JsonObject -> NSDictionary
+
+JsonArray   -> NSArray
+
+```
+JsonObject object = JsonParser.parseString(result).getAsJsonObject();
+JsonArray data = object.get("data").getAsJsonArray();
+```
+
+
+
+
+
+
+
+## 附录
+
+
+
+### FileHelper
+
+```
+package com.shujiantec;
+
+import java.io.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.math.BigInteger;
+
+public class FileHelper {
+    /**
+     * 根据文件计算出文件的MD5
+     * @param file
+     * @return
+     */
+    public static String getFileMD5(File file) {
+        if (!file.isFile()) {
+            return null;
+        }
+
+        MessageDigest digest = null;
+        FileInputStream in = null;
+        byte buffer[] = new byte[1024];
+        int len;
+        try {
+            digest = MessageDigest.getInstance("MD5");
+            in = new FileInputStream(file);
+            while ((len = in.read(buffer, 0, 1024)) != -1) {
+                digest.update(buffer, 0, len);
+            }
+            in.close();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BigInteger bigInt = new BigInteger(1, digest.digest());
+        return bigInt.toString(16);
+    }
+
+    public static String rootPath() {
+        String jarWholePath = FileHelper.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+        try {
+            jarWholePath = java.net.URLDecoder.decode(jarWholePath, "UTF-8");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+        String jarPath = new File(jarWholePath).getParentFile().getAbsolutePath();
+        return jarPath;
+    }
+
+    public static String readFile(String filePath) {
+        StringBuffer stringBuffer = new StringBuffer("");
+        byte[] buffer = new byte[1024];
+        int count = 0;
+        File file = new File(filePath);
+        try {
+            InputStream inputStream = new FileInputStream(file);
+            while (-1 != (count = inputStream.read(buffer))) {
+                stringBuffer.append(new String(buffer, 0, count));
+            }
+            inputStream.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return stringBuffer.toString();
+    }
+}
+```
 
