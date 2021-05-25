@@ -167,6 +167,51 @@ if (true) {
 
 如果您把值赋给尚未声明的变量，该变量将被自动作为 window 的一个属性。
 
+
+
+### 原型
+
+* 对象 ： js 一切皆对象, 每一个 js 对象(null除外)在创建的时候就会有一个与之关联的对象，就是我们所说的原型。
+
+* 函数 ：函数也是对象，每个函数都有一个 prototype 
+
+
+
+对象
+
+* `__proto__`
+* `constructor`
+
+
+
+函数
+
+* `prototype`
+
+* `__proto__`
+* `constructor`
+
+
+
+```
+function Foo() {
+
+}
+let f1 = new Foo()
+
+f1.__proto__ // Foo.prototype
+f1.constructor // Foo() 
+Foo().constructor // Function()
+Foo.prototype // Function.prototype
+Foo.prototype.__proto__ // Object.prototype
+Function.prototype.constructor // Function()
+Object.prototype.__proto__ // null
+```
+
+
+
+
+
 ## HTML DOM
 
 
@@ -303,4 +348,127 @@ function mOut(obj){
   ```
 
   
+
+
+
+## ES6
+
+
+
+## Babel转码器
+
+[Babel](https://babeljs.io/)是一个广泛使用的ES6转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。这意味着，你可以用ES6的方式编写程序，又不用担心现有环境是否支持。下面是一个例子。
+
+```javascript
+// 转码前
+input.map(item => item + 1);
+
+// 转码后
+input.map(function (item) {
+  return item + 1;
+});
+```
+
+上面的原始代码用了箭头函数，这个特性还没有得到广泛支持，Babel将其转为普通函数，就能在现有的JavaScript环境执行了。
+
+
+
+### 使用
+
+```
+<script type="text/ecmascript-6">
+
+</script>
+```
+
+
+
+### class
+
+js 有一个原型的概念，其实就类似于 OC 的 meta class.
+
+不使用 class 关键字生成类。
+
+```
+function Point(x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+Point.prototype.toString = function () {
+  return '(' + this.x + ', ' + this.y + ')';
+};
+
+var p = new Point(1, 2);
+```
+
+上面这种写法跟传统的面向对象语言（比如C++和Java）差异很大，很容易让新学习这门语言的程序员感到困惑。
+
+ES6提供了更接近传统语言的写法，引入了Class（类）这个概念，作为对象的模板。通过`class`关键字，可以定义类。基本上，ES6的`class`可以看作只是一个语法糖，它的绝大部分功能，ES5都可以做到，新的`class`写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已。上面的代码用ES6的“类”改写，就是下面这样。
+
+
+
+* 声明
+
+  ```
+  class Point {
+  	constructor(x, y) {
+      this.x = x;
+      this.y = y;
+    }
+    
+    // 类方法，Point.value() // 'hello'
+    static value() {
+    	return "hello"
+    }
+    
+    toString() {
+      return '(' + this.x + ', ' + this.y + ')';
+    }
+  }
+  
+  ```
+
+* 创建实例
+
+  ```
+  var point = new Point(2,3)
+  point.toString() // (2, 3)
+  
+  typeof Point // "function"
+  Point === Point.prototype.constructor // true
+  
+  point.hasOwnProperty('x') // true
+  point.hasOwnProperty('y') // true
+  point.hasOwnProperty('toString') // false
+  point.__proto__.hasOwnProperty('toString') // true
+  
+  var p1 = new Point(2,3);
+  var p2 = new Point(3,2);
+  
+  p1.__proto__ === p2.__proto__ //true
+  ```
+
+* 继承
+
+  ```
+  class ColorPoint extends Point {
+  	constructor(x, y, color) {
+      super(x, y); // 调用父类的constructor(x, y)
+      this.color = color;
+    }
+    
+    static value() {
+    	return super.classMethod + ', too';
+    }
+  
+    toString() {
+      return this.color + ' ' + super.toString(); // 调用父类的toString()
+    }
+  }
+  ```
+
+  
+
+
 

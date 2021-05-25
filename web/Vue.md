@@ -10,6 +10,10 @@ Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将�
 
 结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上。
 
+
+
+
+
 ## 集成
 
 ```
@@ -332,7 +336,13 @@ jsErrorStatusChanged(index, data) {
 
 ### data
 
-值可以是 object 或者 function，但是在组件中，只能是 function。组件是可以复用的，所以组件中的data如果返回同一个对象，那一处修改，其他地方都会改变。
+值可以是 object 或者 function，但是在组件中，只能是 function。组件是可以复用的，所以组件中的data如果返回同一个对象，那一处修改，其他地方都会改变。值得注意的是只有当实例被创建时就已经存在于 `data` 中的 property 才是**响应式**的。也就是说如果你添加一个新的 property，比如：
+
+```
+vm.b = 'hi'
+```
+
+那么对 `b` 的改动将不会触发任何视图的更新。如果你知道你会在晚些时候需要一个 property，但是一开始它为空或不存在，那么你仅需要设置一些初始值。
 
 Vue 将会递归将data的属性转换为 getter/setter,从而让data的属性能够响应数据变化。
 
@@ -379,6 +389,59 @@ export default {
 ```
 
 除了数据属性，Vue 实例还提供了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来。
+
+
+
+#### 数组变化
+
+data 中的值都是双向绑定了，props 是单向绑定的，但是对于数组，如果只是元素发生了改变，是没有办法获得响应式支持的，需要做一些额外的工作。
+
+// 数组 元素位置 元素
+
+this.$set(array,index,object)
+
+数据里的元素中的某个字段发生了变化，也可以用这个方法。
+
+```
+data() {
+  return {
+    eventNames: ["登录","登出","下载","下单"],
+    activeName: 'first',
+    showSearch: false,
+    sessionProperties: [{
+      name : "应用版本",
+      identifier : "appVersion",
+      type : 'String',
+      operator : "等于",
+      isSelected : false
+    },{
+      name : "首次会话",
+      identifier: "isFirstSession",
+      type: 'UInt8',
+      operator : "等于",
+      isSelected : false
+    }]
+  }
+},
+methods: {
+		buttonClicked(item,index) {
+      console.log(item,index)
+      item.isSelected = true
+      this.$set(this.sessionProperties,index,item)
+      this.$emit("searchValueChanged",item)
+    },
+}
+```
+
+
+
+```
+searchValueChanged(item) {
+  console.log("searchValueChanged")
+  // 本来可以用 this.searchItems.push(item),但是这样其他地方就不能响应了，this.$set就是解决这个问题的
+  this.$set(this.searchItems,this.searchItems.length,item)
+}
+```
 
 
 
@@ -443,7 +506,7 @@ Vue.component('my-component', {
       type: String,
       required: true
     },
-     // 带有默认值的数字
+    // 带有默认值的数字
     propD: {
       type: Number,
       default: 100
@@ -466,6 +529,12 @@ Vue.component('my-component', {
   }  
 }
 ```
+
+注意：props 是单向传递的，父组件改变，子组件也会改变。
+
+
+
+
 
 
 
@@ -1010,7 +1079,76 @@ export default {
 </style>
 ```
 
-## 生命周期<img src="https://cn.vuejs.org/images/lifecycle.png" alt="Vue 实例生命周期" style="zoom:33%;" />
+### Vue MVVM
+
+
+
+* Model : data、props
+* View : template、style
+* ViewModel : 继承自 Vue 类的组件实例
+
+
+
+Vue 模板就是对一个典型的模板如下，
+
+```
+<div id="app">
+    <div v-html="message"></div>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: '<h1>菜鸟教程</h1>'
+  }
+})
+</script>
+```
+
+
+
+####  View
+
+```
+<div id="app">
+    <div v-html="message"></div>
+</div>
+```
+
+
+
+#### Model
+
+```
+data: {
+	message: '<h1>菜鸟教程</h1>'
+}
+```
+
+
+
+#### ViewModel
+
+`<script></script>`中的代码除了data，都可以认为是 ViewModel。视图和数据的绑定是通过各种 vue指令实现的。
+
+```
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: '<h1>菜鸟教程</h1>'
+  }
+})
+</script>
+```
+
+
+
+
+
+## 生命周期
+
+## <img src="https://cn.vuejs.org/images/lifecycle.png" alt="Vue 实例生命周期" style="zoom:33%;" />
 
 了解了生命周期，就可以在合适的地方做合适的事情。
 
@@ -1045,7 +1183,7 @@ this.$nextTick()将回调延迟到下次 DOM 更新循环之后执行。在修�
 
 使用JS代码修改DOM后，并不会立即生效，DOM
 
-**需要注意的是，在 created 和 mounted 阶段，如果需要操作渲染后的试图，也要使用 nextTick 方法。**
+**需要注意的是，在 created 和 mounted 阶段，如果需要操作渲染后的视图，也要使用 nextTick 方法。**
 
 官方文档说明：mounted 不会承诺所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以用 vm.$nextTick：
 
@@ -1131,3 +1269,31 @@ setNeedDisplay在receiver标上一个需要被重新绘图的标记，在下一�
 
    
 
+## 常见问题
+
+### 数据修改了，视图没有变化
+
+响应式有一些限制
+
+* 属性不是在 data 的初始化属性
+
+  ```
+  data() {
+  	return {
+  		a : 'a'
+  	}
+  }
+  
+  // a 是响应式的，b 不是
+  this.$data.b = 'b' 
+  this.b = 'b'
+  ```
+
+  解决方法 
+
+  ```
+  // 有点像 kvc
+  this.$set(this.$data,'b','value')
+  ```
+
+  

@@ -38,3 +38,32 @@ The following pod updates are available:
 - TZImagePickerController 3.2.2 -> 3.2.8 (latest version 3.2.8)
 ```
 
+
+
+### 常见问题
+
+pod install 报错
+
+```
+​```
+LoadError - incompatible library version - /Users/mac/.rvm/gems/ruby-2.7.0/gems/ffi-1.14.2/lib/ffi_c.bundle
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/Users/mac/.rvm/gems/ruby-2.7.0/gems/ffi-1.14.2/lib/ffi.rb:6:in `rescue in <top (required)>'
+/Users/mac/.rvm/gems/ruby-2.7.0/gems/ffi-1.14.2/lib/ffi.rb:3:in `<top (required)>'
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/Users/mac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/ethon-0.12.0/lib/ethon.rb:2:in `<top (required)>'
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/Users/mac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/typhoeus-1.4.0/lib/typhoeus.rb:2:in `<top (required)>'
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/usr/local/Cellar/ruby/2.7.2/lib/ruby/2.7.0/rubygems/core_ext/kernel_require.rb:92:in `require'
+/Users/mac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/cocoapods-core-1.10.1/lib/cocoapods-core/cdn_source.rb:440:in `download_typhoeus_impl_async'
+/Users/mac/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/cocoapods-core-1.10.1/lib/cocoapods-core/cdn_source.rb:372:in `download_and_save_with_retries_async'
+```
+
+执行了一下 `rvm install ruby-2.7.0 `
+
+在进行 pod install 竟然可以了
+

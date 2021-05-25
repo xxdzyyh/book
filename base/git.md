@@ -1,4 +1,12 @@
-## git
+# git
+
+
+
+[Toc]
+
+
+
+
 
 
 
@@ -33,4 +41,26 @@ git checkout BugInsight/SessionReplay/UTGestureDetector.m feature_serversiderend
 
 
 ### git add --force
+
+
+
+## stash
+
+### git stash [save 'stash 说明']
+
+### git stash pop [stash@{n}]
+
+### git stash list
+
+### git stash drop [stash@{n}]
+
+### git stash clear
+
+### git show stash@{n}
+
+
+
+
+
+
 

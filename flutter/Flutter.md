@@ -93,7 +93,7 @@ Flutter的widget被设计成可以快速频繁创建的对象是出于简化代�
 2. 如果一个widget中部分内容可变，有没有必要仅仅针对需要改变的部分创建StatefulWidget？
 
    Flutter framework针对 build 方法进行了优化，不需要单独针对变化的部分创建StatefulWidget，
-   build 的效率有Flutter framework来保证。
+   build 的效率由Flutter framework来保证。
 
 3. StatefulWidget 的流程
 
@@ -110,7 +110,7 @@ Flutter的widget被设计成可以快速频繁创建的对象是出于简化代�
 
 因为这个和之前的iOS/Android区别很大，所以在Flutter生成的模板文件中做了特别的注释说明，仔细阅读main.dart就可以。
 
-### Cupertino & Material
+Cupertino & Material
 
 - Cupertino，iOS风格的widget
 - Material，Android风格的widget
@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### CupertinoButton 
 
-iOS 风格的按钮，使用的时候需要注意 minSize 和 padding 都是有默认值得，设置了minSize < 44 后，如果不设置 padding，就会导致 title 没有居中
+iOS 风格的按钮，使用的时候需要注意 minSize 和 padding 都是有默认值的，设置了minSize < 44 后，如果不设置 padding，就会导致 title 没有居中
 
 ```dart
 var withDrawButton = CupertinoButton(
@@ -186,7 +186,7 @@ var withDrawButton = CupertinoButton(
 
 > 本地资源
 
-获取本地资源必要麻烦，需要编辑 pubspec.yaml 文件，这个文件在项目根目录下。
+获取本地资源比较麻烦，需要编辑 pubspec.yaml 文件，这个文件在项目根目录下。
 
 找到被注释的assets
 
