@@ -28,6 +28,7 @@
 		- [Jenkins自动打包](apple/iOS/Jenkins自动打包.md)
 		- [LLDB](apple/iOS/LLDB.md)
 		- [Lock](apple/iOS/Lock.md)
+		- [MP4 合成](apple/iOS/MP4 合成.md)
 		- [MVC & MVVM](apple/iOS/MVC & MVVM.md)
 		- [Masonry](apple/iOS/Masonry.md)
 		- [PerfDog](apple/iOS/PerfDog.md)
@@ -74,6 +75,7 @@
 		- [iOS 更新日志](apple/iOS/iOS 更新日志.md)
 		- [iOS 多行字符串常量](apple/iOS/iOS 多行字符串常量.md)
 		- [iOS&Android 使用对比](apple/iOS/iOS&Android 使用对比.md)
+		- [os_signpost](apple/iOS/os_signpost.md)
 		- [swizzle](apple/iOS/swizzle.md)
 		- [valueForKeyPath](apple/iOS/valueForKeyPath.md)
 		- [weak底层实现](apple/iOS/weak底层实现.md)
@@ -127,7 +129,10 @@
 	- [中介者模式](base/中介者模式.md)
 	- [批判性思维](base/批判性思维.md)
 	- [变和不变的思考](base/变和不变的思考.md)
+- flutter
+	- [Flutter](flutter/Flutter.md)
 - java
+	- [GC](java/GC.md)
 	- [SpringBoot](java/SpringBoot.md)
 	- [java](java/java.md)
 	- [maven](java/maven.md)
@@ -139,7 +144,6 @@
 	- [MySQL](mysql/MySQL.md)
 - other
 	- [2018-10-08-香港](other/2018-10-08-香港.md)
-	- [Flutter](other/Flutter.md)
 	- [Sublime](other/Sublime.md)
 	- [Tensorflow](other/Tensorflow.md)
 	- [django获取上传文件](other/django获取上传文件.md)
@@ -179,6 +183,8 @@
 	- [使用脚本更新gitbook目录](shell/使用脚本更新gitbook目录.md)
 	- [代码自动生成工具](shell/代码自动生成工具.md)
 	- [判断命令是否存在](shell/判断命令是否存在.md)
+- tool
+	- [Sublime Text](tool/Sublime Text.md)
 - web
 	- CSS
 		- [CSS](web/CSS/CSS.md)

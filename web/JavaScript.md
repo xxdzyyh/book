@@ -383,7 +383,13 @@ input.map(function (item) {
 
 
 
+
+
+
+
 ### class
+
+
 
 js 有一个原型的概念，其实就类似于 OC 的 meta class.
 
