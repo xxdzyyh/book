@@ -367,3 +367,26 @@ ALTER TABLE 表名 MODIFY 字段名 VARCHAR(20) DEFAULT NULL
 * 页面锁：
 
 * 表级锁：对表进行加锁，开销小，不会出现死锁，加锁快，锁粒度大，发生冲突概率最低，并发低
+
+
+
+## mysqldump - 备份
+
+
+
+### 只备份表结构
+
+```
+mysqldump --opt -d buginsight -h 10.13.148.103 -u root -p > zinit.sql;
+```
+
+
+
+### 备份数据
+
+```
+mysqldump -d buginsight -h 10.13.148.103 -u root -p > zinit.sql;
+```
+
+
+

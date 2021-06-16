@@ -681,6 +681,23 @@ vm.$watch('counter', function(nval, oval) {
 </script>
 ```
 
+监听 props log 
+
+```
+export default {
+  name: "log-detail",
+  props: ['log'],
+  watch: {
+    log(val,oldVal) {
+      console.log('watch',val)
+      this.startSearch()
+    }
+  },
+}
+```
+
+
+
 
 
 ### v-model
