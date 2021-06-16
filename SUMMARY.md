@@ -141,7 +141,7 @@
 	- [服务器](java/服务器.md)
 	- [执行脚本](java/执行脚本.md)
 - mysql
-	- [MySQL](mysql/MySQL.md)
+	- [mysql](mysql/mysql.md)
 - other
 	- [2018-10-08-香港](other/2018-10-08-香港.md)
 	- [Sublime](other/Sublime.md)
@@ -198,4 +198,3 @@
 	- [Vue](web/Vue.md)
 	- [Web](web/Web.md)
 	- [echarts](web/echarts.md)
-	- [服务器](web/服务器.md)
