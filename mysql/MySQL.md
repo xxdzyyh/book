@@ -7,8 +7,8 @@
 ### 命令行使用
 
 ```
-// 用户名 root 密码 123456 远程地址 104.35.129.219 端口 3306
-mysql -uroot -p123456 -h104.35.129.219 -P3306;
+// 用户名 root 密码 666666 远程地址 110.15.119.219 端口 3306
+mysql -uroot -p666666 -h110.15.119.219 -P3306;
 
 // 显示所有数据库
 show databases;
@@ -22,23 +22,6 @@ show tables;
 // 显示表结构
 desc network;
 ```
-
-mysql -uroot -pUTestor12345678_ -h10.13.148.103 -P3306;
-
-```
-host=10.13.148.103
-#host=192.168.3.41
-
-database.name = buginsight
-database.port = 3306
-#c3p0.jdbcUrl=jdbc:mysql://${host}:3306/${database.name}?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF8&createDatabaseIfNotExist=true
-c3p0.jdbcUrl=jdbc:mysql://${host}:${database.port}/${database.name}?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true&allowMultiQueries=true
-c3p0.user=root
-#c3p0.password=p12345678
-c3p0.password=UTestor12345678_
-```
-
-
 
 
 
