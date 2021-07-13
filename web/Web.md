@@ -149,21 +149,78 @@ Tomcat 是一个web服务器，Node上最常用的Web服务器也许是[Express]
 
 
 
-### npm
+#### 创建 index.js
 
-#### 安装方式
+```
+// 引入文件模块
+const fs = require('fs');
+// 引入处理路径的模块
+const path = require('path');
+// 引入处理post数据的模块
+const bodyParser = require('body-parser');
+// 引入Express
+const express = require('express');
+const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+// app.use(api);
+// 访问静态资源文件 这里是访问所有dist目录下的静态资源文件
+app.use(express.static(path.resolve(__dirname, './dist')));
+// 因为是单页应用 所有请求都走/dist/index.html
+app.get('/', function(req, res) {
+  const html = fs.readFileSync(path.resolve(__dirname, './dist/index.html'), 'utf-8');
+  res.send(html)
+})
+
+const port = 9999;
+app.listen(port);
+console.log('success listen on ' + port +' http://127.0.0.1:' + port);
+```
+
+#### 安装依赖
+
+```
+// 获取项目package.json、package-lock.json，npm install 会读取这两个文件下载依赖到 node_modules 文件夹
+npm install
+```
+
+#### 获取 dist
+
+```
+npm run build
+```
+
+#### web
+
+```
+$ ls web
+dist              index.js          node_modules      package-lock.json package.json
+```
+
+#### 运行
+
+```
+node index.js
+```
+
+
+
+## npm
+
+### 安装方式
 
 有两种方式用来安装 npm 包：本地安装和全局安装。
 
 至于选择哪种方式来安装，取决于我们如何使用这个包。
 
-##### 全局安装
+#### 全局安装
 
  如果你自己的模块依赖于某个包，并通过 Node.js 的 `require` 加载，那么你应该选择本地安装，这种方式也是 `npm install` 命令的默认行为。
 
 
 
-##### 本地安装
+#### 本地安装
 
 如果你想将包作为一个命令行工具，（比如 grunt CLI），那么你应该选择[全局安装](https://www.npmjs.cn/getting-started/installing-npm-packages-globally)。
 
@@ -229,5 +286,4 @@ npm update
 > 在 npm 5 之后的版本
 
 npm install 安装包时，默认便会修改 package.json 文件，所以 --save 选项已经不再需要了。
-
 
