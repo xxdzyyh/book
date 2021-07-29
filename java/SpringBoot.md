@@ -56,11 +56,34 @@
 </project>
 ```
 
+添加请求
+
+```
+package com.example.elasticsearchtest.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("log")
+public class ELKController {
+
+    @GetMapping("all")
+    public String getAllLog() {
+        return "123";
+    }
+}
+```
+
+```
+curl http://localhost:8888/log/all
+123%    
+```
+
 #### parent
 
 创建一个parent项目，打包类型为pom，parent项目中不存放任何代码，只是管理多个项目之间公共的依赖。在parent项目的pom文件中定义对common.jar的依赖，三个子项目中只需要定义<parent></parent>，parent标签中写上parent项目的pom坐标就可以引用到common.jar了。简单来讲就是可以继承父项目的pom.xml，这样公共部分有父项目制定
-
-
 
 ### 使用modules
 

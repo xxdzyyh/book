@@ -1351,7 +1351,28 @@ setNeedDisplay在receiver标上一个需要被重新绘图的标记，在下一�
    }
    ```
 
-   
+
+
+
+### 对象属性操作
+
+
+
+```
+{14.5: 0, 14.6: 70} -> [{"name":"14.6","value":70},{"name":"14.5","value":0}]
+ 
+mapToChartData(map) {
+  console.log(map)
+  let array = new Array()
+  for (let entry of Object.entries(map)) {
+    let i = { name : entry[0],value: entry[1] }
+    array.push(i)
+  }
+  return array;
+},
+```
+
+
 
 ## 常见问题
 

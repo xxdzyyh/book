@@ -201,10 +201,31 @@ dist              index.js          node_modules      package-lock.json package.
 #### 运行
 
 ```
+// 这种很容易挂掉
 node index.js
+
+// 比上面好一点，但是还是很容易挂掉
+nohup node index.js &
+
+// 使用守护进程启动
+pm2 start index.js
 ```
 
 
+
+### pm2
+
+离线安装 pm2
+
+1. 先找一台能联外网的机器，执行 `npm install pm2 -g `
+2. `npm config get prefix` 显示结果添加 `/lib/node_modules` 找到 pm2
+3. 压缩 `tar czvf pm2.tar.gz pm2/`,在这里打包的好处，是因为该目录下面已经包含了pm2依赖的所有node模块
+4. 传输到服务器
+5. 将 pm2.tar.gz 移到 `npm config get prefix ` + `/lib/node_modules`下面
+
+6. 解压 `tar xvf pm2.tar.gz`
+7. 全局使用`cd /usr/bin;ln -s /usr/local/node/lib/node_modules/pm2/bin/pm2 pm2`
+8. `pm2 start index.js`
 
 ## npm
 
