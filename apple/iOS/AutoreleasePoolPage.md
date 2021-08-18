@@ -1,6 +1,25 @@
----
-type: iOS
----
+
+
+# AutoreleasePool
+
+
+
+* 以栈为节点，双向链表
+* 和线程一一对应
+
+
+
+```
+void *objc_autoreleasePoolPush()
+void *objc_autoreleasePoolPop()
+
+```
+
+
+
+
+
+
 
 ```
 class AutoreleasePoolPage {
@@ -113,6 +132,8 @@ id __strong obj = [NSArray array];
 	
 	-(BOOL)performOperationWithError:(NSError * __autoreleasing *)error;
 	```
+
+
 
 ### 线程问题
 

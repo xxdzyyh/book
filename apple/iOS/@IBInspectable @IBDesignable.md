@@ -2,7 +2,7 @@
 
 如果项目UI以xib为主，那就绝对不能错过 `@IBInspectable @IBDesignable`。使用xib设置UI时，对于系统的控件，可以在Xcode右边的
 
-inspectors对控件的属性进行设置，使用 `@IBInspectable`可以让我们自定义的属性出现在 inspectors 中，直接进行复制。
+inspectors对控件的属性进行设置，使用 `@IBInspectable`可以让我们自定义的属性出现在 inspectors 中，直接进行赋值。
 
 ```
 extension UIView {
@@ -31,7 +31,7 @@ extension UIView {
 
 在xib中，很多时候一个view只需设置圆角，但是为了实现这一点，需要一个outlet或者使用`User Defined Runtime Attributes`，这个还是比较麻烦的。添加了上面的extension后，就可以想设置背景颜色那样直接设置圆角。
 
-<img src="/Users/sckj/Desktop/截屏2020-08-21 上午9.58.11.png" alt="截屏2020-08-21 上午9.58.11" style="zoom:50%;" /><img src="/Users/sckj/Desktop/截屏2020-08-21 上午10.00.58.png" alt="截屏2020-08-21 上午10.00.58" style="zoom:50%;" />
+
 
 设置了cornerRadius后，`User Defined Runtime Attributes`会自动添加一条runtime attribute.
 

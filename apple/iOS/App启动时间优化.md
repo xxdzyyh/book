@@ -1,4 +1,6 @@
-### App启动时间优化
+# App启动时间
+
+[TOC]
 
 官方文档：[Optimizing App Startup Time](https://developer.apple.com/videos/play/wwdc2016/406)
 
@@ -24,42 +26,13 @@ T2:main函数到applicationDidBecomeActive
 
 启动耗时 = T1 + T2
 
-T1阶段受动态的加载时间波动比较大
+T1阶段受动态库加载时间波动比较大
 
 
 
 didFinishLaunchingWithOptions 用户可以看到应用window
 
 applicationDidBecomeActive 用户可以操作
-
-```
-// main.m
-#import "AppDelegate.h"
-
-extern CFAbsoluteTime StartTime;
-
-int main(int argc, char *argv[]) {
-    StartTime = CFAbsoluteTimeGetCurrent();
-    
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
-
-// AppDelegate.m
-CFAbsoluteTime StartTime;
-
-@interface AppDelegate ()
-
-@end
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSUInteger milliseconds = (NSUInteger)((CFAbsoluteTimeGetCurrent() - StartTime) * 1000);
-        NSLog(@"applicationDidBecomeActive in %lu ms", milliseconds);
-    });
-}   
-```
 
 
 
@@ -77,21 +50,17 @@ CFAbsoluteTime StartTime;
 
   
 
-### 查看启动时间
+### Watch Dog
 
-Edit Scheme -> Arguments -> Environment Variables, 添加字段 DYLD_PRINT_STATISTICS 设置value = 1.
+iOS 系统有个叫看门狗的机制，超过这个机制规定时间的操作系统会自动掐掉。Xcode在Debug的时候，会禁止“看门狗”。
 
-```
-Total pre-main time: 988.15 milliseconds (100.0%)
-         dylib loading time: 287.55 milliseconds (29.0%)
-        rebase/binding time: 126687488.8 seconds (148793110.9%)
-            ObjC setup time: 413.39 milliseconds (41.8%)
-           initializer time: 392.24 milliseconds (39.6%)
-           slowest intializers :
-             libSystem.B.dylib :   7.92 milliseconds (0.8%)
-    libMainThreadChecker.dylib : 327.33 milliseconds (33.1%)
-                      OfferApp :  33.54 milliseconds (3.3%)
-```
+| 项目     | 时间   |
+| -------- | ------ |
+| 启动     | 20秒   |
+| 恢复运行 | 10秒   |
+| 悬挂进程 | 10秒   |
+| 退出应用 | 6秒    |
+| 后台运行 | 10分钟 |
 
 
 
@@ -217,3 +186,78 @@ void callInitialize(Class cls)
 * 
 * 多个category实现了initialize,只会执行最后一个category的initialize
 * 
+
+
+
+## 启动时间测量
+
+
+
+### 代码埋点
+
+```
+// main.m
+#import "AppDelegate.h"
+
+extern CFAbsoluteTime StartTime;
+
+int main(int argc, char *argv[]) {
+    StartTime = CFAbsoluteTimeGetCurrent();
+    
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
+
+// AppDelegate.m
+CFAbsoluteTime StartTime;
+
+@interface AppDelegate ()
+
+@end
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSUInteger milliseconds = (NSUInteger)((CFAbsoluteTimeGetCurrent() - StartTime) * 1000);
+        NSLog(@"applicationDidBecomeActive in %lu ms", milliseconds);
+    });
+}   
+```
+
+
+
+### Xcode 启动时间
+
+Edit Scheme -> Arguments -> Environment Variables, 添加字段 DYLD_PRINT_STATISTICS 设置value = 1.
+
+```
+Total pre-main time: 988.15 milliseconds (100.0%)
+         dylib loading time: 287.55 milliseconds (29.0%)
+        rebase/binding time: 126687488.8 seconds (148793110.9%)
+            ObjC setup time: 413.39 milliseconds (41.8%)
+           initializer time: 392.24 milliseconds (39.6%)
+           slowest intializers :
+             libSystem.B.dylib :   7.92 milliseconds (0.8%)
+    libMainThreadChecker.dylib : 327.33 milliseconds (33.1%)
+                      OfferApp :  33.54 milliseconds (3.3%)
+```
+
+
+
+### Instruments App Launch
+
+
+
+1. 重签名App
+2. 使用 Instruments 的 App Launch 进行测量
+
+
+
+![截屏2021-08-18 09.57.16](raw/截屏2021-08-18 09.57.16.png)
+
+
+
+![截屏2021-08-18 09.58.59](raw/App Launch 结果.png)
+
+
+
