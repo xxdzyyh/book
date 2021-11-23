@@ -293,7 +293,14 @@ ALTER TABLE `table_name` ADD INDEX index_name ( `column_name`(20) )
 ALTER TABLE `table name`
 ADD COLUMN `column name` int(11) DEFAULT NULL,
 ADD COLUMN `column name` int(11) DEFAULT NULL;
+
+
+alert table `session_info` add column `replay_type` tinyint(1) default 0;
 ```
+
+
+
+
 
 ### 重命名列
 

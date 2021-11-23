@@ -1,4 +1,16 @@
-## 150行代码搞定Jenkins自动打包
+## Jenkins自动打包
+
+
+
+Sample commands:
+
+- Install the latest LTS version: `brew install jenkins-lts`
+- Install a specific LTS version: `brew install jenkins-lts@YOUR_VERSION`
+- Start the Jenkins service: `brew services start jenkins-lts`
+- Restart the Jenkins service: `brew services restart jenkins-lts`
+- Update the Jenkins version: `brew upgrade jenkins-lts`
+
+
 
 打包是一个没有技术含量但却非常重要的事情，测试人员的工作直接依赖打包结果，如果没有处理好，可能会占用开发人员大量的时间。怎么才能够做好打包这个事情呢？答案就是使用jenkins自动打包。
 

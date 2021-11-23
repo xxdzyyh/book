@@ -1,4 +1,6 @@
-## grep 使用
+# grep 使用
+
+[TOC]
 
 
 
@@ -13,3 +15,9 @@ grep -B 5 foo 1.txgrep -A 5 foo 1.txt
 grep -C 5 foo 1.txgrep -A 5 foo 1.txt
 ```
 
+
+## 在文件中查找指定内容
+
+```
+grep "receiver replay " info_collector.log
+```

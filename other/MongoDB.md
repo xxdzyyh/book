@@ -174,3 +174,24 @@ db.student.aggregate([
 
 ])
 
+
+
+### 分页
+
+
+
+```
+public List<NetworkDoc> findNetworksBySessionId(int appIndex,String sessionId,int page,int pageSize) {
+    Criteria criteria = Criteria.where("appIndex").is(appIndex).and("sessionId").is(sessionId);
+    mongoTemplate.find(Query.query(criteria), NetworkDoc.class, NETWORK_COLLECTION_NAME);
+    int count = (int)mongoTemplate.count(Query.query(criteria),NETWORK_COLLECTION_NAME);
+    if (count <= 0) {
+        return new ArrayList<>();
+    }
+
+    return mongoTemplate.find(Query.query(criteria).skip(page * pageSize).limit(pageSize),NetworkDoc.class,NETWORK_COLLECTION_NAME);
+}
+```
+
+
+

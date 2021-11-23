@@ -20,22 +20,8 @@ https://www.jianshu.com/p/759015369b6f
 
 ```
 - (IBAction)create:(id)sender {
-
-
-
     NSString *testString = [NSString stringWithFormat:@"string created by %@",self];
-
-
-
-    
-
-
-
 }
-
-
-
-复制代码
 ```
 
 断点后在lldb中使用`lldb.macosx.heap`里的`malloc_info`命令，虽然官网上说是Mac app才能用的命令，但是经测试现在在iOS上也能用了：
@@ -90,20 +76,12 @@ lldb可以加载自定义的pthon脚本。只需要在lldb中输入：
 
 ```
 command script import python脚本的地址
-
-
-
-复制代码
 ```
 
 因此把上面的`heap.py`下载到本地后，输入：
 
 ```
 command script import /你的路径/lldb/examples/darwin/heap_find/heap.py
-
-
-
-复制代码
 ```
 
 即可。

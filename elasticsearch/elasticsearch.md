@@ -4,6 +4,20 @@ elk
 
 [TOC]
 
+## 测试机器
+
+
+
+界面：http://124.71.70.101:32123
+
+接口：http://124.71.70.101:19200
+
+elastic
+
+ASD!asd#123
+
+
+
 
 
 ## 术语
@@ -1801,6 +1815,14 @@ cat、deep、do、dog、dogs
 
 
 
+
+## http 请求数据
+
+
+
+```
+curl -H 'Content-Type: application/json' -XGET 'http://124.71.70.101:19200/remote-loginfo/_search?pretty' -d '{"from": 0, "size": 200, "query": {"match_all": {"boost": 1.0 } }, "post_filter": {"bool": {"must": [{"range": {"level": {"from": 0, "to": 5, "include_lower": false, "include_upper": true, "boost": 1.0 } } }, {"range": {"@timestamp": {"from": 1634774400000, "to": 1635350399758, "include_lower": true, "include_upper": true, "boost": 1.0 } } } ], "adjust_pure_negative": true, "boost": 1.0 } }, "version": true, "_source": {"includes": ["id", "taskId", "logType", "content", "logTime", "sessionID", "functionName", "file", "line", "tag", "level", "@timestamp"], "excludes": [] }, "sort": [{"@timestamp": {"order": "desc"} }, {"logTime": {"order": "asc"} } ], "aggregations": {"session_group": {"terms": {"field": "sessionID.keyword", "size": 200, "min_doc_count": 1, "shard_min_doc_count": 0, "show_term_doc_count_error": false, "order": [{"_count": "desc"}, {"_key": "asc"} ] }, "aggregations": {"level_group": {"terms": {"field": "level", "size": 10, "min_doc_count": 1, "shard_min_doc_count": 0, "show_term_doc_count_error": false, "order": [{"_count": "desc"}, {"_key": "asc"} ] } } } } }, "highlight": {"fields": {"content": {} } } }' --user 'elastic':'ASD!asd#123' 
+```
 
 
 

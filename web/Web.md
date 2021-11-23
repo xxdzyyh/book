@@ -308,3 +308,24 @@ npm update
 
 npm install 安装包时，默认便会修改 package.json 文件，所以 --save 选项已经不再需要了。
 
+
+
+
+
+## Element-UI
+
+
+
+### 表格滚动监听
+
+
+
+```
+mounted() {
+  this.update()
+  const el = this.$el.getElementsByClassName('el-table__body-wrapper')[0]
+  el.addEventListener('scroll',() => {
+    console.log('scroll');
+  })
+},
+```

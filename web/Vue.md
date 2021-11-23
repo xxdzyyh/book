@@ -104,6 +104,18 @@ new Vue({
 </div>
 ```
 
+
+
+### v-bind:style
+
+```
+<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">好好学习</div>
+```
+
+
+
+
+
 ### v-if
 
 v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素。
@@ -1402,3 +1414,256 @@ mapToChartData(map) {
   ```
 
   
+
+
+
+## Vue 3
+
+
+
+### setup()
+
+ `setup` 选项是一个接收 `props` 和 `context` 的函数，我们将在[之后](https://v3.cn.vuejs.org/guide/composition-api-setup.html#参数)进行讨论。此外，我们将 `setup` 返回的所有内容都暴露给组件的其余部分 (计算属性、方法、生命周期钩子等等) 以及组件的模板。
+
+
+
+Vue 2 Options API 
+
+Vue 3 **Composition API** 
+
+
+
+**Options API 和 Composition API** 
+
+Options API 约定：
+
+我们需要在 props 里面设置接收参数
+
+我们需要在 data 里面设置变量
+
+我们需要在 computed 里面设置计算属性
+
+我们需要在 watch 里面设置监听属性
+
+我们需要在 methods 里面设置事件方法
+
+你会发现 Options APi 都约定了我们该在哪个位置做什么事，这反倒在一定程度上也强制我们进行了代码分割。
+
+现在用 Composition API，不再这么约定了，于是乎，代码组织非常灵活，我们的控制代码写在 setup 里面即可。
+
+setup函数提供了两个参数 props和context,重要的是在setup函数里没有了this,在 vue3.0 中，访问他们变成以下形式： this.xxx=》context.xxx
+
+我们没有了 this 上下文，没有了 Options API 的强制代码分离。Composition API 给了我们更加广阔的天地，那么我们更加需要慎重自约起来。
+
+对于复杂的逻辑代码，我们要更加重视起 Composition API 的初心，不要吝啬使用 Composition API 来分离代码，用来切割成各种模块导出。
+
+
+
+### Composition API
+
+
+
+你可以通过在生命周期钩子前面加上 “on” 来访问组件的生命周期钩子。
+
+下表包含如何在 [setup ()](https://v3.cn.vuejs.org/guide/composition-api-setup.html) 内部调用生命周期钩子：
+
+| 选项式 API        | Hook inside `setup` |
+| ----------------- | ------------------- |
+| `beforeCreate`    | Not needed*         |
+| `created`         | Not needed*         |
+| `beforeMount`     | `onBeforeMount`     |
+| `mounted`         | `onMounted`         |
+| `beforeUpdate`    | `onBeforeUpdate`    |
+| `updated`         | `onUpdated`         |
+| `beforeUnmount`   | `onBeforeUnmount`   |
+| `unmounted`       | `onUnmounted`       |
+| `errorCaptured`   | `onErrorCaptured`   |
+| `renderTracked`   | `onRenderTracked`   |
+| `renderTriggered` | `onRenderTriggered` |
+| `activated`       | `onActivated`       |
+| `deactivated`     | `onDeactivated`     |
+
+
+
+TIP
+
+因为 `setup` 是围绕 `beforeCreate` 和 `created` 生命周期钩子运行的，所以不需要显式地定义它们。换句话说，在这些钩子中编写的任何代码都应该直接在 `setup` 函数中编写。
+
+
+
+
+
+```
+<script setup>
+
+const getData = function() {
+	console.log("getData")
+}
+
+getData()
+
+</script>
+```
+
+
+
+
+
+#### 获取实例
+
+```
+<script setup>
+import { computed,ref,getCurrentInstance,onMounted} from 'vue'
+
+const { ctx } = getCurrentInstance()
+console.log(ctx.$el)
+
+const app = getCurrentInstance()
+
+</script>
+```
+
+
+
+#### watch
+
+* 监听普通类型
+
+  ```
+  let count = ref(1)
+  watch(count,(newValue,oldValue) => {
+  	console.log('count changed')
+  })
+  ```
+
+* 监听响应式对象
+
+  ```
+  let book = reactive({
+  	name: 'js',
+  	price: 50
+  })
+  
+  watch(()=>book.name,()=>{
+  	console.log('book changed')
+  })
+  ```
+
+* 监听props
+
+  ```
+  const props = defineProps({
+    remoteActionData: Object,
+    startTime: Number | String
+  })
+  
+  watch(()=>props.remoteActionData,(newValue)=>{
+    console.log('watch remoteActionData changed',newValue)
+    parseActionData(props.remoteActionData,props.startTime)
+  })
+  
+  ```
+
+
+### defineExpose
+
+默认定义在 `<script setup>`中的变量方法外界无法访问，所以如果需要外界访问，需要加上 defineExpose
+
+```
+// SessionMP4Replay.vue
+<script setup>
+
+const videoPlayer = ref(null)
+
+function play() {
+
+}
+
+defineExpose({
+  timeUpdate,
+  play,
+  pause,
+  stop,
+  videoPlayer
+})
+</script>
+
+
+// SessionDetailReplay.vue
+<script setup>
+import { ref,defineExpose,onMounted } from 'vue'
+
+let mp4Player = ref(null)
+
+onMounted(()=>{
+	// 如果没有 defineExpose ，这里 mp4Player 不会显示任何属性和方法。可选式 API 默认会暴露所有 data 和 methods
+	console.log(mp4Player)
+})
+
+<template>
+  <div class="h-full">
+    <SessionMP4Replay ref="mp4Player"></SessionMP4Replay>
+  </div>
+</template>
+```
+
+
+
+### ref
+
+如果被引用的组件是通过组合式 API 写得，需要 defineExpose
+
+```
+<script setup>
+import { ref,onMounted } from 'vue'
+
+let mp4Player = ref(null)
+
+onMounted(()=>{
+	console.log(mp4Player)
+})
+</script>
+
+<template>
+  <div class="h-full">
+    <SessionMP4Replay ref="mp4Player"></SessionMP4Replay>
+  </div>
+</template>
+```
+
+
+
+
+
+
+
+## Element UI
+
+### el-table 加载更多
+
+```
+onMounted(()=>{
+  const el = document.getElementsByClassName('el-table__body-wrapper')[0]
+  el.addEventListener('scroll',()=>{
+    let scrollTop = el.scrollTop
+    let clientHeight = el.clientHeight
+    let scrollHeight = el.scrollHeight
+    if (scrollTop + clientHeight >= scrollHeight) {
+      if (disableLoadMore.value === false) {
+        onLoadMore()
+      }
+    }
+  })
+})
+```
+
+
+
+### 图片堆叠
+
+```
+<span class="fa-stack text-center">
+  <i class="el-icon-cloudy fa-stack-2x"></i>
+  <i class="el-icon-bottom fa-stack"></i>
+</span>
+```
